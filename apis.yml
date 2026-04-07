@@ -9,11 +9,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Hybrid Cloud
-  - On-Premises
-  - Edge Computing
-  - Infrastructure
   - AWS
+  - Edge Computing
+  - Hybrid Cloud
+  - Infrastructure
+  - On-Premises
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -29,9 +29,9 @@ apis:
     humanURL: https://aws.amazon.com/outposts/
     baseURL: https://outposts.amazonaws.com
     tags:
+      - Edge Computing
       - Hybrid Cloud
       - On-Premises
-      - Edge Computing
     properties:
       - type: Documentation
         url: https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
