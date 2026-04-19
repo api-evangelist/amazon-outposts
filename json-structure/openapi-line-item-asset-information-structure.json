@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-line-item-asset-information-structure.json",
+  "name": "LineItemAssetInformation",
+  "description": " Information about a line item asset. ",
+  "type": "object",
+  "properties": {
+    "AssetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetId"
+        },
+        {
+          "description": " The ID of the asset. "
+        }
+      ]
+    },
+    "MacAddressList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MacAddressList"
+        },
+        {
+          "description": " The MAC addresses of the asset. "
+        }
+      ]
+    }
+  }
+}

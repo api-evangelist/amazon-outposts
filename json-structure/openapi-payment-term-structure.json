@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-payment-term-structure.json",
+  "name": "PaymentTerm",
+  "description": "PaymentTerm schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "THREE_YEARS",
+    "ONE_YEAR"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-outpost-identifier-structure.json",
+  "name": "OutpostIdentifier",
+  "description": "OutpostIdentifier schema from Amazon Outposts",
+  "type": "string",
+  "pattern": "^(arn:aws([a-z-]+)?:outposts:[a-z\\d-]+:\\d{12}:outpost/)?op-[a-f0-9]{17}$"
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-start-connection-request-structure.json",
+  "name": "StartConnectionRequest",
+  "description": "StartConnectionRequest schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "DeviceSerialNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeviceSerialNumber"
+        },
+        {
+          "description": " The serial number of the dongle. "
+        }
+      ]
+    },
+    "AssetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetId"
+        },
+        {
+          "description": " The ID of the Outpost server. "
+        }
+      ]
+    },
+    "ClientPublicKey": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WireGuardPublicKey"
+        },
+        {
+          "description": " The public key of the client. "
+        }
+      ]
+    },
+    "NetworkInterfaceDeviceIndex": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NetworkInterfaceDeviceIndex"
+        },
+        {
+          "description": " The device index of the network interface on the Outpost server. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "DeviceSerialNumber",
+    "AssetId",
+    "ClientPublicKey",
+    "NetworkInterfaceDeviceIndex"
+  ]
+}

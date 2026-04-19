@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-shipment-information-schema.json",
+  "title": "ShipmentInformation",
+  "description": " Information about a line item shipment. ",
+  "type": "object",
+  "properties": {
+    "ShipmentTrackingNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TrackingId"
+        },
+        {
+          "description": " The tracking number of the shipment. "
+        }
+      ]
+    },
+    "ShipmentCarrier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShipmentCarrier"
+        },
+        {
+          "description": " The carrier of the shipment. "
+        }
+      ]
+    }
+  }
+}

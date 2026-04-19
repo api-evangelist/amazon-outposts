@@ -1,0 +1,13 @@
+{
+  "SiteId": "example-ref",
+  "AccountId": "example-ref",
+  "Name": "example-ref",
+  "Description": "example-ref",
+  "Tags": "example-string",
+  "SiteArn": "example-ref",
+  "Notes": "example-string",
+  "OperatingAddressCountryCode": "example-string",
+  "OperatingAddressStateOrRegion": "us-east-1",
+  "OperatingAddressCity": "example-string",
+  "RackPhysicalProperties": "example-string"
+}

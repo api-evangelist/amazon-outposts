@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-connection-id-structure.json",
+  "name": "ConnectionId",
+  "description": "ConnectionId schema from Amazon Outposts",
+  "type": "string",
+  "pattern": "^[a-zA-Z0-9+/=]{1,1024}$"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-update-outpost-input-structure.json",
+  "name": "UpdateOutpostInput",
+  "description": "UpdateOutpostInput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "$ref": "#/components/schemas/OutpostName"
+    },
+    "Description": {
+      "$ref": "#/components/schemas/OutpostDescription"
+    },
+    "SupportedHardwareType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SupportedHardwareType"
+        },
+        {
+          "description": " The type of hardware for this Outpost. "
+        }
+      ]
+    }
+  }
+}

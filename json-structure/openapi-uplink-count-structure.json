@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-uplink-count-structure.json",
+  "name": "UplinkCount",
+  "description": "UplinkCount schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "UPLINK_COUNT_1",
+    "UPLINK_COUNT_2",
+    "UPLINK_COUNT_3",
+    "UPLINK_COUNT_4",
+    "UPLINK_COUNT_5",
+    "UPLINK_COUNT_6",
+    "UPLINK_COUNT_7",
+    "UPLINK_COUNT_8",
+    "UPLINK_COUNT_12",
+    "UPLINK_COUNT_16"
+  ]
+}

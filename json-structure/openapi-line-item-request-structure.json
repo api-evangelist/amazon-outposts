@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-line-item-request-structure.json",
+  "name": "LineItemRequest",
+  "description": "Information about a line item request.",
+  "type": "object",
+  "properties": {
+    "CatalogItemId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SkuCode"
+        },
+        {
+          "description": "The ID of the catalog item."
+        }
+      ]
+    },
+    "Quantity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LineItemQuantity"
+        },
+        {
+          "description": "The quantity of a line item request."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-get-outpost-instance-types-output-schema.json",
+  "title": "GetOutpostInstanceTypesOutput",
+  "description": "GetOutpostInstanceTypesOutput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "InstanceTypes": {
+      "$ref": "#/components/schemas/InstanceTypeListDefinition"
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/Token"
+    },
+    "OutpostId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutpostId"
+        },
+        {
+          "description": " The ID of the Outpost. "
+        }
+      ]
+    },
+    "OutpostArn": {
+      "$ref": "#/components/schemas/OutpostArn"
+    }
+  }
+}

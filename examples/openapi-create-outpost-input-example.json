@@ -1,0 +1,9 @@
+{
+  "Name": "example-ref",
+  "Description": "example-ref",
+  "SiteId": "resource-abc123",
+  "AvailabilityZone": "example-ref",
+  "AvailabilityZoneId": "example-ref",
+  "Tags": "example-string",
+  "SupportedHardwareType": "standard"
+}

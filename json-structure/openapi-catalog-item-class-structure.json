@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-catalog-item-class-structure.json",
+  "name": "CatalogItemClass",
+  "description": "CatalogItemClass schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "RACK",
+    "SERVER"
+  ]
+}

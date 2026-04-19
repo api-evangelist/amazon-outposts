@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-list-tags-for-resource-response-schema.json",
+  "title": "ListTagsForResourceResponse",
+  "description": "ListTagsForResourceResponse schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The resource tags."
+        }
+      ]
+    }
+  }
+}

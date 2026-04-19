@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-availability-zone-schema.json",
+  "title": "AvailabilityZone",
+  "description": "The Availability Zone.",
+  "type": "string",
+  "pattern": "^([a-zA-Z]+-){1,3}([a-zA-Z]+)?(\\d+[a-zA-Z]?)?$"
+}

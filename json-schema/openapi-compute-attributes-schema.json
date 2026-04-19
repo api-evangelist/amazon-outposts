@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-compute-attributes-schema.json",
+  "title": "ComputeAttributes",
+  "description": " Information about compute hardware assets. ",
+  "type": "object",
+  "properties": {
+    "HostId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HostId"
+        },
+        {
+          "description": " The host ID of the Dedicated Host on the asset. "
+        }
+      ]
+    },
+    "State": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputeAssetState"
+        },
+        {
+          "description": "<p>The state.</p> <ul> <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li> <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li> <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li> </ul>"
+        }
+      ]
+    }
+  }
+}

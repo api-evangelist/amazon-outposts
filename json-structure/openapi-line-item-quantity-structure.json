@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-line-item-quantity-structure.json",
+  "name": "LineItemQuantity",
+  "description": "LineItemQuantity schema from Amazon Outposts",
+  "type": "int32",
+  "minimum": 1,
+  "maximum": 20
+}

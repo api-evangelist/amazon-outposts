@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-list-catalog-items-output-structure.json",
+  "name": "ListCatalogItemsOutput",
+  "description": "ListCatalogItemsOutput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "CatalogItems": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogItemListDefinition"
+        },
+        {
+          "description": "Information about the catalog items."
+        }
+      ]
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/Token"
+    }
+  }
+}

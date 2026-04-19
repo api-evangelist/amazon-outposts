@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-power-connector-structure.json",
+  "name": "PowerConnector",
+  "description": "PowerConnector schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "L6_30P",
+    "IEC309",
+    "AH530P7W",
+    "AH532P6W"
+  ]
+}

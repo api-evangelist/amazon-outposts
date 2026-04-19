@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-underlay-ip-address-schema.json",
+  "title": "UnderlayIpAddress",
+  "description": "UnderlayIpAddress schema from Amazon Outposts",
+  "type": "string",
+  "pattern": "^([0-9]{1,3}\\.){3}[0-9]{1,3}$"
+}

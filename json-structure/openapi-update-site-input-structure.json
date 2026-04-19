@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-update-site-input-structure.json",
+  "name": "UpdateSiteInput",
+  "description": "UpdateSiteInput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "$ref": "#/components/schemas/SiteName"
+    },
+    "Description": {
+      "$ref": "#/components/schemas/SiteDescription"
+    },
+    "Notes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SiteNotes"
+        },
+        {
+          "description": "Notes about a site."
+        }
+      ]
+    }
+  }
+}

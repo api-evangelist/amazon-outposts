@@ -1,0 +1,6 @@
+{
+  "OutpostIdentifier": "resource-abc123",
+  "LineItems": "example-string",
+  "PaymentOption": "example-string",
+  "PaymentTerm": "example-string"
+}

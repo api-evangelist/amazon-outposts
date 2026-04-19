@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-list-assets-input-schema.json",
+  "title": "ListAssetsInput",
+  "description": "ListAssetsInput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {}
+}

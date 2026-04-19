@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-device-serial-number-structure.json",
+  "name": "DeviceSerialNumber",
+  "description": "DeviceSerialNumber schema from Amazon Outposts",
+  "type": "string",
+  "pattern": "^(\\w+)$"
+}

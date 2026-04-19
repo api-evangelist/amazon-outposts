@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-sku-code-schema.json",
+  "title": "SkuCode",
+  "description": "SkuCode schema from Amazon Outposts",
+  "type": "string",
+  "pattern": "OR-[A-Z0-9]{7}"
+}

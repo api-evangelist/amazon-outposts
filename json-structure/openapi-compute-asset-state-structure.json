@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-compute-asset-state-structure.json",
+  "name": "ComputeAssetState",
+  "description": "ComputeAssetState schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "ACTIVE",
+    "ISOLATED",
+    "RETIRING"
+  ]
+}

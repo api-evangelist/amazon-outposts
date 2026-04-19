@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-create-outpost-input-schema.json",
+  "title": "CreateOutpostInput",
+  "description": "CreateOutpostInput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "$ref": "#/components/schemas/OutpostName"
+    },
+    "Description": {
+      "$ref": "#/components/schemas/OutpostDescription"
+    },
+    "SiteId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SiteId"
+        },
+        {
+          "description": " The ID or the Amazon Resource Name (ARN) of the site. "
+        }
+      ]
+    },
+    "AvailabilityZone": {
+      "$ref": "#/components/schemas/AvailabilityZone"
+    },
+    "AvailabilityZoneId": {
+      "$ref": "#/components/schemas/AvailabilityZoneId"
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags to apply to the Outpost."
+        }
+      ]
+    },
+    "SupportedHardwareType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SupportedHardwareType"
+        },
+        {
+          "description": " The type of hardware for this Outpost. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "SiteId"
+  ]
+}

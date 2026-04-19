@@ -1,0 +1,9 @@
+{
+  "OutpostId": "resource-abc123",
+  "OrderId": "resource-abc123",
+  "OrderType": "standard",
+  "Status": "active",
+  "LineItemCountsByStatus": "active",
+  "OrderSubmissionDate": "example-string",
+  "OrderFulfilledDate": "example-string"
+}

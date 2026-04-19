@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-list-assets-output-structure.json",
+  "name": "ListAssetsOutput",
+  "description": "ListAssetsOutput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "Assets": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetListDefinition"
+        },
+        {
+          "description": "Information about the hardware assets."
+        }
+      ]
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/Token"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-tag-resource-request-structure.json",
+  "name": "TagResourceRequest",
+  "description": "TagResourceRequest schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags to add to the resource."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Tags"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-iso8601-timestamp-schema.json",
+  "title": "ISO8601Timestamp",
+  "description": "ISO8601Timestamp schema from Amazon Outposts",
+  "type": "string",
+  "format": "date-time"
+}

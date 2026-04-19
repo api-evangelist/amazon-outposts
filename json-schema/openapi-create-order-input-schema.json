@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-create-order-input-schema.json",
+  "title": "CreateOrderInput",
+  "description": "CreateOrderInput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "OutpostIdentifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutpostIdentifier"
+        },
+        {
+          "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+        }
+      ]
+    },
+    "LineItems": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LineItemRequestListDefinition"
+        },
+        {
+          "description": "The line items that make up the order."
+        }
+      ]
+    },
+    "PaymentOption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentOption"
+        },
+        {
+          "description": "The payment option."
+        }
+      ]
+    },
+    "PaymentTerm": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentTerm"
+        },
+        {
+          "description": "The payment terms."
+        }
+      ]
+    }
+  },
+  "required": [
+    "OutpostIdentifier",
+    "LineItems",
+    "PaymentOption"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "CatalogItemId": "resource-abc123",
+  "ItemStatus": "active",
+  "EC2Capacities": "example-string",
+  "PowerKva": "example-string",
+  "WeightLbs": "example-string",
+  "SupportedUplinkGbps": "example-string",
+  "SupportedStorage": "example-string"
+}

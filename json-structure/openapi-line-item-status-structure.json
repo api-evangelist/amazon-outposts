@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-line-item-status-structure.json",
+  "name": "LineItemStatus",
+  "description": "LineItemStatus schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "PREPARING",
+    "BUILDING",
+    "SHIPPED",
+    "DELIVERED",
+    "INSTALLING",
+    "INSTALLED",
+    "ERROR",
+    "CANCELLED",
+    "REPLACED"
+  ]
+}

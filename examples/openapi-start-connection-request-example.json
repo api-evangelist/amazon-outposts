@@ -1,0 +1,6 @@
+{
+  "DeviceSerialNumber": "example-string",
+  "AssetId": "resource-abc123",
+  "ClientPublicKey": "example-string",
+  "NetworkInterfaceDeviceIndex": "example-string"
+}

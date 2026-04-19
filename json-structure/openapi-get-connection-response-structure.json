@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-get-connection-response-structure.json",
+  "name": "GetConnectionResponse",
+  "description": "GetConnectionResponse schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "ConnectionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConnectionId"
+        },
+        {
+          "description": " The ID of the connection. "
+        }
+      ]
+    },
+    "ConnectionDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConnectionDetails"
+        },
+        {
+          "description": " Information about the connection. "
+        }
+      ]
+    }
+  }
+}

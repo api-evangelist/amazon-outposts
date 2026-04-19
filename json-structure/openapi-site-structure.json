@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-site-structure.json",
+  "name": "Site",
+  "description": "Information about a site.",
+  "type": "object",
+  "properties": {
+    "SiteId": {
+      "$ref": "#/components/schemas/SiteId"
+    },
+    "AccountId": {
+      "$ref": "#/components/schemas/AccountId"
+    },
+    "Name": {
+      "$ref": "#/components/schemas/SiteName"
+    },
+    "Description": {
+      "$ref": "#/components/schemas/SiteDescription"
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The site tags."
+        }
+      ]
+    },
+    "SiteArn": {
+      "$ref": "#/components/schemas/SiteArn"
+    },
+    "Notes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SiteNotes"
+        },
+        {
+          "description": " Notes about a site. "
+        }
+      ]
+    },
+    "OperatingAddressCountryCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CountryCode"
+        },
+        {
+          "description": " The ISO-3166 two-letter country code where the hardware is installed and powered on. "
+        }
+      ]
+    },
+    "OperatingAddressStateOrRegion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StateOrRegion"
+        },
+        {
+          "description": " State or region where the hardware is installed and powered on. "
+        }
+      ]
+    },
+    "OperatingAddressCity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/City"
+        },
+        {
+          "description": " City where the hardware is installed and powered on. "
+        }
+      ]
+    },
+    "RackPhysicalProperties": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RackPhysicalProperties"
+        },
+        {
+          "description": " Information about the physical and logistical details for a rack at the site. "
+        }
+      ]
+    }
+  }
+}

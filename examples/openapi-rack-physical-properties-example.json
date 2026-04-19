@@ -1,0 +1,11 @@
+{
+  "PowerDrawKva": "example-string",
+  "PowerPhase": "example-string",
+  "PowerConnector": "example-string",
+  "PowerFeedDrop": "example-string",
+  "UplinkGbps": "example-string",
+  "UplinkCount": "example-string",
+  "FiberOpticCableType": "standard",
+  "OpticalStandard": "example-string",
+  "MaximumSupportedWeightLbs": "example-string"
+}

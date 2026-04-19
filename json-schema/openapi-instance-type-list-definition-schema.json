@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-instance-type-list-definition-schema.json",
+  "title": "InstanceTypeListDefinition",
+  "description": "Information about the instance types.",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/InstanceTypeItem"
+  }
+}

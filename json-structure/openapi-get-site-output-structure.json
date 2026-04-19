@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-get-site-output-structure.json",
+  "name": "GetSiteOutput",
+  "description": "GetSiteOutput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "Site": {
+      "$ref": "#/components/schemas/Site"
+    }
+  }
+}

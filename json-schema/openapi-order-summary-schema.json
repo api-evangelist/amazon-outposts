@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-order-summary-schema.json",
+  "title": "OrderSummary",
+  "description": " A summary of line items in your order. ",
+  "type": "object",
+  "properties": {
+    "OutpostId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutpostIdOnly"
+        },
+        {
+          "description": " The ID of the Outpost. "
+        }
+      ]
+    },
+    "OrderId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderId"
+        },
+        {
+          "description": " The ID of the order. "
+        }
+      ]
+    },
+    "OrderType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderType"
+        },
+        {
+          "description": "The type of order."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderStatus"
+        },
+        {
+          "description": "<p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> </ul> <note> <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> </note>"
+        }
+      ]
+    },
+    "LineItemCountsByStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LineItemStatusCounts"
+        },
+        {
+          "description": " The status of all line items in the order. "
+        }
+      ]
+    },
+    "OrderSubmissionDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ISO8601Timestamp"
+        },
+        {
+          "description": " The submission date for the order. "
+        }
+      ]
+    },
+    "OrderFulfilledDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ISO8601Timestamp"
+        },
+        {
+          "description": " The fulfilment date for the order. "
+        }
+      ]
+    }
+  }
+}

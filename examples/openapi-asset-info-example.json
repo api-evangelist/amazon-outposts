@@ -1,0 +1,7 @@
+{
+  "AssetId": "resource-abc123",
+  "RackId": "resource-abc123",
+  "AssetType": "standard",
+  "ComputeAttributes": "example-string",
+  "AssetLocation": "example-string"
+}

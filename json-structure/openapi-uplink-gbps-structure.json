@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-uplink-gbps-structure.json",
+  "name": "UplinkGbps",
+  "description": "UplinkGbps schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "UPLINK_1G",
+    "UPLINK_10G",
+    "UPLINK_40G",
+    "UPLINK_100G"
+  ]
+}

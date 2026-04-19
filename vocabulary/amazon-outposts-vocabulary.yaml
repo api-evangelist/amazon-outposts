@@ -1,0 +1,53 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon Outposts
+  description: Unified vocabulary for Amazon Outposts APIs.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: AWS Outposts
+    namespace: openapi.yml
+    version: 2019-12-03
+    baseUrl: http://outposts.{region}.amazonaws.com
+    status: active
+  actions:
+  - name: create
+    method: POST
+    pattern: write
+  - name: list
+    method: GET
+    pattern: read
+  - name: get
+    method: GET
+    pattern: read
+  - name: update
+    method: PATCH
+    pattern: write
+  - name: delete
+    method: DELETE
+    pattern: destructive
+capability:
+  workflows:
+  - name: Amazon Outposts API Workflow
+    file: capabilities/amazon-outposts-workflow.yaml
+    description: Core API workflow
+    apis:
+    - openapi.yml
+    personas:
+    - Developer
+  personas:
+  - id: developer
+    name: Developer
+    description: Developer using Amazon Outposts APIs
+  domains:
+  - Amazon Outposts
+  - AWS
+crossReference:
+- resource: AWS Outposts
+  apis:
+  - openapi.yml
+  workflows:
+  - Amazon Outposts API Workflow
+  personas:
+  - Developer

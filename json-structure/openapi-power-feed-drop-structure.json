@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-power-feed-drop-structure.json",
+  "name": "PowerFeedDrop",
+  "description": "PowerFeedDrop schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "ABOVE_RACK",
+    "BELOW_RACK"
+  ]
+}

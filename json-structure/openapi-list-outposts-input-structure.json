@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-list-outposts-input-structure.json",
+  "name": "ListOutpostsInput",
+  "description": "ListOutpostsInput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {}
+}

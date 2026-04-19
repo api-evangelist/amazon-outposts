@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-optical-standard-schema.json",
+  "title": "OpticalStandard",
+  "description": "OpticalStandard schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "OPTIC_10GBASE_SR",
+    "OPTIC_10GBASE_IR",
+    "OPTIC_10GBASE_LR",
+    "OPTIC_40GBASE_SR",
+    "OPTIC_40GBASE_ESR",
+    "OPTIC_40GBASE_IR4_LR4L",
+    "OPTIC_40GBASE_LR4",
+    "OPTIC_100GBASE_SR4",
+    "OPTIC_100GBASE_CWDM4",
+    "OPTIC_100GBASE_LR4",
+    "OPTIC_100G_PSM4_MSA",
+    "OPTIC_1000BASE_LX",
+    "OPTIC_1000BASE_SX"
+  ]
+}

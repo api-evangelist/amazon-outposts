@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-catalog-item-schema.json",
+  "title": "CatalogItem",
+  "description": " Information about a catalog item. ",
+  "type": "object",
+  "properties": {
+    "CatalogItemId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SkuCode"
+        },
+        {
+          "description": " The ID of the catalog item. "
+        }
+      ]
+    },
+    "ItemStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogItemStatus"
+        },
+        {
+          "description": " The status of a catalog item. "
+        }
+      ]
+    },
+    "EC2Capacities": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EC2CapacityListDefinition"
+        },
+        {
+          "description": " Information about the EC2 capacity of an item. "
+        }
+      ]
+    },
+    "PowerKva": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogItemPowerKva"
+        },
+        {
+          "description": " Information about the power draw of an item. "
+        }
+      ]
+    },
+    "WeightLbs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogItemWeightLbs"
+        },
+        {
+          "description": " The weight of the item in pounds. "
+        }
+      ]
+    },
+    "SupportedUplinkGbps": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SupportedUplinkGbpsListDefinition"
+        },
+        {
+          "description": " The uplink speed this catalog item requires for the connection to the Region. "
+        }
+      ]
+    },
+    "SupportedStorage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SupportedStorageList"
+        },
+        {
+          "description": " The supported storage options for the catalog item. "
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon Outposts API Workflow
+  description: Workflow capability composing Amazon Outposts APIs for developers and operators.
+  tags:
+  - Amazon Outposts
+  - AWS
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_SIGV4_AUTH: AWS_SIGV4_AUTH
+capability:
+  consumes:
+  - import: outposts
+    location: ./shared/outposts.yaml
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: amazon-outposts-api
+    description: Unified REST API for Amazon Outposts.
+    resources:
+    - path: /v1/resources
+      name: resources
+      description: Primary Amazon Outposts resources
+      operations:
+      - method: GET
+        name: list-resources
+        description: List Amazon Outposts resources
+        call: openapi.yml.list
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: amazon-outposts-mcp
+    transport: http
+    description: MCP server for AI-assisted Amazon Outposts operations.
+    tools:
+    - name: list-openapi.yml
+      description: List and manage openapi.yml resources
+      hints:
+        readOnly: true
+        openWorld: true
+      call: openapi.yml.list
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-state-or-region-list-schema.json",
+  "title": "StateOrRegionList",
+  "description": "StateOrRegionList schema from Amazon Outposts",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/StateOrRegion"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-rack-elevation-structure.json",
+  "name": "RackElevation",
+  "description": "RackElevation schema from Amazon Outposts",
+  "type": "float",
+  "minimum": 0,
+  "maximum": 99
+}

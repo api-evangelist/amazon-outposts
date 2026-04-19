@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-shipment-carrier-structure.json",
+  "name": "ShipmentCarrier",
+  "description": "ShipmentCarrier schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "DHL",
+    "DBS",
+    "FEDEX",
+    "UPS"
+  ]
+}

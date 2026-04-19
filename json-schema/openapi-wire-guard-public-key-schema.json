@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-wire-guard-public-key-schema.json",
+  "title": "WireGuardPublicKey",
+  "description": "WireGuardPublicKey schema from Amazon Outposts",
+  "type": "string",
+  "pattern": "^[a-zA-Z0-9/+]{43}=$"
+}

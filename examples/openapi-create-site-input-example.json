@@ -1,0 +1,9 @@
+{
+  "Name": "example-ref",
+  "Description": "example-ref",
+  "Notes": "example-string",
+  "Tags": "example-string",
+  "OperatingAddress": "example-string",
+  "ShippingAddress": "example-string",
+  "RackPhysicalProperties": "example-string"
+}

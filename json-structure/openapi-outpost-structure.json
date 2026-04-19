@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-outpost-structure.json",
+  "name": "Outpost",
+  "description": "Information about an Outpost.",
+  "type": "object",
+  "properties": {
+    "OutpostId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutpostId"
+        },
+        {
+          "description": " The ID of the Outpost. "
+        }
+      ]
+    },
+    "OwnerId": {
+      "$ref": "#/components/schemas/OwnerId"
+    },
+    "OutpostArn": {
+      "$ref": "#/components/schemas/OutpostArn"
+    },
+    "SiteId": {
+      "$ref": "#/components/schemas/SiteId"
+    },
+    "Name": {
+      "$ref": "#/components/schemas/OutpostName"
+    },
+    "Description": {
+      "$ref": "#/components/schemas/OutpostDescription"
+    },
+    "LifeCycleStatus": {
+      "$ref": "#/components/schemas/LifeCycleStatus"
+    },
+    "AvailabilityZone": {
+      "$ref": "#/components/schemas/AvailabilityZone"
+    },
+    "AvailabilityZoneId": {
+      "$ref": "#/components/schemas/AvailabilityZoneId"
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The Outpost tags."
+        }
+      ]
+    },
+    "SiteArn": {
+      "$ref": "#/components/schemas/SiteArn"
+    },
+    "SupportedHardwareType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SupportedHardwareType"
+        },
+        {
+          "description": " The hardware type. "
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-postal-code-schema.json",
+  "title": "PostalCode",
+  "description": "PostalCode schema from Amazon Outposts",
+  "type": "string",
+  "pattern": "^[a-zA-Z0-9 -]+$"
+}

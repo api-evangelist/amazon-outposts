@@ -1,0 +1,531 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "outposts": "https://outposts.amazonaws.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "AccessDeniedException": "outposts:AccessDeniedException",
+    "AccountId": {
+      "@id": "outposts:AccountId",
+      "@type": "xsd:string"
+    },
+    "Address": {
+      "@id": "outposts:Address",
+      "@type": "xsd:string"
+    },
+    "AddressLine1": {
+      "@id": "outposts:AddressLine1",
+      "@type": "xsd:string"
+    },
+    "AddressLine2": {
+      "@id": "outposts:AddressLine2",
+      "@type": "xsd:string"
+    },
+    "AddressLine3": {
+      "@id": "outposts:AddressLine3",
+      "@type": "xsd:string"
+    },
+    "AddressType": {
+      "@id": "outposts:AddressType",
+      "@type": "xsd:string"
+    },
+    "Arn": "outposts:Arn",
+    "AssetId": {
+      "@id": "outposts:AssetId",
+      "@type": "xsd:string"
+    },
+    "AssetInfo": "outposts:AssetInfo",
+    "AssetListDefinition": "outposts:AssetListDefinition",
+    "AssetLocation": {
+      "@id": "outposts:AssetLocation",
+      "@type": "xsd:string"
+    },
+    "AssetState": "outposts:AssetState",
+    "AssetType": {
+      "@id": "outposts:AssetType",
+      "@type": "xsd:string"
+    },
+    "AvailabilityZone": {
+      "@id": "outposts:AvailabilityZone",
+      "@type": "xsd:string"
+    },
+    "AvailabilityZoneId": {
+      "@id": "outposts:AvailabilityZoneId",
+      "@type": "xsd:string"
+    },
+    "AvailabilityZoneIdList": "outposts:AvailabilityZoneIdList",
+    "AvailabilityZoneList": "outposts:AvailabilityZoneList",
+    "CIDR": "outposts:CIDR",
+    "CIDRList": "outposts:CIDRList",
+    "CancelOrderInput": "outposts:CancelOrderInput",
+    "CancelOrderOutput": "outposts:CancelOrderOutput",
+    "CatalogItem": {
+      "@id": "outposts:CatalogItem",
+      "@type": "xsd:string"
+    },
+    "CatalogItemClass": "outposts:CatalogItemClass",
+    "CatalogItemClassList": "outposts:CatalogItemClassList",
+    "CatalogItemListDefinition": "outposts:CatalogItemListDefinition",
+    "CatalogItemPowerKva": "outposts:CatalogItemPowerKva",
+    "CatalogItemStatus": "outposts:CatalogItemStatus",
+    "CatalogItemWeightLbs": "outposts:CatalogItemWeightLbs",
+    "City": {
+      "@id": "outposts:City",
+      "@type": "xsd:string"
+    },
+    "CityList": "outposts:CityList",
+    "ComputeAssetState": "outposts:ComputeAssetState",
+    "ComputeAttributes": {
+      "@id": "outposts:ComputeAttributes",
+      "@type": "xsd:string"
+    },
+    "ConflictException": "outposts:ConflictException",
+    "ConnectionDetails": {
+      "@id": "outposts:ConnectionDetails",
+      "@type": "xsd:string"
+    },
+    "ConnectionId": {
+      "@id": "outposts:ConnectionId",
+      "@type": "xsd:string"
+    },
+    "ContactName": {
+      "@id": "outposts:ContactName",
+      "@type": "xsd:string"
+    },
+    "ContactPhoneNumber": {
+      "@id": "outposts:ContactPhoneNumber",
+      "@type": "xsd:string"
+    },
+    "CountryCode": {
+      "@id": "outposts:CountryCode",
+      "@type": "xsd:string"
+    },
+    "CountryCodeList": "outposts:CountryCodeList",
+    "CreateOrderInput": "outposts:CreateOrderInput",
+    "CreateOrderOutput": "outposts:CreateOrderOutput",
+    "CreateOutpostInput": "outposts:CreateOutpostInput",
+    "CreateOutpostOutput": "outposts:CreateOutpostOutput",
+    "CreateSiteInput": "outposts:CreateSiteInput",
+    "CreateSiteOutput": "outposts:CreateSiteOutput",
+    "DeleteOutpostInput": "outposts:DeleteOutpostInput",
+    "DeleteOutpostOutput": "outposts:DeleteOutpostOutput",
+    "DeleteSiteInput": "outposts:DeleteSiteInput",
+    "DeleteSiteOutput": "outposts:DeleteSiteOutput",
+    "DeviceSerialNumber": {
+      "@id": "outposts:DeviceSerialNumber",
+      "@type": "xsd:string"
+    },
+    "DistrictOrCounty": {
+      "@id": "outposts:DistrictOrCounty",
+      "@type": "xsd:string"
+    },
+    "EC2Capacity": "outposts:EC2Capacity",
+    "EC2CapacityListDefinition": "outposts:EC2CapacityListDefinition",
+    "EC2FamilyList": "outposts:EC2FamilyList",
+    "Family": {
+      "@id": "outposts:Family",
+      "@type": "xsd:string"
+    },
+    "FiberOpticCableType": {
+      "@id": "outposts:FiberOpticCableType",
+      "@type": "xsd:string"
+    },
+    "GetCatalogItemInput": "outposts:GetCatalogItemInput",
+    "GetCatalogItemOutput": "outposts:GetCatalogItemOutput",
+    "GetConnectionRequest": "outposts:GetConnectionRequest",
+    "GetConnectionResponse": "outposts:GetConnectionResponse",
+    "GetOrderInput": "outposts:GetOrderInput",
+    "GetOrderOutput": "outposts:GetOrderOutput",
+    "GetOutpostInput": "outposts:GetOutpostInput",
+    "GetOutpostInstanceTypesInput": "outposts:GetOutpostInstanceTypesInput",
+    "GetOutpostInstanceTypesOutput": "outposts:GetOutpostInstanceTypesOutput",
+    "GetOutpostOutput": "outposts:GetOutpostOutput",
+    "GetSiteAddressInput": "outposts:GetSiteAddressInput",
+    "GetSiteAddressOutput": "outposts:GetSiteAddressOutput",
+    "GetSiteInput": "outposts:GetSiteInput",
+    "GetSiteOutput": "outposts:GetSiteOutput",
+    "HostId": {
+      "@id": "outposts:HostId",
+      "@type": "xsd:string"
+    },
+    "HostIdList": "outposts:HostIdList",
+    "ISO8601Timestamp": "outposts:ISO8601Timestamp",
+    "InstanceType": {
+      "@id": "outposts:InstanceType",
+      "@type": "xsd:string"
+    },
+    "InstanceTypeItem": "outposts:InstanceTypeItem",
+    "InstanceTypeListDefinition": "outposts:InstanceTypeListDefinition",
+    "InternalServerException": "outposts:InternalServerException",
+    "LifeCycleStatus": {
+      "@id": "outposts:LifeCycleStatus",
+      "@type": "xsd:string"
+    },
+    "LifeCycleStatusList": "outposts:LifeCycleStatusList",
+    "LineItem": "outposts:LineItem",
+    "LineItemAssetInformation": "outposts:LineItemAssetInformation",
+    "LineItemAssetInformationList": "outposts:LineItemAssetInformationList",
+    "LineItemId": {
+      "@id": "outposts:LineItemId",
+      "@type": "xsd:string"
+    },
+    "LineItemListDefinition": "outposts:LineItemListDefinition",
+    "LineItemQuantity": "outposts:LineItemQuantity",
+    "LineItemRequest": "outposts:LineItemRequest",
+    "LineItemRequestListDefinition": "outposts:LineItemRequestListDefinition",
+    "LineItemStatus": "outposts:LineItemStatus",
+    "LineItemStatusCounts": "outposts:LineItemStatusCounts",
+    "ListAssetsInput": "outposts:ListAssetsInput",
+    "ListAssetsOutput": "outposts:ListAssetsOutput",
+    "ListCatalogItemsInput": "outposts:ListCatalogItemsInput",
+    "ListCatalogItemsOutput": "outposts:ListCatalogItemsOutput",
+    "ListOrdersInput": "outposts:ListOrdersInput",
+    "ListOrdersOutput": "outposts:ListOrdersOutput",
+    "ListOutpostsInput": "outposts:ListOutpostsInput",
+    "ListOutpostsOutput": "outposts:ListOutpostsOutput",
+    "ListSitesInput": "outposts:ListSitesInput",
+    "ListSitesOutput": "outposts:ListSitesOutput",
+    "ListTagsForResourceRequest": "outposts:ListTagsForResourceRequest",
+    "ListTagsForResourceResponse": "outposts:ListTagsForResourceResponse",
+    "MacAddress": "outposts:MacAddress",
+    "MacAddressList": {
+      "@id": "outposts:MacAddressList",
+      "@type": "xsd:string"
+    },
+    "MaxResults1000": "outposts:MaxResults1000",
+    "MaxSize": {
+      "@id": "outposts:MaxSize",
+      "@type": "xsd:string"
+    },
+    "MaximumSupportedWeightLbs": {
+      "@id": "outposts:MaximumSupportedWeightLbs",
+      "@type": "xsd:string"
+    },
+    "Municipality": {
+      "@id": "outposts:Municipality",
+      "@type": "xsd:string"
+    },
+    "NetworkInterfaceDeviceIndex": {
+      "@id": "outposts:NetworkInterfaceDeviceIndex",
+      "@type": "xsd:string"
+    },
+    "NotFoundException": "outposts:NotFoundException",
+    "OpticalStandard": {
+      "@id": "outposts:OpticalStandard",
+      "@type": "xsd:string"
+    },
+    "Order": {
+      "@id": "outposts:Order",
+      "@type": "xsd:string"
+    },
+    "OrderId": {
+      "@id": "outposts:OrderId",
+      "@type": "xsd:string"
+    },
+    "OrderStatus": "outposts:OrderStatus",
+    "OrderSummary": "outposts:OrderSummary",
+    "OrderSummaryListDefinition": "outposts:OrderSummaryListDefinition",
+    "OrderType": {
+      "@id": "outposts:OrderType",
+      "@type": "xsd:string"
+    },
+    "Outpost": {
+      "@id": "outposts:Outpost",
+      "@type": "xsd:string"
+    },
+    "OutpostArn": {
+      "@id": "outposts:OutpostArn",
+      "@type": "xsd:string"
+    },
+    "OutpostDescription": "outposts:OutpostDescription",
+    "OutpostId": {
+      "@id": "outposts:OutpostId",
+      "@type": "xsd:string"
+    },
+    "OutpostIdOnly": "outposts:OutpostIdOnly",
+    "OutpostIdentifier": {
+      "@id": "outposts:OutpostIdentifier",
+      "@type": "xsd:string"
+    },
+    "OutpostName": "outposts:OutpostName",
+    "OwnerId": {
+      "@id": "outposts:OwnerId",
+      "@type": "xsd:string"
+    },
+    "PaymentOption": {
+      "@id": "outposts:PaymentOption",
+      "@type": "xsd:string"
+    },
+    "PaymentTerm": {
+      "@id": "outposts:PaymentTerm",
+      "@type": "xsd:string"
+    },
+    "PostalCode": {
+      "@id": "outposts:PostalCode",
+      "@type": "xsd:string"
+    },
+    "PowerConnector": {
+      "@id": "outposts:PowerConnector",
+      "@type": "xsd:string"
+    },
+    "PowerDrawKva": {
+      "@id": "outposts:PowerDrawKva",
+      "@type": "xsd:string"
+    },
+    "PowerFeedDrop": {
+      "@id": "outposts:PowerFeedDrop",
+      "@type": "xsd:string"
+    },
+    "PowerPhase": {
+      "@id": "outposts:PowerPhase",
+      "@type": "xsd:string"
+    },
+    "Quantity": {
+      "@id": "outposts:Quantity",
+      "@type": "xsd:string"
+    },
+    "RackElevation": {
+      "@id": "outposts:RackElevation",
+      "@type": "xsd:string"
+    },
+    "RackId": {
+      "@id": "outposts:RackId",
+      "@type": "xsd:string"
+    },
+    "RackPhysicalProperties": {
+      "@id": "outposts:RackPhysicalProperties",
+      "@type": "xsd:string"
+    },
+    "ServerEndpoint": {
+      "@id": "outposts:ServerEndpoint",
+      "@type": "xsd:string"
+    },
+    "ServiceQuotaExceededException": "outposts:ServiceQuotaExceededException",
+    "ShipmentCarrier": {
+      "@id": "outposts:ShipmentCarrier",
+      "@type": "xsd:string"
+    },
+    "ShipmentInformation": {
+      "@id": "outposts:ShipmentInformation",
+      "@type": "xsd:string"
+    },
+    "Site": {
+      "@id": "outposts:Site",
+      "@type": "xsd:string"
+    },
+    "SiteArn": {
+      "@id": "outposts:SiteArn",
+      "@type": "xsd:string"
+    },
+    "SiteDescription": "outposts:SiteDescription",
+    "SiteId": {
+      "@id": "outposts:SiteId",
+      "@type": "xsd:string"
+    },
+    "SiteName": "outposts:SiteName",
+    "SiteNotes": "outposts:SiteNotes",
+    "SkuCode": "outposts:SkuCode",
+    "StartConnectionRequest": "outposts:StartConnectionRequest",
+    "StartConnectionResponse": "outposts:StartConnectionResponse",
+    "StateOrRegion": {
+      "@id": "outposts:StateOrRegion",
+      "@type": "xsd:string"
+    },
+    "StateOrRegionList": "outposts:StateOrRegionList",
+    "StatusList": "outposts:StatusList",
+    "SupportedHardwareType": {
+      "@id": "outposts:SupportedHardwareType",
+      "@type": "xsd:string"
+    },
+    "SupportedStorageEnum": "outposts:SupportedStorageEnum",
+    "SupportedStorageList": "outposts:SupportedStorageList",
+    "SupportedUplinkGbps": {
+      "@id": "outposts:SupportedUplinkGbps",
+      "@type": "xsd:string"
+    },
+    "SupportedUplinkGbpsListDefinition": "outposts:SupportedUplinkGbpsListDefinition",
+    "TagKey": "outposts:TagKey",
+    "TagKeyList": "outposts:TagKeyList",
+    "TagMap": "outposts:TagMap",
+    "TagResourceRequest": "outposts:TagResourceRequest",
+    "TagResourceResponse": "outposts:TagResourceResponse",
+    "TagValue": "outposts:TagValue",
+    "Token": "outposts:Token",
+    "TrackingId": "outposts:TrackingId",
+    "UnderlayIpAddress": {
+      "@id": "outposts:UnderlayIpAddress",
+      "@type": "xsd:string"
+    },
+    "UntagResourceRequest": "outposts:UntagResourceRequest",
+    "UntagResourceResponse": "outposts:UntagResourceResponse",
+    "UpdateOutpostInput": "outposts:UpdateOutpostInput",
+    "UpdateOutpostOutput": "outposts:UpdateOutpostOutput",
+    "UpdateSiteAddressInput": "outposts:UpdateSiteAddressInput",
+    "UpdateSiteAddressOutput": "outposts:UpdateSiteAddressOutput",
+    "UpdateSiteInput": "outposts:UpdateSiteInput",
+    "UpdateSiteOutput": "outposts:UpdateSiteOutput",
+    "UpdateSiteRackPhysicalPropertiesInput": "outposts:UpdateSiteRackPhysicalPropertiesInput",
+    "UpdateSiteRackPhysicalPropertiesOutput": "outposts:UpdateSiteRackPhysicalPropertiesOutput",
+    "UplinkCount": {
+      "@id": "outposts:UplinkCount",
+      "@type": "xsd:string"
+    },
+    "UplinkGbps": {
+      "@id": "outposts:UplinkGbps",
+      "@type": "xsd:string"
+    },
+    "ValidationException": "outposts:ValidationException",
+    "WireGuardPublicKey": "outposts:WireGuardPublicKey",
+    "outpostListDefinition": "outposts:outpostListDefinition",
+    "siteListDefinition": "outposts:siteListDefinition",
+    "AllowedIps": {
+      "@id": "outposts:AllowedIps",
+      "@type": "xsd:string"
+    },
+    "AssetInformationList": {
+      "@id": "outposts:AssetInformationList",
+      "@type": "xsd:string"
+    },
+    "Assets": {
+      "@id": "outposts:Assets",
+      "@type": "xsd:string"
+    },
+    "CatalogItemId": {
+      "@id": "outposts:CatalogItemId",
+      "@type": "xsd:string"
+    },
+    "CatalogItems": {
+      "@id": "outposts:CatalogItems",
+      "@type": "xsd:string"
+    },
+    "ClientPublicKey": {
+      "@id": "outposts:ClientPublicKey",
+      "@type": "xsd:string"
+    },
+    "ClientTunnelAddress": {
+      "@id": "outposts:ClientTunnelAddress",
+      "@type": "xsd:string"
+    },
+    "Description": {
+      "@id": "outposts:Description",
+      "@type": "xsd:string"
+    },
+    "EC2Capacities": {
+      "@id": "outposts:EC2Capacities",
+      "@type": "xsd:string"
+    },
+    "InstanceTypes": {
+      "@id": "outposts:InstanceTypes",
+      "@type": "xsd:string"
+    },
+    "ItemStatus": {
+      "@id": "outposts:ItemStatus",
+      "@type": "xsd:string"
+    },
+    "LineItemCountsByStatus": {
+      "@id": "outposts:LineItemCountsByStatus",
+      "@type": "xsd:string"
+    },
+    "LineItems": {
+      "@id": "outposts:LineItems",
+      "@type": "xsd:string"
+    },
+    "Name": {
+      "@id": "outposts:Name",
+      "@type": "xsd:string"
+    },
+    "NextToken": {
+      "@id": "outposts:NextToken",
+      "@type": "xsd:string"
+    },
+    "Notes": {
+      "@id": "outposts:Notes",
+      "@type": "xsd:string"
+    },
+    "OperatingAddress": {
+      "@id": "outposts:OperatingAddress",
+      "@type": "xsd:string"
+    },
+    "OperatingAddressCity": {
+      "@id": "outposts:OperatingAddressCity",
+      "@type": "xsd:string"
+    },
+    "OperatingAddressCountryCode": {
+      "@id": "outposts:OperatingAddressCountryCode",
+      "@type": "xsd:string"
+    },
+    "OperatingAddressStateOrRegion": {
+      "@id": "outposts:OperatingAddressStateOrRegion",
+      "@type": "xsd:string"
+    },
+    "OrderFulfilledDate": {
+      "@id": "outposts:OrderFulfilledDate",
+      "@type": "xsd:string"
+    },
+    "OrderSubmissionDate": {
+      "@id": "outposts:OrderSubmissionDate",
+      "@type": "xsd:string"
+    },
+    "Orders": {
+      "@id": "outposts:Orders",
+      "@type": "xsd:string"
+    },
+    "Outposts": {
+      "@id": "outposts:Outposts",
+      "@type": "xsd:string"
+    },
+    "PowerKva": {
+      "@id": "outposts:PowerKva",
+      "@type": "xsd:string"
+    },
+    "PreviousLineItemId": {
+      "@id": "outposts:PreviousLineItemId",
+      "@type": "xsd:string"
+    },
+    "PreviousOrderId": {
+      "@id": "outposts:PreviousOrderId",
+      "@type": "xsd:string"
+    },
+    "ServerPublicKey": {
+      "@id": "outposts:ServerPublicKey",
+      "@type": "xsd:string"
+    },
+    "ServerTunnelAddress": {
+      "@id": "outposts:ServerTunnelAddress",
+      "@type": "xsd:string"
+    },
+    "ShipmentTrackingNumber": {
+      "@id": "outposts:ShipmentTrackingNumber",
+      "@type": "xsd:string"
+    },
+    "ShippingAddress": {
+      "@id": "outposts:ShippingAddress",
+      "@type": "xsd:string"
+    },
+    "Sites": {
+      "@id": "outposts:Sites",
+      "@type": "xsd:string"
+    },
+    "State": {
+      "@id": "outposts:State",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "outposts:Status",
+      "@type": "xsd:string"
+    },
+    "SupportedStorage": {
+      "@id": "outposts:SupportedStorage",
+      "@type": "xsd:string"
+    },
+    "Tags": {
+      "@id": "outposts:Tags",
+      "@type": "xsd:string"
+    },
+    "WeightLbs": {
+      "@id": "outposts:WeightLbs",
+      "@type": "xsd:string"
+    }
+  }
+}

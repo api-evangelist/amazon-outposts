@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-network-interface-device-index-structure.json",
+  "name": "NetworkInterfaceDeviceIndex",
+  "description": "NetworkInterfaceDeviceIndex schema from Amazon Outposts",
+  "type": "int32",
+  "minimum": 0,
+  "maximum": 1
+}

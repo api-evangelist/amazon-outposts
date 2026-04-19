@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-asset-type-structure.json",
+  "name": "AssetType",
+  "description": "AssetType schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "COMPUTE"
+  ]
+}

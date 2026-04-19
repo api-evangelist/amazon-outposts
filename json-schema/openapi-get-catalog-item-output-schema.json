@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-get-catalog-item-output-schema.json",
+  "title": "GetCatalogItemOutput",
+  "description": "GetCatalogItemOutput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "CatalogItem": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogItem"
+        },
+        {
+          "description": "Information about this catalog item."
+        }
+      ]
+    }
+  }
+}

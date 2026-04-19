@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-update-site-address-output-schema.json",
+  "title": "UpdateSiteAddressOutput",
+  "description": "UpdateSiteAddressOutput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "AddressType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressType"
+        },
+        {
+          "description": " The type of the address. "
+        }
+      ]
+    },
+    "Address": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Address"
+        },
+        {
+          "description": " Information about an address. "
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-get-site-address-output-structure.json",
+  "name": "GetSiteAddressOutput",
+  "description": "GetSiteAddressOutput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "SiteId": {
+      "$ref": "#/components/schemas/SiteId"
+    },
+    "AddressType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressType"
+        },
+        {
+          "description": "The type of the address you receive. "
+        }
+      ]
+    },
+    "Address": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Address"
+        },
+        {
+          "description": " Information about the address. "
+        }
+      ]
+    }
+  }
+}

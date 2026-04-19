@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-outpost-list-definition-structure.json",
+  "name": "outpostListDefinition",
+  "description": "Information about the Outposts.",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/Outpost"
+  }
+}

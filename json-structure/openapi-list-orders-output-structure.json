@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-list-orders-output-structure.json",
+  "name": "ListOrdersOutput",
+  "description": "ListOrdersOutput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "Orders": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderSummaryListDefinition"
+        },
+        {
+          "description": " Information about the orders. "
+        }
+      ]
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/Token"
+    }
+  }
+}

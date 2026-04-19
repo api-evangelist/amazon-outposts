@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-power-draw-kva-structure.json",
+  "name": "PowerDrawKva",
+  "description": "PowerDrawKva schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "POWER_5_KVA",
+    "POWER_10_KVA",
+    "POWER_15_KVA",
+    "POWER_30_KVA"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-list-outposts-output-structure.json",
+  "name": "ListOutpostsOutput",
+  "description": "ListOutpostsOutput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "Outposts": {
+      "$ref": "#/components/schemas/outpostListDefinition"
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/Token"
+    }
+  }
+}

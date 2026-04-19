@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-address-structure.json",
+  "name": "Address",
+  "description": " Information about an address. ",
+  "type": "object",
+  "properties": {
+    "ContactName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ContactName"
+        },
+        {
+          "description": "The name of the contact."
+        }
+      ]
+    },
+    "ContactPhoneNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ContactPhoneNumber"
+        },
+        {
+          "description": "The phone number of the contact."
+        }
+      ]
+    },
+    "AddressLine1": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressLine1"
+        },
+        {
+          "description": "The first line of the address."
+        }
+      ]
+    },
+    "AddressLine2": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressLine2"
+        },
+        {
+          "description": "The second line of the address."
+        }
+      ]
+    },
+    "AddressLine3": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressLine3"
+        },
+        {
+          "description": "The third line of the address."
+        }
+      ]
+    },
+    "City": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/City"
+        },
+        {
+          "description": "The city for the address."
+        }
+      ]
+    },
+    "StateOrRegion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StateOrRegion"
+        },
+        {
+          "description": "The state for the address."
+        }
+      ]
+    },
+    "DistrictOrCounty": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DistrictOrCounty"
+        },
+        {
+          "description": "The district or county for the address."
+        }
+      ]
+    },
+    "PostalCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PostalCode"
+        },
+        {
+          "description": "The postal code for the address."
+        }
+      ]
+    },
+    "CountryCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CountryCode"
+        },
+        {
+          "description": "The ISO-3166 two-letter country code for the address."
+        }
+      ]
+    },
+    "Municipality": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Municipality"
+        },
+        {
+          "description": "The municipality for the address."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AddressLine1",
+    "City",
+    "StateOrRegion",
+    "PostalCode",
+    "CountryCode"
+  ]
+}

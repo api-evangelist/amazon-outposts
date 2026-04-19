@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-rack-elevation-schema.json",
+  "title": "RackElevation",
+  "description": "RackElevation schema from Amazon Outposts",
+  "type": "number",
+  "format": "float",
+  "minimum": 0,
+  "maximum": 99
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-ec2-capacity-schema.json",
+  "title": "EC2Capacity",
+  "description": " Information about EC2 capacity. ",
+  "type": "object",
+  "properties": {
+    "Family": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Family"
+        },
+        {
+          "description": " The family of the EC2 capacity. "
+        }
+      ]
+    },
+    "MaxSize": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxSize"
+        },
+        {
+          "description": " The maximum size of the EC2 capacity. "
+        }
+      ]
+    },
+    "Quantity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Quantity"
+        },
+        {
+          "description": " The quantity of the EC2 capacity. "
+        }
+      ]
+    }
+  }
+}

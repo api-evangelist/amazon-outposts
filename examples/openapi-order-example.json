@@ -1,0 +1,11 @@
+{
+  "OutpostId": "resource-abc123",
+  "OrderId": "resource-abc123",
+  "Status": "active",
+  "LineItems": "example-string",
+  "PaymentOption": "example-string",
+  "OrderSubmissionDate": "example-string",
+  "OrderFulfilledDate": "example-string",
+  "PaymentTerm": "example-string",
+  "OrderType": "standard"
+}

@@ -1,0 +1,10 @@
+{
+  "CatalogItemId": "resource-abc123",
+  "LineItemId": "resource-abc123",
+  "Quantity": "example-string",
+  "Status": "active",
+  "ShipmentInformation": "example-string",
+  "AssetInformationList": "example-string",
+  "PreviousLineItemId": "resource-abc123",
+  "PreviousOrderId": "resource-abc123"
+}

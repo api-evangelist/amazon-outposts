@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-tag-map-structure.json",
+  "name": "TagMap",
+  "description": "TagMap schema from Amazon Outposts",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/TagValue"
+  }
+}

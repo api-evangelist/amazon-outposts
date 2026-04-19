@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-host-id-structure.json",
+  "name": "HostId",
+  "description": "HostId schema from Amazon Outposts",
+  "type": "string",
+  "pattern": "^[A-Za-z0-9-]*$"
+}

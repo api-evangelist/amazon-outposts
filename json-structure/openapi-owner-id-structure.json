@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-owner-id-structure.json",
+  "name": "OwnerId",
+  "description": "The Amazon Web Services account ID of the Outpost owner.",
+  "type": "string",
+  "pattern": "\\d{12}"
+}

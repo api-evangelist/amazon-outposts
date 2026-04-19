@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-ec2-family-list-schema.json",
+  "title": "EC2FamilyList",
+  "description": "EC2FamilyList schema from Amazon Outposts",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/Family"
+  }
+}

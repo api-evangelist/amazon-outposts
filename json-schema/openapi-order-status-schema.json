@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-order-status-schema.json",
+  "title": "OrderStatus",
+  "description": "OrderStatus schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "RECEIVED",
+    "PENDING",
+    "PROCESSING",
+    "INSTALLING",
+    "FULFILLED",
+    "CANCELLED",
+    "PREPARING",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "ERROR"
+  ]
+}

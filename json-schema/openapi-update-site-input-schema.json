@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-update-site-input-schema.json",
+  "title": "UpdateSiteInput",
+  "description": "UpdateSiteInput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "$ref": "#/components/schemas/SiteName"
+    },
+    "Description": {
+      "$ref": "#/components/schemas/SiteDescription"
+    },
+    "Notes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SiteNotes"
+        },
+        {
+          "description": "Notes about a site."
+        }
+      ]
+    }
+  }
+}

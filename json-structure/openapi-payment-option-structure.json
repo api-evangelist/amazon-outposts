@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-payment-option-structure.json",
+  "name": "PaymentOption",
+  "description": "PaymentOption schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "ALL_UPFRONT",
+    "NO_UPFRONT",
+    "PARTIAL_UPFRONT"
+  ]
+}

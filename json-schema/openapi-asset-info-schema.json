@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-asset-info-schema.json",
+  "title": "AssetInfo",
+  "description": " Information about hardware assets. ",
+  "type": "object",
+  "properties": {
+    "AssetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetId"
+        },
+        {
+          "description": " The ID of the asset. "
+        }
+      ]
+    },
+    "RackId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RackId"
+        },
+        {
+          "description": " The rack ID of the asset. "
+        }
+      ]
+    },
+    "AssetType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetType"
+        },
+        {
+          "description": " The type of the asset. "
+        }
+      ]
+    },
+    "ComputeAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputeAttributes"
+        },
+        {
+          "description": " Information about compute hardware assets. "
+        }
+      ]
+    },
+    "AssetLocation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssetLocation"
+        },
+        {
+          "description": " The position of an asset in a rack. "
+        }
+      ]
+    }
+  }
+}

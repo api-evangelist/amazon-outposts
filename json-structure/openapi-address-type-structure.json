@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-address-type-structure.json",
+  "name": "AddressType",
+  "description": "AddressType schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "SHIPPING_ADDRESS",
+    "OPERATING_ADDRESS"
+  ]
+}

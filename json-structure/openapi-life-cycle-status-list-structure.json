@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-life-cycle-status-list-structure.json",
+  "name": "LifeCycleStatusList",
+  "description": "LifeCycleStatusList schema from Amazon Outposts",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/LifeCycleStatus"
+  }
+}

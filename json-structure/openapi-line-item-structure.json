@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-line-item-structure.json",
+  "name": "LineItem",
+  "description": "Information about a line item.",
+  "type": "object",
+  "properties": {
+    "CatalogItemId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SkuCode"
+        },
+        {
+          "description": " The ID of the catalog item. "
+        }
+      ]
+    },
+    "LineItemId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LineItemId"
+        },
+        {
+          "description": "The ID of the line item."
+        }
+      ]
+    },
+    "Quantity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LineItemQuantity"
+        },
+        {
+          "description": "The quantity of the line item."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LineItemStatus"
+        },
+        {
+          "description": "The status of the line item."
+        }
+      ]
+    },
+    "ShipmentInformation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShipmentInformation"
+        },
+        {
+          "description": " Information about a line item shipment. "
+        }
+      ]
+    },
+    "AssetInformationList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LineItemAssetInformationList"
+        },
+        {
+          "description": " Information about assets. "
+        }
+      ]
+    },
+    "PreviousLineItemId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LineItemId"
+        },
+        {
+          "description": "The ID of the previous line item."
+        }
+      ]
+    },
+    "PreviousOrderId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderId"
+        },
+        {
+          "description": "The ID of the previous order."
+        }
+      ]
+    }
+  }
+}

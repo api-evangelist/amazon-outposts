@@ -1,0 +1,6 @@
+{
+  "InstanceTypes": "example-ref",
+  "NextToken": "example-ref",
+  "OutpostId": "resource-abc123",
+  "OutpostArn": "example-ref"
+}

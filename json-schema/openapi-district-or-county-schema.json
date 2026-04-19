@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-district-or-county-schema.json",
+  "title": "DistrictOrCounty",
+  "description": "DistrictOrCounty schema from Amazon Outposts",
+  "type": "string",
+  "pattern": "^\\S[\\S ]*"
+}

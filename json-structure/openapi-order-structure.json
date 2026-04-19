@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-order-structure.json",
+  "name": "Order",
+  "description": "Information about an order.",
+  "type": "object",
+  "properties": {
+    "OutpostId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutpostIdOnly"
+        },
+        {
+          "description": " The ID of the Outpost in the order. "
+        }
+      ]
+    },
+    "OrderId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderId"
+        },
+        {
+          "description": "The ID of the order."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderStatus"
+        },
+        {
+          "description": "<p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> </ul> <note> <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> </note>"
+        }
+      ]
+    },
+    "LineItems": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LineItemListDefinition"
+        },
+        {
+          "description": "The line items for the order"
+        }
+      ]
+    },
+    "PaymentOption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentOption"
+        },
+        {
+          "description": "The payment option for the order."
+        }
+      ]
+    },
+    "OrderSubmissionDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ISO8601Timestamp"
+        },
+        {
+          "description": "The submission date for the order."
+        }
+      ]
+    },
+    "OrderFulfilledDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ISO8601Timestamp"
+        },
+        {
+          "description": "The fulfillment date of the order."
+        }
+      ]
+    },
+    "PaymentTerm": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaymentTerm"
+        },
+        {
+          "description": "The payment term."
+        }
+      ]
+    },
+    "OrderType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderType"
+        },
+        {
+          "description": "The type of order."
+        }
+      ]
+    }
+  }
+}

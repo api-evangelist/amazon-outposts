@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-instance-type-structure.json",
+  "name": "InstanceType",
+  "description": "The instance type.",
+  "type": "string"
+}

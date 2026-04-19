@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-address-line3-schema.json",
+  "title": "AddressLine3",
+  "description": "AddressLine3 schema from Amazon Outposts",
+  "type": "string",
+  "pattern": "^\\S[\\S ]*$"
+}

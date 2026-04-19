@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-ec2-capacity-list-definition-structure.json",
+  "name": "EC2CapacityListDefinition",
+  "description": "EC2CapacityListDefinition schema from Amazon Outposts",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/EC2Capacity"
+  }
+}

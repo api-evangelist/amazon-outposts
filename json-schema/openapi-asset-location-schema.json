@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-asset-location-schema.json",
+  "title": "AssetLocation",
+  "description": " Information about the position of the asset in a rack. ",
+  "type": "object",
+  "properties": {
+    "RackElevation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RackElevation"
+        },
+        {
+          "description": " The position of an asset in a rack measured in rack units. "
+        }
+      ]
+    }
+  }
+}

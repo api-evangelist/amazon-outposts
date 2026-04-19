@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-site-name-schema.json",
+  "title": "SiteName",
+  "description": "The name of the site.",
+  "type": "string",
+  "pattern": "^[\\S ]+$"
+}

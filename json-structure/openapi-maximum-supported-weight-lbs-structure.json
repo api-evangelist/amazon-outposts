@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-maximum-supported-weight-lbs-structure.json",
+  "name": "MaximumSupportedWeightLbs",
+  "description": "MaximumSupportedWeightLbs schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "NO_LIMIT",
+    "MAX_1400_LBS",
+    "MAX_1600_LBS",
+    "MAX_1800_LBS",
+    "MAX_2000_LBS"
+  ]
+}

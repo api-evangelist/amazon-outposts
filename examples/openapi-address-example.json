@@ -1,0 +1,13 @@
+{
+  "ContactName": "my-resource",
+  "ContactPhoneNumber": "example-string",
+  "AddressLine1": "example-string",
+  "AddressLine2": "example-string",
+  "AddressLine3": "example-string",
+  "City": "example-string",
+  "StateOrRegion": "us-east-1",
+  "DistrictOrCounty": "example-string",
+  "PostalCode": "example-string",
+  "CountryCode": "example-string",
+  "Municipality": "example-string"
+}

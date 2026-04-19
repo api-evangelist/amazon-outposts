@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-connection-details-structure.json",
+  "name": "ConnectionDetails",
+  "description": " Information about a connection. ",
+  "type": "object",
+  "properties": {
+    "ClientPublicKey": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WireGuardPublicKey"
+        },
+        {
+          "description": " The public key of the client. "
+        }
+      ]
+    },
+    "ServerPublicKey": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WireGuardPublicKey"
+        },
+        {
+          "description": " The public key of the server. "
+        }
+      ]
+    },
+    "ServerEndpoint": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServerEndpoint"
+        },
+        {
+          "description": " The endpoint for the server. "
+        }
+      ]
+    },
+    "ClientTunnelAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CIDR"
+        },
+        {
+          "description": " The client tunnel address. "
+        }
+      ]
+    },
+    "ServerTunnelAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CIDR"
+        },
+        {
+          "description": " The server tunnel address. "
+        }
+      ]
+    },
+    "AllowedIps": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CIDRList"
+        },
+        {
+          "description": " The allowed IP addresses. "
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-supported-storage-enum-structure.json",
+  "name": "SupportedStorageEnum",
+  "description": "SupportedStorageEnum schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "EBS",
+    "S3"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "ClientPublicKey": "example-string",
+  "ServerPublicKey": "example-string",
+  "ServerEndpoint": "example-string",
+  "ClientTunnelAddress": "example-string",
+  "ServerTunnelAddress": "example-string",
+  "AllowedIps": "example-string"
+}

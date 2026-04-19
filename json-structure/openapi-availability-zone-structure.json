@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-availability-zone-structure.json",
+  "name": "AvailabilityZone",
+  "description": "The Availability Zone.",
+  "type": "string",
+  "pattern": "^([a-zA-Z]+-){1,3}([a-zA-Z]+)?(\\d+[a-zA-Z]?)?$"
+}

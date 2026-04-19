@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-rack-physical-properties-structure.json",
+  "name": "RackPhysicalProperties",
+  "description": " Information about the physical and logistical details for racks at sites. For more information about hardware requirements for racks, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist\">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. ",
+  "type": "object",
+  "properties": {
+    "PowerDrawKva": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PowerDrawKva"
+        },
+        {
+          "description": "The power draw available at the hardware placement position for the rack. "
+        }
+      ]
+    },
+    "PowerPhase": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PowerPhase"
+        },
+        {
+          "description": "The power option that you can provide for hardware."
+        }
+      ]
+    },
+    "PowerConnector": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PowerConnector"
+        },
+        {
+          "description": "The power connector for the hardware. "
+        }
+      ]
+    },
+    "PowerFeedDrop": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PowerFeedDrop"
+        },
+        {
+          "description": "The position of the power feed."
+        }
+      ]
+    },
+    "UplinkGbps": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UplinkGbps"
+        },
+        {
+          "description": "The uplink speed the rack supports for the connection to the Region. "
+        }
+      ]
+    },
+    "UplinkCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UplinkCount"
+        },
+        {
+          "description": "The number of uplinks each Outpost network device."
+        }
+      ]
+    },
+    "FiberOpticCableType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FiberOpticCableType"
+        },
+        {
+          "description": "The type of fiber used to attach the Outpost to the network. "
+        }
+      ]
+    },
+    "OpticalStandard": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OpticalStandard"
+        },
+        {
+          "description": "The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking\">Network</a> in the Amazon Web Services Outposts User Guide. "
+        }
+      ]
+    },
+    "MaximumSupportedWeightLbs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaximumSupportedWeightLbs"
+        },
+        {
+          "description": "The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). "
+        }
+      ]
+    }
+  }
+}

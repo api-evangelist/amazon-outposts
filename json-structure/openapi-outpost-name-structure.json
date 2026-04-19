@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-outpost-name-structure.json",
+  "name": "OutpostName",
+  "description": "The name of the Outpost.",
+  "type": "string",
+  "pattern": "^[\\S ]+$"
+}

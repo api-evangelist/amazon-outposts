@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-structure/openapi-outpost-arn-structure.json",
+  "name": "OutpostArn",
+  "description": "The Amazon Resource Name (ARN) of the Outpost.",
+  "type": "string",
+  "pattern": "^arn:aws([a-z-]+)?:outposts:[a-z\\d-]+:\\d{12}:outpost/op-[a-f0-9]{17}$"
+}

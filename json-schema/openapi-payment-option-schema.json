@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-payment-option-schema.json",
+  "title": "PaymentOption",
+  "description": "PaymentOption schema from Amazon Outposts",
+  "type": "string",
+  "enum": [
+    "ALL_UPFRONT",
+    "NO_UPFRONT",
+    "PARTIAL_UPFRONT"
+  ]
+}

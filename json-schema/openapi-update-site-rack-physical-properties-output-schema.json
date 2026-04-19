@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/json-schema/openapi-update-site-rack-physical-properties-output-schema.json",
+  "title": "UpdateSiteRackPhysicalPropertiesOutput",
+  "description": "UpdateSiteRackPhysicalPropertiesOutput schema from Amazon Outposts",
+  "type": "object",
+  "properties": {
+    "Site": {
+      "$ref": "#/components/schemas/Site"
+    }
+  }
+}

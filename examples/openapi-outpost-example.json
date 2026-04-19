@@ -1,0 +1,14 @@
+{
+  "OutpostId": "resource-abc123",
+  "OwnerId": "example-ref",
+  "OutpostArn": "example-ref",
+  "SiteId": "example-ref",
+  "Name": "example-ref",
+  "Description": "example-ref",
+  "LifeCycleStatus": "example-ref",
+  "AvailabilityZone": "example-ref",
+  "AvailabilityZoneId": "example-ref",
+  "Tags": "example-string",
+  "SiteArn": "example-ref",
+  "SupportedHardwareType": "standard"
+}
