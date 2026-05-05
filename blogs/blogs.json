@@ -1,0 +1,13 @@
+{
+  "repo": "amazon-outposts",
+  "feeds": [
+    {
+      "source": "https://aws.amazon.com/blogs/compute/tag/aws-outposts/",
+      "feed_url": "https://aws.amazon.com/blogs/compute/tag/aws-outposts/feed/",
+      "saved": 10,
+      "title": "AWS Outposts \u2013 AWS Compute Blog"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:21:53Z"
+}
