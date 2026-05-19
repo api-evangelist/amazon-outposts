@@ -1,11 +1,8 @@
 aid: amazon-outposts
 name: Amazon Outposts
-description: >-
-  AWS Outposts is a family of fully managed solutions delivering AWS
-  infrastructure and services to virtually any on-premises or edge location
-  for a truly consistent hybrid experience. It allows you to extend AWS
-  infrastructure, AWS services, APIs, and tools to virtually any data center,
-  co-location space, or on-premises facility.
+description: AWS Outposts is a family of fully managed solutions delivering AWS infrastructure and services to virtually any
+  on-premises or edge location for a truly consistent hybrid experience. It allows you to extend AWS infrastructure, AWS services,
+  APIs, and tools to virtually any data center, co-location space, or on-premises facility.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
@@ -14,18 +11,15 @@ tags:
 - Hybrid Cloud
 - Infrastructure
 - On-Premises
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/amazon-outposts/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-04-19'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
 - aid: amazon-outposts:aws-outposts-api
   name: AWS Outposts API
-  description: >-
-    The AWS Outposts API provides programmatic access to create and manage
-    Outposts, sites, orders, catalog items, assets, and local gateway routes
-    for deploying AWS infrastructure on-premises.
+  description: The AWS Outposts API provides programmatic access to create and manage Outposts, sites, orders, catalog items,
+    assets, and local gateway routes for deploying AWS infrastructure on-premises.
   humanURL: https://aws.amazon.com/outposts/
   baseURL: https://outposts.amazonaws.com
   tags:
@@ -43,6 +37,8 @@ apis:
     url: https://aws.amazon.com/outposts/pricing/
   - type: FAQ
     url: https://aws.amazon.com/outposts/faqs/
+  - type: NaftikoCapability
+    url: capabilities/amazon-outposts.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/outposts/
@@ -74,8 +70,6 @@ common:
   url: rules/amazon-outposts-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/amazon-outposts-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/amazon-outposts-workflow.yaml
 - type: JSONLD
   url: json-ld/amazon-outposts-openapi-context.jsonld
 - type: JSONSchema
