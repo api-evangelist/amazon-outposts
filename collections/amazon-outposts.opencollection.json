@@ -1,0 +1,1416 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Outposts",
+    "version": "Mon Dec 02 2019 19:00:00 GMT-0500 (Eastern Standard Time)"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Amazon Outposts Cancel Order",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://outposts.{region}.amazonaws.com/orders/:OrderId/cancel",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "OrderId",
+            "value": "",
+            "type": "path",
+            "description": " The ID of the order. "
+          }
+        ]
+      },
+      "docs": "Cancels the specified order for an Outpost."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Create Order",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://outposts.{region}.amazonaws.com/orders",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Creates an order for an Outpost."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts List Outposts",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/outposts",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "NextToken",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "MaxResults",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "LifeCycleStatusFilter",
+            "value": "",
+            "type": "query",
+            "description": "Filters the results by the lifecycle status."
+          },
+          {
+            "name": "AvailabilityZoneFilter",
+            "value": "",
+            "type": "query",
+            "description": "Filters the results by Availability Zone (for example, <code>us-east-1a</code>)."
+          },
+          {
+            "name": "AvailabilityZoneIdFilter",
+            "value": "",
+            "type": "query",
+            "description": "Filters the results by AZ ID (for example, <code>use1-az1</code>)."
+          }
+        ]
+      },
+      "docs": "<p>Lists the Outposts for your Amazon Web Services account.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Create Outpost",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://outposts.{region}.amazonaws.com/outposts",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "<p>Creates an Outpost.</p> <p>You can specify either an Availability one or an AZ ID.</p>"
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts List Sites",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/sites",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "NextToken",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "MaxResults",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "OperatingAddressCountryCodeFilter",
+            "value": "",
+            "type": "query",
+            "description": "Filters the results by country code."
+          },
+          {
+            "name": "OperatingAddressStateOrRegionFilter",
+            "value": "",
+            "type": "query",
+            "description": "Filters the results by state or region."
+          },
+          {
+            "name": "OperatingAddressCityFilter",
+            "value": "",
+            "type": "query",
+            "description": "Filters the results by city."
+          }
+        ]
+      },
+      "docs": "<p>Lists the Outpost sites for your Amazon Web Services account. Use filters to return specific results.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Create Site",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://outposts.{region}.amazonaws.com/sites",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": " Creates a site for an Outpost. "
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Get Outpost",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/outposts/:OutpostId",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "OutpostId",
+            "value": "",
+            "type": "path",
+            "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+          }
+        ]
+      },
+      "docs": "Gets information about the specified Outpost."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Update Outpost",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "http://outposts.{region}.amazonaws.com/outposts/:OutpostId",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "OutpostId",
+            "value": "",
+            "type": "path",
+            "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": " Updates an Outpost. "
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Delete Outpost",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "http://outposts.{region}.amazonaws.com/outposts/:OutpostId",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "OutpostId",
+            "value": "",
+            "type": "path",
+            "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+          }
+        ]
+      },
+      "docs": "Deletes the specified Outpost."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Get Site",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/sites/:SiteId",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "SiteId",
+            "value": "",
+            "type": "path",
+            "description": " The ID or the Amazon Resource Name (ARN) of the site. "
+          }
+        ]
+      },
+      "docs": "Gets information about the specified Outpost site."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Update Site",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "http://outposts.{region}.amazonaws.com/sites/:SiteId",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "SiteId",
+            "value": "",
+            "type": "path",
+            "description": " The ID or the Amazon Resource Name (ARN) of the site. "
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Updates the specified site."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Delete Site",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "http://outposts.{region}.amazonaws.com/sites/:SiteId",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "SiteId",
+            "value": "",
+            "type": "path",
+            "description": " The ID or the Amazon Resource Name (ARN) of the site. "
+          }
+        ]
+      },
+      "docs": "Deletes the specified site."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Get Catalog Item",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/catalog/item/:CatalogItemId",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "CatalogItemId",
+            "value": "",
+            "type": "path",
+            "description": "The ID of the catalog item."
+          }
+        ]
+      },
+      "docs": "Gets information about the specified catalog item."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Get Connection",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/connections/:ConnectionId",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "ConnectionId",
+            "value": "",
+            "type": "path",
+            "description": " The ID of the connection. "
+          }
+        ]
+      },
+      "docs": "<note> <p> Amazon Web Services uses this action to install Outpost servers.</p> </note> <p> Gets information about the specified connection. </p> <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html\"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href=\"https://docs.aws.amaz"
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Get Order",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/orders/:OrderId",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "OrderId",
+            "value": "",
+            "type": "path",
+            "description": "The ID of the order."
+          }
+        ]
+      },
+      "docs": "Gets information about the specified order."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Get Outpost Instance Types",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/outposts/:OutpostId/instanceTypes",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "OutpostId",
+            "value": "",
+            "type": "path",
+            "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+          },
+          {
+            "name": "NextToken",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "MaxResults",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Gets the instance types for the specified Outpost."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Get Site Address",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/sites/:SiteId/address#AddressType",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "SiteId",
+            "value": "",
+            "type": "path",
+            "description": " The ID or the Amazon Resource Name (ARN) of the site. "
+          },
+          {
+            "name": "AddressType",
+            "value": "",
+            "type": "query",
+            "description": "The type of the address you request. "
+          }
+        ]
+      },
+      "docs": " Gets the site address of the specified site. "
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts List Assets",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/outposts/:OutpostId/assets",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "OutpostId",
+            "value": "",
+            "type": "path",
+            "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+          },
+          {
+            "name": "HostIdFilter",
+            "value": "",
+            "type": "query",
+            "description": "Filters the results by the host ID of a Dedicated Host."
+          },
+          {
+            "name": "MaxResults",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "NextToken",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "StatusFilter",
+            "value": "",
+            "type": "query",
+            "description": "Filters the results by state."
+          }
+        ]
+      },
+      "docs": "<p>Lists the hardware assets for the specified Outpost.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts List Catalog Items",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/catalog/items",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "NextToken",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "MaxResults",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "ItemClassFilter",
+            "value": "",
+            "type": "query",
+            "description": "Filters the results by item class."
+          },
+          {
+            "name": "SupportedStorageFilter",
+            "value": "",
+            "type": "query",
+            "description": "Filters the results by storage option."
+          },
+          {
+            "name": "EC2FamilyFilter",
+            "value": "",
+            "type": "query",
+            "description": "Filters the results by EC2 family (for example, M5)."
+          }
+        ]
+      },
+      "docs": "<p>Lists the items in the catalog.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts List Orders",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/list-orders",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "OutpostIdentifierFilter",
+            "value": "",
+            "type": "query",
+            "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+          },
+          {
+            "name": "NextToken",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "MaxResults",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Lists the Outpost orders for your Amazon Web Services account."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts List Tags for Resource",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://outposts.{region}.amazonaws.com/tags/:ResourceArn",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "ResourceArn",
+            "value": "",
+            "type": "path",
+            "description": "The Amazon Resource Name (ARN) of the resource."
+          }
+        ]
+      },
+      "docs": "Lists the tags for the specified resource."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Tag Resource",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://outposts.{region}.amazonaws.com/tags/:ResourceArn",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "ResourceArn",
+            "value": "",
+            "type": "path",
+            "description": "The Amazon Resource Name (ARN) of the resource."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Adds tags to the specified resource."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Start Connection",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://outposts.{region}.amazonaws.com/connections",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "<note> <p> Amazon Web Services uses this action to install Outpost servers.</p> </note> <p> Starts the connection required for Outpost server installation. </p> <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html\"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href=\"https:"
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Untag Resource",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "http://outposts.{region}.amazonaws.com/tags/:ResourceArn#tagKeys",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "ResourceArn",
+            "value": "",
+            "type": "path",
+            "description": "The Amazon Resource Name (ARN) of the resource."
+          },
+          {
+            "name": "tagKeys",
+            "value": "",
+            "type": "query",
+            "description": "The tag keys."
+          }
+        ]
+      },
+      "docs": "Removes tags from the specified resource."
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Update Site Address",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "http://outposts.{region}.amazonaws.com/sites/:SiteId/address",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "SiteId",
+            "value": "",
+            "type": "path",
+            "description": " The ID or the Amazon Resource Name (ARN) of the site. "
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "<p>Updates the address of the specified site.</p> <p>You can't update a site address if there is an order in progress. You must wait for the order to complete or cancel the order.</p> <p>You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated.</p>"
+    },
+    {
+      "info": {
+        "name": "Amazon Outposts Update Site Rack Physical Properties",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "http://outposts.{region}.amazonaws.com/sites/:SiteId/rackPhysicalProperties",
+        "headers": [
+          {
+            "name": "X-Amz-Content-Sha256",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Date",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Algorithm",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Credential",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Security-Token",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-Signature",
+            "value": ""
+          },
+          {
+            "name": "X-Amz-SignedHeaders",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "SiteId",
+            "value": "",
+            "type": "path",
+            "description": " The ID or the Amazon Resource Name (ARN) of the site. "
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "<p>Update the physical and logistical details for a rack at a site. For more information about hardware requirements for racks, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist\">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p> <p>To update a rack at a site with an order of <code>IN_PROGRESS</code>, you must wait for the order to complete or cancel the order.</p>"
+    }
+  ],
+  "bundled": true
+}
