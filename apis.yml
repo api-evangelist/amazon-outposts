@@ -40,6 +40,14 @@ apis:
       - type: FAQ
         url: https://aws.amazon.com/outposts/faqs/
 common:
+  - type: TrustCenter
+    url: security/amazon-outposts-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-outposts-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-outposts-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-outposts-authentication.yml
   - type: Portal
     url: https://aws.amazon.com/outposts/
   - type: Website
