@@ -40,6 +40,8 @@ apis:
       - type: FAQ
         url: https://aws.amazon.com/outposts/faqs/
 common:
+  - type: AgenticAccess
+    url: agentic-access/amazon-outposts-agentic-access.yml
   - type: TrustCenter
     url: security/amazon-outposts-trust-center.yml
   - type: VulnerabilityDisclosure
