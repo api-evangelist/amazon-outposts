@@ -1,0 +1,451 @@
+openapi: 3.0.0
+info:
+  version: 2019-12-03
+  x-release: v4
+  title: AWS Outposts Catalog API
+  description: Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services infrastructure, APIs, and tools to customer premises. By providing local access to Amazon Web Services managed infrastructure, Amazon Web Services Outposts enables customers to build and run applications on premises using the same programming interfaces as in Amazon Web Services Regions, while using local compute and storage resources for lower latency and local data processing needs.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: outposts
+  x-aws-signingName: outposts
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/outposts-2019-12-03.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://outposts.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Outposts multi-region endpoint
+- url: https://outposts.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Outposts multi-region endpoint
+- url: http://outposts.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Outposts endpoint for China (Beijing) and China (Ningxia)
+- url: https://outposts.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Outposts endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Catalog
+paths:
+  /catalog/item/{CatalogItemId}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: GetCatalogItem
+      description: Gets information about the specified catalog item.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCatalogItemOutput'
+              examples:
+                GetCatalogItem200Example:
+                  summary: Default GetCatalogItem 200 response
+                  x-microcks-default: true
+                  value:
+                    CatalogItem: example-string
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters:
+      - name: CatalogItemId
+        in: path
+        required: true
+        description: The ID of the catalog item.
+        schema:
+          type: string
+          pattern: OR-[A-Z0-9]{7}
+          minLength: 1
+          maxLength: 10
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      summary: Amazon Outposts Get Catalog Item
+      tags:
+      - Catalog
+  /catalog/items:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListCatalogItems
+      description: <p>Lists the items in the catalog.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCatalogItemsOutput'
+              examples:
+                ListCatalogItems200Example:
+                  summary: Default ListCatalogItems 200 response
+                  x-microcks-default: true
+                  value:
+                    CatalogItems: example-string
+                    NextToken: example-ref
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters:
+      - name: NextToken
+        in: query
+        required: false
+        description: ''
+        schema:
+          type: string
+          pattern: ^(\d+)##(\S+)$
+          description: The pagination token.
+          minLength: 1
+          maxLength: 2048
+      - name: MaxResults
+        in: query
+        required: false
+        description: ''
+        schema:
+          type: integer
+          description: The maximum page size.
+          minimum: 1
+          maximum: 1000
+      - name: ItemClassFilter
+        in: query
+        required: false
+        description: Filters the results by item class.
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/CatalogItemClass'
+      - name: SupportedStorageFilter
+        in: query
+        required: false
+        description: Filters the results by storage option.
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/SupportedStorageEnum'
+      - name: EC2FamilyFilter
+        in: query
+        required: false
+        description: Filters the results by EC2 family (for example, M5).
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/Family'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      summary: Amazon Outposts List Catalog Items
+      tags:
+      - Catalog
+components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    GetCatalogItemOutput:
+      type: object
+      properties:
+        CatalogItem:
+          allOf:
+          - $ref: '#/components/schemas/CatalogItem'
+          - description: Information about this catalog item.
+    EC2Capacity:
+      type: object
+      properties:
+        Family:
+          allOf:
+          - $ref: '#/components/schemas/Family'
+          - description: ' The family of the EC2 capacity. '
+        MaxSize:
+          allOf:
+          - $ref: '#/components/schemas/MaxSize'
+          - description: ' The maximum size of the EC2 capacity. '
+        Quantity:
+          allOf:
+          - $ref: '#/components/schemas/Quantity'
+          - description: ' The quantity of the EC2 capacity. '
+      description: ' Information about EC2 capacity. '
+    SkuCode:
+      type: string
+      pattern: OR-[A-Z0-9]{7}
+      minLength: 1
+      maxLength: 10
+    NotFoundException: {}
+    EC2CapacityListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/EC2Capacity'
+    SupportedUplinkGbps:
+      type: integer
+    SupportedUplinkGbpsListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/SupportedUplinkGbps'
+    CatalogItemPowerKva:
+      type: number
+      format: float
+    ListCatalogItemsOutput:
+      type: object
+      properties:
+        CatalogItems:
+          allOf:
+          - $ref: '#/components/schemas/CatalogItemListDefinition'
+          - description: Information about the catalog items.
+        NextToken:
+          $ref: '#/components/schemas/Token'
+    CatalogItemClass:
+      type: string
+      enum:
+      - RACK
+      - SERVER
+    CatalogItemWeightLbs:
+      type: integer
+    MaxSize:
+      type: string
+    InternalServerException: {}
+    Token:
+      type: string
+      pattern: ^(\d+)##(\S+)$
+      description: The pagination token.
+      minLength: 1
+      maxLength: 2048
+    CatalogItem:
+      type: object
+      properties:
+        CatalogItemId:
+          allOf:
+          - $ref: '#/components/schemas/SkuCode'
+          - description: ' The ID of the catalog item. '
+        ItemStatus:
+          allOf:
+          - $ref: '#/components/schemas/CatalogItemStatus'
+          - description: ' The status of a catalog item. '
+        EC2Capacities:
+          allOf:
+          - $ref: '#/components/schemas/EC2CapacityListDefinition'
+          - description: ' Information about the EC2 capacity of an item. '
+        PowerKva:
+          allOf:
+          - $ref: '#/components/schemas/CatalogItemPowerKva'
+          - description: ' Information about the power draw of an item. '
+        WeightLbs:
+          allOf:
+          - $ref: '#/components/schemas/CatalogItemWeightLbs'
+          - description: ' The weight of the item in pounds. '
+        SupportedUplinkGbps:
+          allOf:
+          - $ref: '#/components/schemas/SupportedUplinkGbpsListDefinition'
+          - description: ' The uplink speed this catalog item requires for the connection to the Region. '
+        SupportedStorage:
+          allOf:
+          - $ref: '#/components/schemas/SupportedStorageList'
+          - description: ' The supported storage options for the catalog item. '
+      description: ' Information about a catalog item. '
+    Family:
+      type: string
+      pattern: '[a-z0-9]+'
+      minLength: 1
+      maxLength: 10
+    SupportedStorageEnum:
+      type: string
+      enum:
+      - EBS
+      - S3
+    ValidationException: {}
+    SupportedStorageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SupportedStorageEnum'
+    Quantity:
+      type: string
+    CatalogItemStatus:
+      type: string
+      enum:
+      - AVAILABLE
+      - DISCONTINUED
+    CatalogItemListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/CatalogItem'
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/outposts/
+x-hasEquivalentPaths: true

@@ -1,0 +1,635 @@
+openapi: 3.0.0
+info:
+  version: 2019-12-03
+  x-release: v4
+  title: AWS Outposts Catalog Orders API
+  description: Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services infrastructure, APIs, and tools to customer premises. By providing local access to Amazon Web Services managed infrastructure, Amazon Web Services Outposts enables customers to build and run applications on premises using the same programming interfaces as in Amazon Web Services Regions, while using local compute and storage resources for lower latency and local data processing needs.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: outposts
+  x-aws-signingName: outposts
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/outposts-2019-12-03.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://outposts.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Outposts multi-region endpoint
+- url: https://outposts.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Outposts multi-region endpoint
+- url: http://outposts.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Outposts endpoint for China (Beijing) and China (Ningxia)
+- url: https://outposts.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Outposts endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Orders
+paths:
+  /orders/{OrderId}/cancel:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CancelOrder
+      description: Cancels the specified order for an Outpost.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelOrderOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '482':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters:
+      - name: OrderId
+        in: path
+        required: true
+        description: ' The ID of the order. '
+        schema:
+          type: string
+          pattern: oo-[a-f0-9]{17}$
+          minLength: 1
+          maxLength: 20
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      summary: Amazon Outposts Cancel Order
+      tags:
+      - Orders
+  /orders:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateOrder
+      description: Creates an order for an Outpost.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateOrderOutput'
+              examples:
+                CreateOrder200Example:
+                  summary: Default CreateOrder 200 response
+                  x-microcks-default: true
+                  value:
+                    Order: example-string
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '482':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '485':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - OutpostIdentifier
+              - LineItems
+              - PaymentOption
+              properties:
+                OutpostIdentifier:
+                  description: ' The ID or the Amazon Resource Name (ARN) of the Outpost. '
+                  type: string
+                  pattern: ^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$
+                  minLength: 1
+                  maxLength: 180
+                LineItems:
+                  description: The line items that make up the order.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/LineItemRequest'
+                  minItems: 1
+                  maxItems: 20
+                PaymentOption:
+                  description: The payment option.
+                  type: string
+                  enum:
+                  - ALL_UPFRONT
+                  - NO_UPFRONT
+                  - PARTIAL_UPFRONT
+                PaymentTerm:
+                  description: The payment terms.
+                  type: string
+                  enum:
+                  - THREE_YEARS
+                  - ONE_YEAR
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      summary: Amazon Outposts Create Order
+      tags:
+      - Orders
+  /orders/{OrderId}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: GetOrder
+      description: Gets information about the specified order.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetOrderOutput'
+              examples:
+                GetOrder200Example:
+                  summary: Default GetOrder 200 response
+                  x-microcks-default: true
+                  value:
+                    Order: example-ref
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters:
+      - name: OrderId
+        in: path
+        required: true
+        description: The ID of the order.
+        schema:
+          type: string
+          pattern: oo-[a-f0-9]{17}$
+          minLength: 1
+          maxLength: 20
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      summary: Amazon Outposts Get Order
+      tags:
+      - Orders
+components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    LineItemQuantity:
+      type: integer
+      minimum: 1
+      maximum: 20
+    SkuCode:
+      type: string
+      pattern: OR-[A-Z0-9]{7}
+      minLength: 1
+      maxLength: 10
+    OrderStatus:
+      type: string
+      enum:
+      - RECEIVED
+      - PENDING
+      - PROCESSING
+      - INSTALLING
+      - FULFILLED
+      - CANCELLED
+      - PREPARING
+      - IN_PROGRESS
+      - COMPLETED
+      - ERROR
+    NotFoundException: {}
+    AccessDeniedException: {}
+    LineItemId:
+      type: string
+      pattern: ooi-[a-f0-9]{17}
+    LineItemStatus:
+      type: string
+      enum:
+      - PREPARING
+      - BUILDING
+      - SHIPPED
+      - DELIVERED
+      - INSTALLING
+      - INSTALLED
+      - ERROR
+      - CANCELLED
+      - REPLACED
+    ShipmentCarrier:
+      type: string
+      enum:
+      - DHL
+      - DBS
+      - FEDEX
+      - UPS
+    MacAddressList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MacAddress'
+    ConflictException: {}
+    TrackingId:
+      type: string
+      pattern: ^[a-zA-Z0-9]+$
+      minLength: 6
+      maxLength: 42
+    LineItemRequest:
+      type: object
+      properties:
+        CatalogItemId:
+          allOf:
+          - $ref: '#/components/schemas/SkuCode'
+          - description: The ID of the catalog item.
+        Quantity:
+          allOf:
+          - $ref: '#/components/schemas/LineItemQuantity'
+          - description: The quantity of a line item request.
+      description: Information about a line item request.
+    LineItemAssetInformationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LineItemAssetInformation'
+    Order:
+      type: object
+      properties:
+        OutpostId:
+          allOf:
+          - $ref: '#/components/schemas/OutpostIdOnly'
+          - description: ' The ID of the Outpost in the order. '
+        OrderId:
+          allOf:
+          - $ref: '#/components/schemas/OrderId'
+          - description: The ID of the order.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/OrderStatus'
+          - description: '<p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> </ul> <note> <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> </note>'
+        LineItems:
+          allOf:
+          - $ref: '#/components/schemas/LineItemListDefinition'
+          - description: The line items for the order
+        PaymentOption:
+          allOf:
+          - $ref: '#/components/schemas/PaymentOption'
+          - description: The payment option for the order.
+        OrderSubmissionDate:
+          allOf:
+          - $ref: '#/components/schemas/ISO8601Timestamp'
+          - description: The submission date for the order.
+        OrderFulfilledDate:
+          allOf:
+          - $ref: '#/components/schemas/ISO8601Timestamp'
+          - description: The fulfillment date of the order.
+        PaymentTerm:
+          allOf:
+          - $ref: '#/components/schemas/PaymentTerm'
+          - description: The payment term.
+        OrderType:
+          allOf:
+          - $ref: '#/components/schemas/OrderType'
+          - description: The type of order.
+      description: Information about an order.
+    ShipmentInformation:
+      type: object
+      properties:
+        ShipmentTrackingNumber:
+          allOf:
+          - $ref: '#/components/schemas/TrackingId'
+          - description: ' The tracking number of the shipment. '
+        ShipmentCarrier:
+          allOf:
+          - $ref: '#/components/schemas/ShipmentCarrier'
+          - description: ' The carrier of the shipment. '
+      description: ' Information about a line item shipment. '
+    PaymentOption:
+      type: string
+      enum:
+      - ALL_UPFRONT
+      - NO_UPFRONT
+      - PARTIAL_UPFRONT
+    OutpostIdOnly:
+      type: string
+      pattern: ^op-[a-f0-9]{17}$
+      minLength: 1
+      maxLength: 20
+    ServiceQuotaExceededException: {}
+    InternalServerException: {}
+    ISO8601Timestamp:
+      type: string
+      format: date-time
+    MacAddress:
+      type: string
+      pattern: ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$
+      minLength: 17
+      maxLength: 17
+    LineItemListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/LineItem'
+    LineItem:
+      type: object
+      properties:
+        CatalogItemId:
+          allOf:
+          - $ref: '#/components/schemas/SkuCode'
+          - description: ' The ID of the catalog item. '
+        LineItemId:
+          allOf:
+          - $ref: '#/components/schemas/LineItemId'
+          - description: The ID of the line item.
+        Quantity:
+          allOf:
+          - $ref: '#/components/schemas/LineItemQuantity'
+          - description: The quantity of the line item.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/LineItemStatus'
+          - description: The status of the line item.
+        ShipmentInformation:
+          allOf:
+          - $ref: '#/components/schemas/ShipmentInformation'
+          - description: ' Information about a line item shipment. '
+        AssetInformationList:
+          allOf:
+          - $ref: '#/components/schemas/LineItemAssetInformationList'
+          - description: ' Information about assets. '
+        PreviousLineItemId:
+          allOf:
+          - $ref: '#/components/schemas/LineItemId'
+          - description: The ID of the previous line item.
+        PreviousOrderId:
+          allOf:
+          - $ref: '#/components/schemas/OrderId'
+          - description: The ID of the previous order.
+      description: Information about a line item.
+    CancelOrderOutput:
+      type: object
+      properties: {}
+    LineItemAssetInformation:
+      type: object
+      properties:
+        AssetId:
+          allOf:
+          - $ref: '#/components/schemas/AssetId'
+          - description: ' The ID of the asset. '
+        MacAddressList:
+          allOf:
+          - $ref: '#/components/schemas/MacAddressList'
+          - description: ' The MAC addresses of the asset. '
+      description: ' Information about a line item asset. '
+    PaymentTerm:
+      type: string
+      enum:
+      - THREE_YEARS
+      - ONE_YEAR
+    OrderId:
+      type: string
+      pattern: oo-[a-f0-9]{17}$
+      minLength: 1
+      maxLength: 20
+    OrderType:
+      type: string
+      enum:
+      - OUTPOST
+      - REPLACEMENT
+    CreateOrderOutput:
+      type: object
+      properties:
+        Order:
+          allOf:
+          - $ref: '#/components/schemas/Order'
+          - description: Information about this order.
+    ValidationException: {}
+    AssetId:
+      type: string
+      pattern: ^(\w+)$
+      minLength: 1
+      maxLength: 100
+    GetOrderOutput:
+      type: object
+      properties:
+        Order:
+          $ref: '#/components/schemas/Order'
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/outposts/
+x-hasEquivalentPaths: true
