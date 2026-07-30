@@ -5,7 +5,20 @@ description: >-
   on-premises or edge location for a truly consistent hybrid experience. It allows you to extend AWS infrastructure, AWS
   services, APIs, and tools to virtually any data center, co-location space, or on-premises facility.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-outposts.png
 tags:
   - AWS
   - Edge Computing
@@ -17,29 +30,135 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: amazon-outposts:aws-outposts-api
-    name: AWS Outposts API
-    description: >-
-      The AWS Outposts API provides programmatic access to create and manage Outposts, sites, orders, catalog items,
-      assets, and local gateway routes for deploying AWS infrastructure on-premises.
-    humanURL: https://aws.amazon.com/outposts/
-    baseURL: https://outposts.amazonaws.com
-    tags:
-      - Edge Computing
-      - Hybrid Cloud
-      - On-Premises
-    properties:
-      - type: Documentation
-        url: https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
-      - type: OpenAPI
-        url: openapi/amazon-outposts-openapi.yml
-      - type: GettingStarted
-        url: https://aws.amazon.com/outposts/getting-started/
-      - type: Pricing
-        url: https://aws.amazon.com/outposts/pricing/
-      - type: FAQ
-        url: https://aws.amazon.com/outposts/faqs/
+- aid: amazon-outposts:amazon-outposts-catalog-api
+  name: Amazon Outposts Catalog API
+  description: The Catalog API from Amazon Outposts — 2 operation(s) for catalog.
+  humanURL: https://aws.amazon.com/outposts/
+  baseURL: https://outposts.amazonaws.com
+  tags:
+  - Catalog
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-outposts-catalog-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/outposts/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/outposts/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/outposts/faqs/
+- aid: amazon-outposts:amazon-outposts-connections-api
+  name: Amazon Outposts Connections API
+  description: The Connections API from Amazon Outposts — 2 operation(s) for connections.
+  humanURL: https://aws.amazon.com/outposts/
+  baseURL: https://outposts.amazonaws.com
+  tags:
+  - Connections
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-outposts-connections-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/outposts/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/outposts/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/outposts/faqs/
+- aid: amazon-outposts:amazon-outposts-list-orders-api
+  name: Amazon Outposts List Orders API
+  description: The List Orders API from Amazon Outposts — 1 operation(s) for list orders.
+  humanURL: https://aws.amazon.com/outposts/
+  baseURL: https://outposts.amazonaws.com
+  tags:
+  - List Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-outposts-list-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/outposts/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/outposts/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/outposts/faqs/
+- aid: amazon-outposts:amazon-outposts-orders-api
+  name: Amazon Outposts Orders API
+  description: The Orders API from Amazon Outposts — 3 operation(s) for orders.
+  humanURL: https://aws.amazon.com/outposts/
+  baseURL: https://outposts.amazonaws.com
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-outposts-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/outposts/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/outposts/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/outposts/faqs/
+- aid: amazon-outposts:amazon-outposts-outposts-api
+  name: Amazon Outposts Outposts API
+  description: The Outposts API from Amazon Outposts — 4 operation(s) for outposts.
+  humanURL: https://aws.amazon.com/outposts/
+  baseURL: https://outposts.amazonaws.com
+  tags:
+  - Outposts
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-outposts-outposts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/outposts/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/outposts/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/outposts/faqs/
+- aid: amazon-outposts:amazon-outposts-sites-api
+  name: Amazon Outposts Sites API
+  description: The Sites API from Amazon Outposts — 5 operation(s) for sites.
+  humanURL: https://aws.amazon.com/outposts/
+  baseURL: https://outposts.amazonaws.com
+  tags:
+  - Sites
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-outposts-sites-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/outposts/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/outposts/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/outposts/faqs/
+- aid: amazon-outposts:amazon-outposts-tags-api
+  name: Amazon Outposts Tags API
+  description: The Tags API from Amazon Outposts — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/outposts/
+  baseURL: https://outposts.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-outposts-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/outposts/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/outposts/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/outposts/faqs/
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-outposts/overview
   - type: AgenticAccess
     url: agentic-access/amazon-outposts-agentic-access.yml
   - type: TrustCenter
