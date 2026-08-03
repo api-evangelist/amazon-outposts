@@ -1,0 +1,4427 @@
+{
+  "info": {
+    "_postman_id": "11cd50f6-bcb3-4637-bf4c-826a2ca45d67",
+    "name": "AWS Outposts Catalog Sites API",
+    "description": "Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services infrastructure, APIs, and tools to customer premises. By providing local access to Amazon Web Services managed infrastructure, Amazon Web Services Outposts enables customers to build and run applications on premises using the same programming interfaces as in Amazon Web Services Regions, while using local compute and storage resources for lower latency and local data processing needs.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:41:23.000Z",
+    "updatedAt": "2026-07-28T10:41:23.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-11cd50f6-bcb3-4637-bf4c-826a2ca45d67"
+  },
+  "item": [
+    {
+      "name": "sites",
+      "item": [
+        {
+          "name": "{SiteId}",
+          "item": [
+            {
+              "name": "address#AddressType",
+              "item": [
+                {
+                  "name": "Amazon Outposts Get Site Address",
+                  "id": "2172774e-8573-4bf0-ae6c-445892ac2ae3",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId/address?AddressType=SHIPPING_ADDRESS#AddressType",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId",
+                        "address"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The type of the address you request. ",
+                          "key": "AddressType",
+                          "value": "SHIPPING_ADDRESS"
+                        }
+                      ],
+                      "hash": "AddressType",
+                      "variable": [
+                        {
+                          "id": "fc634bfb-9d15-4b3f-a708-1387d83f24e9",
+                          "key": "SiteId",
+                          "value": "arn:aws:outposts:j0qqn5lvr:642229564695:site/os-ad3ac7add710b90b8",
+                          "description": "(Required)  The ID or the Amazon Resource Name (ARN) of the site. "
+                        }
+                      ]
+                    },
+                    "description": " Gets the site address of the specified site. "
+                  },
+                  "response": [
+                    {
+                      "id": "f167a5df-5570-40c6-a862-1d5f70d23b99",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/address?AddressType=SHIPPING_ADDRESS#AddressType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "address"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The type of the address you request. ",
+                              "key": "AddressType",
+                              "value": "SHIPPING_ADDRESS"
+                            }
+                          ],
+                          "hash": "AddressType",
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"SiteId\": \"os-e66b91a47cb7895b7\",\n  \"AddressType\": \"SHIPPING_ADDRESS\",\n  \"Address\": {\n    \"AddressLine1\": \"_GVAT$Lz\",\n    \"City\": \"'\\\"T^$.uY\",\n    \"StateOrRegion\": \"\\\"r2\",\n    \"PostalCode\": \"BZ\",\n    \"CountryCode\": \"HS\",\n    \"ContactName\": \"|\",\n    \"ContactPhoneNumber\": \"*`ePs0x49dw\",\n    \"AddressLine2\": \"``C|_3_\",\n    \"AddressLine3\": \"NW^k:\",\n    \"DistrictOrCounty\": \"A@P[Ju?\",\n    \"Municipality\": \"v,4\"\n  }\n}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-f167a5df-5570-40c6-a862-1d5f70d23b99"
+                    },
+                    {
+                      "id": "72f39e0f-b40e-470b-bf94-3eefcb368610",
+                      "name": "ValidationException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/address?AddressType=SHIPPING_ADDRESS#AddressType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "address"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The type of the address you request. ",
+                              "key": "AddressType",
+                              "value": "SHIPPING_ADDRESS"
+                            }
+                          ],
+                          "hash": "AddressType",
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-72f39e0f-b40e-470b-bf94-3eefcb368610"
+                    },
+                    {
+                      "id": "aaf9c301-9b21-48da-b449-6431d1d6afba",
+                      "name": "AccessDeniedException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/address?AddressType=SHIPPING_ADDRESS#AddressType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "address"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The type of the address you request. ",
+                              "key": "AddressType",
+                              "value": "SHIPPING_ADDRESS"
+                            }
+                          ],
+                          "hash": "AddressType",
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-aaf9c301-9b21-48da-b449-6431d1d6afba"
+                    },
+                    {
+                      "id": "ac1224dc-bc7e-44e1-9731-7f0363dd117c",
+                      "name": "NotFoundException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/address?AddressType=SHIPPING_ADDRESS#AddressType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "address"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The type of the address you request. ",
+                              "key": "AddressType",
+                              "value": "SHIPPING_ADDRESS"
+                            }
+                          ],
+                          "hash": "AddressType",
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-ac1224dc-bc7e-44e1-9731-7f0363dd117c"
+                    },
+                    {
+                      "id": "e56968bb-1e4c-401a-96ee-118b5f340fa4",
+                      "name": "InternalServerException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/address?AddressType=SHIPPING_ADDRESS#AddressType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "address"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The type of the address you request. ",
+                              "key": "AddressType",
+                              "value": "SHIPPING_ADDRESS"
+                            }
+                          ],
+                          "hash": "AddressType",
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-e56968bb-1e4c-401a-96ee-118b5f340fa4"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-2172774e-8573-4bf0-ae6c-445892ac2ae3"
+                }
+              ],
+              "id": "5928b9b6-cdf4-4d54-b76f-e327abd44633",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-5928b9b6-cdf4-4d54-b76f-e327abd44633"
+            },
+            {
+              "name": "address",
+              "item": [
+                {
+                  "name": "Amazon Outposts Update Site Address",
+                  "id": "14bcfb03-be89-4203-8f28-0cead9a169e9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"AddressType\": \"OPERATING_ADDRESS\",\n  \"Address\": {\n    \"ContactName\": \"F:FwL[0%\",\n    \"ContactPhoneNumber\": \"=WJOE'C]q\\\\\",\n    \"AddressLine1\": \"an2pLk\",\n    \"AddressLine2\": \"BZEMo\",\n    \"AddressLine3\": \"xMu`\",\n    \"City\": \"sf-2E\",\n    \"StateOrRegion\": \"C3E\",\n    \"DistrictOrCounty\": \"+$S)14E[C\",\n    \"PostalCode\": \"vtouOh4At\",\n    \"CountryCode\": \"PV\",\n    \"Municipality\": \"htCp\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId/address",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId",
+                        "address"
+                      ],
+                      "variable": [
+                        {
+                          "id": "a82be893-1851-4c7e-aafe-6ec85feed693",
+                          "key": "SiteId",
+                          "value": "arn:aws:outposts:j0qqn5lvr:642229564695:site/os-ad3ac7add710b90b8",
+                          "description": "(Required)  The ID or the Amazon Resource Name (ARN) of the site. "
+                        }
+                      ]
+                    },
+                    "description": "<p>Updates the address of the specified site.</p> <p>You can't update a site address if there is an order in progress. You must wait for the order to complete or cancel the order.</p> <p>You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "1c6afa95-2ef0-4296-b38b-bc10b069dadd",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"AddressType\": \"OPERATING_ADDRESS\",\n  \"Address\": {\n    \"ContactName\": \"F:FwL[0%\",\n    \"ContactPhoneNumber\": \"=WJOE'C]q\\\\\",\n    \"AddressLine1\": \"an2pLk\",\n    \"AddressLine2\": \"BZEMo\",\n    \"AddressLine3\": \"xMu`\",\n    \"City\": \"sf-2E\",\n    \"StateOrRegion\": \"C3E\",\n    \"DistrictOrCounty\": \"+$S)14E[C\",\n    \"PostalCode\": \"vtouOh4At\",\n    \"CountryCode\": \"PV\",\n    \"Municipality\": \"htCp\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/address",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "address"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"AddressType\": \"SHIPPING_ADDRESS\",\n  \"Address\": {\n    \"AddressLine1\": \"[2Z9]a\",\n    \"City\": \"%V|85dY`R\",\n    \"StateOrRegion\": \"a{!\",\n    \"PostalCode\": \"pbqS\",\n    \"CountryCode\": \"QR\",\n    \"ContactName\": \"rz$1>6\",\n    \"ContactPhoneNumber\": \"b\",\n    \"AddressLine2\": \"hOhqz\\\\\",\n    \"AddressLine3\": \"Q\",\n    \"DistrictOrCounty\": \"6fVK*#l]\",\n    \"Municipality\": \"%|*O8l\"\n  }\n}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-1c6afa95-2ef0-4296-b38b-bc10b069dadd"
+                    },
+                    {
+                      "id": "fecba5fc-4a43-4390-8699-8a84e9f2240f",
+                      "name": "ValidationException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"AddressType\": \"OPERATING_ADDRESS\",\n  \"Address\": {\n    \"ContactName\": \"F:FwL[0%\",\n    \"ContactPhoneNumber\": \"=WJOE'C]q\\\\\",\n    \"AddressLine1\": \"an2pLk\",\n    \"AddressLine2\": \"BZEMo\",\n    \"AddressLine3\": \"xMu`\",\n    \"City\": \"sf-2E\",\n    \"StateOrRegion\": \"C3E\",\n    \"DistrictOrCounty\": \"+$S)14E[C\",\n    \"PostalCode\": \"vtouOh4At\",\n    \"CountryCode\": \"PV\",\n    \"Municipality\": \"htCp\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/address",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "address"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-fecba5fc-4a43-4390-8699-8a84e9f2240f"
+                    },
+                    {
+                      "id": "8d8bf39c-63fe-42be-afed-9aaa0b94de3c",
+                      "name": "AccessDeniedException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"AddressType\": \"OPERATING_ADDRESS\",\n  \"Address\": {\n    \"ContactName\": \"F:FwL[0%\",\n    \"ContactPhoneNumber\": \"=WJOE'C]q\\\\\",\n    \"AddressLine1\": \"an2pLk\",\n    \"AddressLine2\": \"BZEMo\",\n    \"AddressLine3\": \"xMu`\",\n    \"City\": \"sf-2E\",\n    \"StateOrRegion\": \"C3E\",\n    \"DistrictOrCounty\": \"+$S)14E[C\",\n    \"PostalCode\": \"vtouOh4At\",\n    \"CountryCode\": \"PV\",\n    \"Municipality\": \"htCp\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/address",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "address"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-8d8bf39c-63fe-42be-afed-9aaa0b94de3c"
+                    },
+                    {
+                      "id": "6c000e74-b56c-4fbb-a1b0-0987c2ed4f6a",
+                      "name": "NotFoundException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"AddressType\": \"OPERATING_ADDRESS\",\n  \"Address\": {\n    \"ContactName\": \"F:FwL[0%\",\n    \"ContactPhoneNumber\": \"=WJOE'C]q\\\\\",\n    \"AddressLine1\": \"an2pLk\",\n    \"AddressLine2\": \"BZEMo\",\n    \"AddressLine3\": \"xMu`\",\n    \"City\": \"sf-2E\",\n    \"StateOrRegion\": \"C3E\",\n    \"DistrictOrCounty\": \"+$S)14E[C\",\n    \"PostalCode\": \"vtouOh4At\",\n    \"CountryCode\": \"PV\",\n    \"Municipality\": \"htCp\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/address",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "address"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-6c000e74-b56c-4fbb-a1b0-0987c2ed4f6a"
+                    },
+                    {
+                      "id": "0e50ea61-fd35-4193-8988-4e2392a1a3c3",
+                      "name": "ConflictException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"AddressType\": \"OPERATING_ADDRESS\",\n  \"Address\": {\n    \"ContactName\": \"F:FwL[0%\",\n    \"ContactPhoneNumber\": \"=WJOE'C]q\\\\\",\n    \"AddressLine1\": \"an2pLk\",\n    \"AddressLine2\": \"BZEMo\",\n    \"AddressLine3\": \"xMu`\",\n    \"City\": \"sf-2E\",\n    \"StateOrRegion\": \"C3E\",\n    \"DistrictOrCounty\": \"+$S)14E[C\",\n    \"PostalCode\": \"vtouOh4At\",\n    \"CountryCode\": \"PV\",\n    \"Municipality\": \"htCp\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/address",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "address"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-0e50ea61-fd35-4193-8988-4e2392a1a3c3"
+                    },
+                    {
+                      "id": "2e74b988-e29f-42b0-96d2-703dfffc4cfe",
+                      "name": "InternalServerException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"AddressType\": \"OPERATING_ADDRESS\",\n  \"Address\": {\n    \"ContactName\": \"F:FwL[0%\",\n    \"ContactPhoneNumber\": \"=WJOE'C]q\\\\\",\n    \"AddressLine1\": \"an2pLk\",\n    \"AddressLine2\": \"BZEMo\",\n    \"AddressLine3\": \"xMu`\",\n    \"City\": \"sf-2E\",\n    \"StateOrRegion\": \"C3E\",\n    \"DistrictOrCounty\": \"+$S)14E[C\",\n    \"PostalCode\": \"vtouOh4At\",\n    \"CountryCode\": \"PV\",\n    \"Municipality\": \"htCp\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/address",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "address"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-2e74b988-e29f-42b0-96d2-703dfffc4cfe"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-14bcfb03-be89-4203-8f28-0cead9a169e9"
+                }
+              ],
+              "id": "b0f2fc34-0078-4cfb-8b8f-27e7726db102",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-b0f2fc34-0078-4cfb-8b8f-27e7726db102"
+            },
+            {
+              "name": "rackPhysicalProperties",
+              "item": [
+                {
+                  "name": "Amazon Outposts Update Site Rack Physical Properties",
+                  "id": "895a17fd-ed1e-46cb-930b-1fc8f56b4be8",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"PowerDrawKva\": \"POWER_30_KVA\",\n  \"PowerPhase\": \"SINGLE_PHASE\",\n  \"PowerConnector\": \"L6_30P\",\n  \"PowerFeedDrop\": \"BELOW_RACK\",\n  \"UplinkGbps\": \"UPLINK_1G\",\n  \"UplinkCount\": \"UPLINK_COUNT_8\",\n  \"FiberOpticCableType\": \"MULTI_MODE\",\n  \"OpticalStandard\": \"OPTIC_100GBASE_SR4\",\n  \"MaximumSupportedWeightLbs\": \"MAX_1600_LBS\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId/rackPhysicalProperties",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId",
+                        "rackPhysicalProperties"
+                      ],
+                      "variable": [
+                        {
+                          "id": "c9b9f7e2-75ef-4cae-a5a9-cabc63d86f5e",
+                          "key": "SiteId",
+                          "value": "arn:aws:outposts:j0qqn5lvr:642229564695:site/os-ad3ac7add710b90b8",
+                          "description": "(Required)  The ID or the Amazon Resource Name (ARN) of the site. "
+                        }
+                      ]
+                    },
+                    "description": "<p>Update the physical and logistical details for a rack at a site. For more information about hardware requirements for racks, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist\">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p> <p>To update a rack at a site with an order of <code>IN_PROGRESS</code>, you must wait for the order to complete or cancel the order.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "40e94518-577e-4786-b8cc-26fec59abaeb",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"PowerDrawKva\": \"POWER_30_KVA\",\n  \"PowerPhase\": \"SINGLE_PHASE\",\n  \"PowerConnector\": \"L6_30P\",\n  \"PowerFeedDrop\": \"BELOW_RACK\",\n  \"UplinkGbps\": \"UPLINK_1G\",\n  \"UplinkCount\": \"UPLINK_COUNT_8\",\n  \"FiberOpticCableType\": \"MULTI_MODE\",\n  \"OpticalStandard\": \"OPTIC_100GBASE_SR4\",\n  \"MaximumSupportedWeightLbs\": \"MAX_1600_LBS\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/rackPhysicalProperties",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "rackPhysicalProperties"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"Site\": {\n    \"SiteId\": \"os-66d11bd146abf9678\",\n    \"AccountId\": \"395874614611\",\n    \"Name\": \">Bq;K99_\",\n    \"Description\": \"kx\",\n    \"Tags\": {\n      \"dolor_ea\": \"JgDWXX\",\n      \"sed_3\": \"ZHrh?\",\n      \"aliquipc\": \"R1x(n:G~\",\n      \"ullamco_44\": \"ooX]\",\n      \"deserunt_4\": \"_`b\",\n      \"dod8\": \"D>#_&v}\",\n      \"anim4\": \"M5Tdv|elEd\",\n      \"commodo_0ad\": \"VJpLVDQJH\",\n      \"officia4c\": \"I`\\\\/O#I\",\n      \"cupidatat9\": \"0pdk~\",\n      \"irure_c72\": \"Ce\",\n      \"eiusmod_ce7\": \"xQ\",\n      \"non4db\": \"h` )\\\\=\",\n      \"esse6\": \"(u\",\n      \"dolor3\": \"<rZ0vhu&k\",\n      \"et58e\": \"2Du^*1$\",\n      \"voluptate_445\": \"^\\\"+R!>k H\",\n      \"ad6b\": \"t?p.5<n\",\n      \"qui50\": \"ww/\"\n    },\n    \"SiteArn\": \"arn:aws:outposts:bambqaw:097087940688:site/os-cb6b91b9c7a09a569\",\n    \"Notes\": \"5c^]/\",\n    \"OperatingAddressCountryCode\": \"NJ\",\n    \"OperatingAddressStateOrRegion\": \"TJp5/Sv\",\n    \"OperatingAddressCity\": \":Z\",\n    \"RackPhysicalProperties\": {\n      \"PowerDrawKva\": \"POWER_10_KVA\",\n      \"PowerPhase\": \"THREE_PHASE\",\n      \"PowerConnector\": \"L6_30P\",\n      \"PowerFeedDrop\": \"ABOVE_RACK\",\n      \"UplinkGbps\": \"UPLINK_10G\",\n      \"UplinkCount\": \"UPLINK_COUNT_3\",\n      \"FiberOpticCableType\": \"SINGLE_MODE\",\n      \"OpticalStandard\": \"OPTIC_1000BASE_LX\",\n      \"MaximumSupportedWeightLbs\": \"NO_LIMIT\"\n    }\n  }\n}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-40e94518-577e-4786-b8cc-26fec59abaeb"
+                    },
+                    {
+                      "id": "e93103dd-f093-442e-82fb-903a118721b9",
+                      "name": "ValidationException",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"PowerDrawKva\": \"POWER_30_KVA\",\n  \"PowerPhase\": \"SINGLE_PHASE\",\n  \"PowerConnector\": \"L6_30P\",\n  \"PowerFeedDrop\": \"BELOW_RACK\",\n  \"UplinkGbps\": \"UPLINK_1G\",\n  \"UplinkCount\": \"UPLINK_COUNT_8\",\n  \"FiberOpticCableType\": \"MULTI_MODE\",\n  \"OpticalStandard\": \"OPTIC_100GBASE_SR4\",\n  \"MaximumSupportedWeightLbs\": \"MAX_1600_LBS\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/rackPhysicalProperties",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "rackPhysicalProperties"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-e93103dd-f093-442e-82fb-903a118721b9"
+                    },
+                    {
+                      "id": "0899b24c-7b84-4eb6-98b6-4187bf6fca8a",
+                      "name": "ConflictException",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"PowerDrawKva\": \"POWER_30_KVA\",\n  \"PowerPhase\": \"SINGLE_PHASE\",\n  \"PowerConnector\": \"L6_30P\",\n  \"PowerFeedDrop\": \"BELOW_RACK\",\n  \"UplinkGbps\": \"UPLINK_1G\",\n  \"UplinkCount\": \"UPLINK_COUNT_8\",\n  \"FiberOpticCableType\": \"MULTI_MODE\",\n  \"OpticalStandard\": \"OPTIC_100GBASE_SR4\",\n  \"MaximumSupportedWeightLbs\": \"MAX_1600_LBS\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/rackPhysicalProperties",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "rackPhysicalProperties"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-0899b24c-7b84-4eb6-98b6-4187bf6fca8a"
+                    },
+                    {
+                      "id": "aaee2592-76d6-4490-9aae-1ad5b76a7161",
+                      "name": "NotFoundException",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"PowerDrawKva\": \"POWER_30_KVA\",\n  \"PowerPhase\": \"SINGLE_PHASE\",\n  \"PowerConnector\": \"L6_30P\",\n  \"PowerFeedDrop\": \"BELOW_RACK\",\n  \"UplinkGbps\": \"UPLINK_1G\",\n  \"UplinkCount\": \"UPLINK_COUNT_8\",\n  \"FiberOpticCableType\": \"MULTI_MODE\",\n  \"OpticalStandard\": \"OPTIC_100GBASE_SR4\",\n  \"MaximumSupportedWeightLbs\": \"MAX_1600_LBS\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/rackPhysicalProperties",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "rackPhysicalProperties"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-aaee2592-76d6-4490-9aae-1ad5b76a7161"
+                    },
+                    {
+                      "id": "bdc98c33-bef4-4d4e-9e41-a3e65afedb74",
+                      "name": "AccessDeniedException",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"PowerDrawKva\": \"POWER_30_KVA\",\n  \"PowerPhase\": \"SINGLE_PHASE\",\n  \"PowerConnector\": \"L6_30P\",\n  \"PowerFeedDrop\": \"BELOW_RACK\",\n  \"UplinkGbps\": \"UPLINK_1G\",\n  \"UplinkCount\": \"UPLINK_COUNT_8\",\n  \"FiberOpticCableType\": \"MULTI_MODE\",\n  \"OpticalStandard\": \"OPTIC_100GBASE_SR4\",\n  \"MaximumSupportedWeightLbs\": \"MAX_1600_LBS\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/rackPhysicalProperties",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "rackPhysicalProperties"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-bdc98c33-bef4-4d4e-9e41-a3e65afedb74"
+                    },
+                    {
+                      "id": "59ca0da9-6ed9-496b-9284-7cf432169542",
+                      "name": "InternalServerException",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"PowerDrawKva\": \"POWER_30_KVA\",\n  \"PowerPhase\": \"SINGLE_PHASE\",\n  \"PowerConnector\": \"L6_30P\",\n  \"PowerFeedDrop\": \"BELOW_RACK\",\n  \"UplinkGbps\": \"UPLINK_1G\",\n  \"UplinkCount\": \"UPLINK_COUNT_8\",\n  \"FiberOpticCableType\": \"MULTI_MODE\",\n  \"OpticalStandard\": \"OPTIC_100GBASE_SR4\",\n  \"MaximumSupportedWeightLbs\": \"MAX_1600_LBS\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sites/:SiteId/rackPhysicalProperties",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sites",
+                            ":SiteId",
+                            "rackPhysicalProperties"
+                          ],
+                          "variable": [
+                            {
+                              "key": "SiteId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:24.000Z",
+                      "updatedAt": "2026-07-28T10:41:24.000Z",
+                      "uid": "35240-59ca0da9-6ed9-496b-9284-7cf432169542"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-895a17fd-ed1e-46cb-930b-1fc8f56b4be8"
+                }
+              ],
+              "id": "737af854-a952-4cf8-9ae6-6bce19f8af75",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-737af854-a952-4cf8-9ae6-6bce19f8af75"
+            },
+            {
+              "name": "Amazon Outposts Delete Site",
+              "id": "a3594914-c991-4a6f-a7ca-7f429dc3dcb2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sites/:SiteId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites",
+                    ":SiteId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "f3560189-efa8-4fd1-9e66-45d3ccb92848",
+                      "key": "SiteId",
+                      "value": "arn:aws:outposts:j0qqn5lvr:642229564695:site/os-ad3ac7add710b90b8",
+                      "description": "(Required)  The ID or the Amazon Resource Name (ARN) of the site. "
+                    }
+                  ]
+                },
+                "description": "Deletes the specified site."
+              },
+              "response": [
+                {
+                  "id": "e0e2a11a-0f23-46b9-ab16-2bf2c09ee579",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-e0e2a11a-0f23-46b9-ab16-2bf2c09ee579"
+                },
+                {
+                  "id": "cdf94066-4ab5-4060-aad5-8d7caf38d2be",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-cdf94066-4ab5-4060-aad5-8d7caf38d2be"
+                },
+                {
+                  "id": "8790d915-e633-490f-afa4-7efade08ae84",
+                  "name": "ConflictException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-8790d915-e633-490f-afa4-7efade08ae84"
+                },
+                {
+                  "id": "0d287708-9396-4a4e-8bda-ec8ee01a341a",
+                  "name": "NotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-0d287708-9396-4a4e-8bda-ec8ee01a341a"
+                },
+                {
+                  "id": "5deaafd1-472a-4c31-87ce-85755ee2489b",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-5deaafd1-472a-4c31-87ce-85755ee2489b"
+                },
+                {
+                  "id": "15fc8c27-9aeb-40a6-8038-1c984ee72343",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-15fc8c27-9aeb-40a6-8038-1c984ee72343"
+                }
+              ],
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-a3594914-c991-4a6f-a7ca-7f429dc3dcb2"
+            },
+            {
+              "name": "Amazon Outposts Get Site",
+              "id": "2cbedebc-35d4-43c2-bbdf-7db728d8f0ab",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sites/:SiteId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites",
+                    ":SiteId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "d9eb7645-a7ed-4c06-84ad-950b86d4caea",
+                      "key": "SiteId",
+                      "value": "arn:aws:outposts:j0qqn5lvr:642229564695:site/os-ad3ac7add710b90b8",
+                      "description": "(Required)  The ID or the Amazon Resource Name (ARN) of the site. "
+                    }
+                  ]
+                },
+                "description": "Gets information about the specified Outpost site."
+              },
+              "response": [
+                {
+                  "id": "f984b604-7577-449d-a7d3-233a48406c94",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Site\": {\n    \"SiteId\": \"os-66d11bd146abf9678\",\n    \"AccountId\": \"395874614611\",\n    \"Name\": \">Bq;K99_\",\n    \"Description\": \"kx\",\n    \"Tags\": {\n      \"dolor_ea\": \"JgDWXX\",\n      \"sed_3\": \"ZHrh?\",\n      \"aliquipc\": \"R1x(n:G~\",\n      \"ullamco_44\": \"ooX]\",\n      \"deserunt_4\": \"_`b\",\n      \"dod8\": \"D>#_&v}\",\n      \"anim4\": \"M5Tdv|elEd\",\n      \"commodo_0ad\": \"VJpLVDQJH\",\n      \"officia4c\": \"I`\\\\/O#I\",\n      \"cupidatat9\": \"0pdk~\",\n      \"irure_c72\": \"Ce\",\n      \"eiusmod_ce7\": \"xQ\",\n      \"non4db\": \"h` )\\\\=\",\n      \"esse6\": \"(u\",\n      \"dolor3\": \"<rZ0vhu&k\",\n      \"et58e\": \"2Du^*1$\",\n      \"voluptate_445\": \"^\\\"+R!>k H\",\n      \"ad6b\": \"t?p.5<n\",\n      \"qui50\": \"ww/\"\n    },\n    \"SiteArn\": \"arn:aws:outposts:bambqaw:097087940688:site/os-cb6b91b9c7a09a569\",\n    \"Notes\": \"5c^]/\",\n    \"OperatingAddressCountryCode\": \"NJ\",\n    \"OperatingAddressStateOrRegion\": \"TJp5/Sv\",\n    \"OperatingAddressCity\": \":Z\",\n    \"RackPhysicalProperties\": {\n      \"PowerDrawKva\": \"POWER_10_KVA\",\n      \"PowerPhase\": \"THREE_PHASE\",\n      \"PowerConnector\": \"L6_30P\",\n      \"PowerFeedDrop\": \"ABOVE_RACK\",\n      \"UplinkGbps\": \"UPLINK_10G\",\n      \"UplinkCount\": \"UPLINK_COUNT_3\",\n      \"FiberOpticCableType\": \"SINGLE_MODE\",\n      \"OpticalStandard\": \"OPTIC_1000BASE_LX\",\n      \"MaximumSupportedWeightLbs\": \"NO_LIMIT\"\n    }\n  }\n}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-f984b604-7577-449d-a7d3-233a48406c94"
+                },
+                {
+                  "id": "d747eed5-ef32-43f5-930a-bab0a3912bd0",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-d747eed5-ef32-43f5-930a-bab0a3912bd0"
+                },
+                {
+                  "id": "71f33245-29c4-40c8-99dc-038f3b2730f2",
+                  "name": "NotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-71f33245-29c4-40c8-99dc-038f3b2730f2"
+                },
+                {
+                  "id": "43c6bfe3-eae5-4256-a9ce-16b9c1e36c08",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-43c6bfe3-eae5-4256-a9ce-16b9c1e36c08"
+                },
+                {
+                  "id": "05427f8f-8c37-45c7-b570-9e267a75a6d4",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-05427f8f-8c37-45c7-b570-9e267a75a6d4"
+                }
+              ],
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-2cbedebc-35d4-43c2-bbdf-7db728d8f0ab"
+            },
+            {
+              "name": "Amazon Outposts Update Site",
+              "id": "0d4da0a0-04d0-4c05-83ab-57e332d8588c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"%377+;ln*I%\",\n  \"Description\": \"@t\\\"-\",\n  \"Notes\": \"v'r$9VmW\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/sites/:SiteId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites",
+                    ":SiteId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "2cb5eda0-faad-4d34-9a68-b27b1a12cb3b",
+                      "key": "SiteId",
+                      "value": "arn:aws:outposts:j0qqn5lvr:642229564695:site/os-ad3ac7add710b90b8",
+                      "description": "(Required)  The ID or the Amazon Resource Name (ARN) of the site. "
+                    }
+                  ]
+                },
+                "description": "Updates the specified site."
+              },
+              "response": [
+                {
+                  "id": "8990e184-0a2a-4de9-aec6-d5f242974e71",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"%377+;ln*I%\",\n  \"Description\": \"@t\\\"-\",\n  \"Notes\": \"v'r$9VmW\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Site\": {\n    \"SiteId\": \"os-66d11bd146abf9678\",\n    \"AccountId\": \"395874614611\",\n    \"Name\": \">Bq;K99_\",\n    \"Description\": \"kx\",\n    \"Tags\": {\n      \"dolor_ea\": \"JgDWXX\",\n      \"sed_3\": \"ZHrh?\",\n      \"aliquipc\": \"R1x(n:G~\",\n      \"ullamco_44\": \"ooX]\",\n      \"deserunt_4\": \"_`b\",\n      \"dod8\": \"D>#_&v}\",\n      \"anim4\": \"M5Tdv|elEd\",\n      \"commodo_0ad\": \"VJpLVDQJH\",\n      \"officia4c\": \"I`\\\\/O#I\",\n      \"cupidatat9\": \"0pdk~\",\n      \"irure_c72\": \"Ce\",\n      \"eiusmod_ce7\": \"xQ\",\n      \"non4db\": \"h` )\\\\=\",\n      \"esse6\": \"(u\",\n      \"dolor3\": \"<rZ0vhu&k\",\n      \"et58e\": \"2Du^*1$\",\n      \"voluptate_445\": \"^\\\"+R!>k H\",\n      \"ad6b\": \"t?p.5<n\",\n      \"qui50\": \"ww/\"\n    },\n    \"SiteArn\": \"arn:aws:outposts:bambqaw:097087940688:site/os-cb6b91b9c7a09a569\",\n    \"Notes\": \"5c^]/\",\n    \"OperatingAddressCountryCode\": \"NJ\",\n    \"OperatingAddressStateOrRegion\": \"TJp5/Sv\",\n    \"OperatingAddressCity\": \":Z\",\n    \"RackPhysicalProperties\": {\n      \"PowerDrawKva\": \"POWER_10_KVA\",\n      \"PowerPhase\": \"THREE_PHASE\",\n      \"PowerConnector\": \"L6_30P\",\n      \"PowerFeedDrop\": \"ABOVE_RACK\",\n      \"UplinkGbps\": \"UPLINK_10G\",\n      \"UplinkCount\": \"UPLINK_COUNT_3\",\n      \"FiberOpticCableType\": \"SINGLE_MODE\",\n      \"OpticalStandard\": \"OPTIC_1000BASE_LX\",\n      \"MaximumSupportedWeightLbs\": \"NO_LIMIT\"\n    }\n  }\n}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-8990e184-0a2a-4de9-aec6-d5f242974e71"
+                },
+                {
+                  "id": "03f5b4b9-2881-4d67-8c59-ae2a7bbbbb83",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"%377+;ln*I%\",\n  \"Description\": \"@t\\\"-\",\n  \"Notes\": \"v'r$9VmW\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-03f5b4b9-2881-4d67-8c59-ae2a7bbbbb83"
+                },
+                {
+                  "id": "95cd2e57-cbdd-4213-a996-a8fb5911d879",
+                  "name": "ConflictException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"%377+;ln*I%\",\n  \"Description\": \"@t\\\"-\",\n  \"Notes\": \"v'r$9VmW\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-95cd2e57-cbdd-4213-a996-a8fb5911d879"
+                },
+                {
+                  "id": "addb8982-aa77-497b-867c-60852aeeeb82",
+                  "name": "NotFoundException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"%377+;ln*I%\",\n  \"Description\": \"@t\\\"-\",\n  \"Notes\": \"v'r$9VmW\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-addb8982-aa77-497b-867c-60852aeeeb82"
+                },
+                {
+                  "id": "b815b015-8bac-4732-ae72-c828b0c627e7",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"%377+;ln*I%\",\n  \"Description\": \"@t\\\"-\",\n  \"Notes\": \"v'r$9VmW\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-b815b015-8bac-4732-ae72-c828b0c627e7"
+                },
+                {
+                  "id": "d3568901-b712-4c3c-a9e9-8e885393e4ea",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"%377+;ln*I%\",\n  \"Description\": \"@t\\\"-\",\n  \"Notes\": \"v'r$9VmW\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sites/:SiteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sites",
+                        ":SiteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "SiteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:24.000Z",
+                  "updatedAt": "2026-07-28T10:41:24.000Z",
+                  "uid": "35240-d3568901-b712-4c3c-a9e9-8e885393e4ea"
+                }
+              ],
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-0d4da0a0-04d0-4c05-83ab-57e332d8588c"
+            }
+          ],
+          "id": "991c254d-328e-45d1-b1fb-d1e55c953b25",
+          "createdAt": "2026-07-28T10:41:24.000Z",
+          "updatedAt": "2026-07-28T10:41:24.000Z",
+          "uid": "35240-991c254d-328e-45d1-b1fb-d1e55c953b25"
+        },
+        {
+          "name": "Amazon Outposts Create Site",
+          "id": "f7ebb8de-88c9-42f4-b8c7-6810cfe65f90",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"vP~Y'/T\",\n  \"Description\": \"_\\\\H8;wu\\\"Byb\",\n  \"Notes\": \"WI\",\n  \"Tags\": {\n    \"ut89e\": \"st8fbdPD!\",\n    \"in_57\": \"a :^0L'X\",\n    \"est_db3\": \".=?~\",\n    \"ut_6\": \"0#F$#\",\n    \"sunt_2\": \"X9\",\n    \"est_84\": \"$\",\n    \"eiusmod_3_\": \"\\\\'Wc_ta/\",\n    \"sunt8f6\": \"\\\\y'^[Y$\\\\l6\\\\\",\n    \"id9dd\": \"Zq6zPH2*Hgo\",\n    \"Duis_e\": \"&5[\",\n    \"do_\": \"_%P\",\n    \"commodo_21\": \"(w~Q[\"\n  },\n  \"OperatingAddress\": {\n    \"ContactName\": \"h(qGnt.&]\",\n    \"ContactPhoneNumber\": \"em^eIO5KJ\",\n    \"AddressLine1\": \"Yp]j\",\n    \"AddressLine2\": \"]?~6++y}e\\\"\",\n    \"AddressLine3\": \"+WfZ<\",\n    \"City\": \"617\",\n    \"StateOrRegion\": \"O|H\",\n    \"DistrictOrCounty\": \"N]\",\n    \"PostalCode\": \"MwfRqslRk-\",\n    \"CountryCode\": \"DB\",\n    \"Municipality\": \"o`q3D\"\n  },\n  \"ShippingAddress\": {\n    \"ContactName\": \"hrpLs58\\\\\",\n    \"ContactPhoneNumber\": \"k-mBlA\",\n    \"AddressLine1\": \"Ii27WUc3\",\n    \"AddressLine2\": \"Gb/bSI.\",\n    \"AddressLine3\": \"!\",\n    \"City\": \"&._5(BEt0\",\n    \"StateOrRegion\": \"=-h{sbDPEr\",\n    \"DistrictOrCounty\": \"]sV14\",\n    \"PostalCode\": \"9ltve\",\n    \"CountryCode\": \"FI\",\n    \"Municipality\": \"5%_\"\n  },\n  \"RackPhysicalProperties\": {\n    \"PowerDrawKva\": \"POWER_30_KVA\",\n    \"PowerPhase\": \"THREE_PHASE\",\n    \"PowerConnector\": \"IEC309\",\n    \"PowerFeedDrop\": \"ABOVE_RACK\",\n    \"UplinkGbps\": \"UPLINK_40G\",\n    \"UplinkCount\": \"UPLINK_COUNT_8\",\n    \"FiberOpticCableType\": \"SINGLE_MODE\",\n    \"OpticalStandard\": \"OPTIC_10GBASE_LR\",\n    \"MaximumSupportedWeightLbs\": \"MAX_1800_LBS\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/sites",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "sites"
+              ]
+            },
+            "description": " Creates a site for an Outpost. "
+          },
+          "response": [
+            {
+              "id": "c906c799-271c-4197-a739-a64ca628199b",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"vP~Y'/T\",\n  \"Description\": \"_\\\\H8;wu\\\"Byb\",\n  \"Notes\": \"WI\",\n  \"Tags\": {\n    \"ut89e\": \"st8fbdPD!\",\n    \"in_57\": \"a :^0L'X\",\n    \"est_db3\": \".=?~\",\n    \"ut_6\": \"0#F$#\",\n    \"sunt_2\": \"X9\",\n    \"est_84\": \"$\",\n    \"eiusmod_3_\": \"\\\\'Wc_ta/\",\n    \"sunt8f6\": \"\\\\y'^[Y$\\\\l6\\\\\",\n    \"id9dd\": \"Zq6zPH2*Hgo\",\n    \"Duis_e\": \"&5[\",\n    \"do_\": \"_%P\",\n    \"commodo_21\": \"(w~Q[\"\n  },\n  \"OperatingAddress\": {\n    \"ContactName\": \"h(qGnt.&]\",\n    \"ContactPhoneNumber\": \"em^eIO5KJ\",\n    \"AddressLine1\": \"Yp]j\",\n    \"AddressLine2\": \"]?~6++y}e\\\"\",\n    \"AddressLine3\": \"+WfZ<\",\n    \"City\": \"617\",\n    \"StateOrRegion\": \"O|H\",\n    \"DistrictOrCounty\": \"N]\",\n    \"PostalCode\": \"MwfRqslRk-\",\n    \"CountryCode\": \"DB\",\n    \"Municipality\": \"o`q3D\"\n  },\n  \"ShippingAddress\": {\n    \"ContactName\": \"hrpLs58\\\\\",\n    \"ContactPhoneNumber\": \"k-mBlA\",\n    \"AddressLine1\": \"Ii27WUc3\",\n    \"AddressLine2\": \"Gb/bSI.\",\n    \"AddressLine3\": \"!\",\n    \"City\": \"&._5(BEt0\",\n    \"StateOrRegion\": \"=-h{sbDPEr\",\n    \"DistrictOrCounty\": \"]sV14\",\n    \"PostalCode\": \"9ltve\",\n    \"CountryCode\": \"FI\",\n    \"Municipality\": \"5%_\"\n  },\n  \"RackPhysicalProperties\": {\n    \"PowerDrawKva\": \"POWER_30_KVA\",\n    \"PowerPhase\": \"THREE_PHASE\",\n    \"PowerConnector\": \"IEC309\",\n    \"PowerFeedDrop\": \"ABOVE_RACK\",\n    \"UplinkGbps\": \"UPLINK_40G\",\n    \"UplinkCount\": \"UPLINK_COUNT_8\",\n    \"FiberOpticCableType\": \"SINGLE_MODE\",\n    \"OpticalStandard\": \"OPTIC_10GBASE_LR\",\n    \"MaximumSupportedWeightLbs\": \"MAX_1800_LBS\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/sites",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Site\": {\n    \"SiteId\": \"os-66d11bd146abf9678\",\n    \"AccountId\": \"395874614611\",\n    \"Name\": \">Bq;K99_\",\n    \"Description\": \"kx\",\n    \"Tags\": {\n      \"dolor_ea\": \"JgDWXX\",\n      \"sed_3\": \"ZHrh?\",\n      \"aliquipc\": \"R1x(n:G~\",\n      \"ullamco_44\": \"ooX]\",\n      \"deserunt_4\": \"_`b\",\n      \"dod8\": \"D>#_&v}\",\n      \"anim4\": \"M5Tdv|elEd\",\n      \"commodo_0ad\": \"VJpLVDQJH\",\n      \"officia4c\": \"I`\\\\/O#I\",\n      \"cupidatat9\": \"0pdk~\",\n      \"irure_c72\": \"Ce\",\n      \"eiusmod_ce7\": \"xQ\",\n      \"non4db\": \"h` )\\\\=\",\n      \"esse6\": \"(u\",\n      \"dolor3\": \"<rZ0vhu&k\",\n      \"et58e\": \"2Du^*1$\",\n      \"voluptate_445\": \"^\\\"+R!>k H\",\n      \"ad6b\": \"t?p.5<n\",\n      \"qui50\": \"ww/\"\n    },\n    \"SiteArn\": \"arn:aws:outposts:bambqaw:097087940688:site/os-cb6b91b9c7a09a569\",\n    \"Notes\": \"5c^]/\",\n    \"OperatingAddressCountryCode\": \"NJ\",\n    \"OperatingAddressStateOrRegion\": \"TJp5/Sv\",\n    \"OperatingAddressCity\": \":Z\",\n    \"RackPhysicalProperties\": {\n      \"PowerDrawKva\": \"POWER_10_KVA\",\n      \"PowerPhase\": \"THREE_PHASE\",\n      \"PowerConnector\": \"L6_30P\",\n      \"PowerFeedDrop\": \"ABOVE_RACK\",\n      \"UplinkGbps\": \"UPLINK_10G\",\n      \"UplinkCount\": \"UPLINK_COUNT_3\",\n      \"FiberOpticCableType\": \"SINGLE_MODE\",\n      \"OpticalStandard\": \"OPTIC_1000BASE_LX\",\n      \"MaximumSupportedWeightLbs\": \"NO_LIMIT\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-c906c799-271c-4197-a739-a64ca628199b"
+            },
+            {
+              "id": "8711299d-699c-44a2-ab74-e59b1ed19660",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"vP~Y'/T\",\n  \"Description\": \"_\\\\H8;wu\\\"Byb\",\n  \"Notes\": \"WI\",\n  \"Tags\": {\n    \"ut89e\": \"st8fbdPD!\",\n    \"in_57\": \"a :^0L'X\",\n    \"est_db3\": \".=?~\",\n    \"ut_6\": \"0#F$#\",\n    \"sunt_2\": \"X9\",\n    \"est_84\": \"$\",\n    \"eiusmod_3_\": \"\\\\'Wc_ta/\",\n    \"sunt8f6\": \"\\\\y'^[Y$\\\\l6\\\\\",\n    \"id9dd\": \"Zq6zPH2*Hgo\",\n    \"Duis_e\": \"&5[\",\n    \"do_\": \"_%P\",\n    \"commodo_21\": \"(w~Q[\"\n  },\n  \"OperatingAddress\": {\n    \"ContactName\": \"h(qGnt.&]\",\n    \"ContactPhoneNumber\": \"em^eIO5KJ\",\n    \"AddressLine1\": \"Yp]j\",\n    \"AddressLine2\": \"]?~6++y}e\\\"\",\n    \"AddressLine3\": \"+WfZ<\",\n    \"City\": \"617\",\n    \"StateOrRegion\": \"O|H\",\n    \"DistrictOrCounty\": \"N]\",\n    \"PostalCode\": \"MwfRqslRk-\",\n    \"CountryCode\": \"DB\",\n    \"Municipality\": \"o`q3D\"\n  },\n  \"ShippingAddress\": {\n    \"ContactName\": \"hrpLs58\\\\\",\n    \"ContactPhoneNumber\": \"k-mBlA\",\n    \"AddressLine1\": \"Ii27WUc3\",\n    \"AddressLine2\": \"Gb/bSI.\",\n    \"AddressLine3\": \"!\",\n    \"City\": \"&._5(BEt0\",\n    \"StateOrRegion\": \"=-h{sbDPEr\",\n    \"DistrictOrCounty\": \"]sV14\",\n    \"PostalCode\": \"9ltve\",\n    \"CountryCode\": \"FI\",\n    \"Municipality\": \"5%_\"\n  },\n  \"RackPhysicalProperties\": {\n    \"PowerDrawKva\": \"POWER_30_KVA\",\n    \"PowerPhase\": \"THREE_PHASE\",\n    \"PowerConnector\": \"IEC309\",\n    \"PowerFeedDrop\": \"ABOVE_RACK\",\n    \"UplinkGbps\": \"UPLINK_40G\",\n    \"UplinkCount\": \"UPLINK_COUNT_8\",\n    \"FiberOpticCableType\": \"SINGLE_MODE\",\n    \"OpticalStandard\": \"OPTIC_10GBASE_LR\",\n    \"MaximumSupportedWeightLbs\": \"MAX_1800_LBS\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/sites",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-8711299d-699c-44a2-ab74-e59b1ed19660"
+            },
+            {
+              "id": "bd49dd80-7e25-4d72-85cc-e7e691c0e2ee",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"vP~Y'/T\",\n  \"Description\": \"_\\\\H8;wu\\\"Byb\",\n  \"Notes\": \"WI\",\n  \"Tags\": {\n    \"ut89e\": \"st8fbdPD!\",\n    \"in_57\": \"a :^0L'X\",\n    \"est_db3\": \".=?~\",\n    \"ut_6\": \"0#F$#\",\n    \"sunt_2\": \"X9\",\n    \"est_84\": \"$\",\n    \"eiusmod_3_\": \"\\\\'Wc_ta/\",\n    \"sunt8f6\": \"\\\\y'^[Y$\\\\l6\\\\\",\n    \"id9dd\": \"Zq6zPH2*Hgo\",\n    \"Duis_e\": \"&5[\",\n    \"do_\": \"_%P\",\n    \"commodo_21\": \"(w~Q[\"\n  },\n  \"OperatingAddress\": {\n    \"ContactName\": \"h(qGnt.&]\",\n    \"ContactPhoneNumber\": \"em^eIO5KJ\",\n    \"AddressLine1\": \"Yp]j\",\n    \"AddressLine2\": \"]?~6++y}e\\\"\",\n    \"AddressLine3\": \"+WfZ<\",\n    \"City\": \"617\",\n    \"StateOrRegion\": \"O|H\",\n    \"DistrictOrCounty\": \"N]\",\n    \"PostalCode\": \"MwfRqslRk-\",\n    \"CountryCode\": \"DB\",\n    \"Municipality\": \"o`q3D\"\n  },\n  \"ShippingAddress\": {\n    \"ContactName\": \"hrpLs58\\\\\",\n    \"ContactPhoneNumber\": \"k-mBlA\",\n    \"AddressLine1\": \"Ii27WUc3\",\n    \"AddressLine2\": \"Gb/bSI.\",\n    \"AddressLine3\": \"!\",\n    \"City\": \"&._5(BEt0\",\n    \"StateOrRegion\": \"=-h{sbDPEr\",\n    \"DistrictOrCounty\": \"]sV14\",\n    \"PostalCode\": \"9ltve\",\n    \"CountryCode\": \"FI\",\n    \"Municipality\": \"5%_\"\n  },\n  \"RackPhysicalProperties\": {\n    \"PowerDrawKva\": \"POWER_30_KVA\",\n    \"PowerPhase\": \"THREE_PHASE\",\n    \"PowerConnector\": \"IEC309\",\n    \"PowerFeedDrop\": \"ABOVE_RACK\",\n    \"UplinkGbps\": \"UPLINK_40G\",\n    \"UplinkCount\": \"UPLINK_COUNT_8\",\n    \"FiberOpticCableType\": \"SINGLE_MODE\",\n    \"OpticalStandard\": \"OPTIC_10GBASE_LR\",\n    \"MaximumSupportedWeightLbs\": \"MAX_1800_LBS\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/sites",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-bd49dd80-7e25-4d72-85cc-e7e691c0e2ee"
+            },
+            {
+              "id": "c2e8b8a2-a939-4561-a9c3-186d61b16e1e",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"vP~Y'/T\",\n  \"Description\": \"_\\\\H8;wu\\\"Byb\",\n  \"Notes\": \"WI\",\n  \"Tags\": {\n    \"ut89e\": \"st8fbdPD!\",\n    \"in_57\": \"a :^0L'X\",\n    \"est_db3\": \".=?~\",\n    \"ut_6\": \"0#F$#\",\n    \"sunt_2\": \"X9\",\n    \"est_84\": \"$\",\n    \"eiusmod_3_\": \"\\\\'Wc_ta/\",\n    \"sunt8f6\": \"\\\\y'^[Y$\\\\l6\\\\\",\n    \"id9dd\": \"Zq6zPH2*Hgo\",\n    \"Duis_e\": \"&5[\",\n    \"do_\": \"_%P\",\n    \"commodo_21\": \"(w~Q[\"\n  },\n  \"OperatingAddress\": {\n    \"ContactName\": \"h(qGnt.&]\",\n    \"ContactPhoneNumber\": \"em^eIO5KJ\",\n    \"AddressLine1\": \"Yp]j\",\n    \"AddressLine2\": \"]?~6++y}e\\\"\",\n    \"AddressLine3\": \"+WfZ<\",\n    \"City\": \"617\",\n    \"StateOrRegion\": \"O|H\",\n    \"DistrictOrCounty\": \"N]\",\n    \"PostalCode\": \"MwfRqslRk-\",\n    \"CountryCode\": \"DB\",\n    \"Municipality\": \"o`q3D\"\n  },\n  \"ShippingAddress\": {\n    \"ContactName\": \"hrpLs58\\\\\",\n    \"ContactPhoneNumber\": \"k-mBlA\",\n    \"AddressLine1\": \"Ii27WUc3\",\n    \"AddressLine2\": \"Gb/bSI.\",\n    \"AddressLine3\": \"!\",\n    \"City\": \"&._5(BEt0\",\n    \"StateOrRegion\": \"=-h{sbDPEr\",\n    \"DistrictOrCounty\": \"]sV14\",\n    \"PostalCode\": \"9ltve\",\n    \"CountryCode\": \"FI\",\n    \"Municipality\": \"5%_\"\n  },\n  \"RackPhysicalProperties\": {\n    \"PowerDrawKva\": \"POWER_30_KVA\",\n    \"PowerPhase\": \"THREE_PHASE\",\n    \"PowerConnector\": \"IEC309\",\n    \"PowerFeedDrop\": \"ABOVE_RACK\",\n    \"UplinkGbps\": \"UPLINK_40G\",\n    \"UplinkCount\": \"UPLINK_COUNT_8\",\n    \"FiberOpticCableType\": \"SINGLE_MODE\",\n    \"OpticalStandard\": \"OPTIC_10GBASE_LR\",\n    \"MaximumSupportedWeightLbs\": \"MAX_1800_LBS\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/sites",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-c2e8b8a2-a939-4561-a9c3-186d61b16e1e"
+            },
+            {
+              "id": "56e7692f-01c8-4923-a15a-5aab91c72b2a",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"vP~Y'/T\",\n  \"Description\": \"_\\\\H8;wu\\\"Byb\",\n  \"Notes\": \"WI\",\n  \"Tags\": {\n    \"ut89e\": \"st8fbdPD!\",\n    \"in_57\": \"a :^0L'X\",\n    \"est_db3\": \".=?~\",\n    \"ut_6\": \"0#F$#\",\n    \"sunt_2\": \"X9\",\n    \"est_84\": \"$\",\n    \"eiusmod_3_\": \"\\\\'Wc_ta/\",\n    \"sunt8f6\": \"\\\\y'^[Y$\\\\l6\\\\\",\n    \"id9dd\": \"Zq6zPH2*Hgo\",\n    \"Duis_e\": \"&5[\",\n    \"do_\": \"_%P\",\n    \"commodo_21\": \"(w~Q[\"\n  },\n  \"OperatingAddress\": {\n    \"ContactName\": \"h(qGnt.&]\",\n    \"ContactPhoneNumber\": \"em^eIO5KJ\",\n    \"AddressLine1\": \"Yp]j\",\n    \"AddressLine2\": \"]?~6++y}e\\\"\",\n    \"AddressLine3\": \"+WfZ<\",\n    \"City\": \"617\",\n    \"StateOrRegion\": \"O|H\",\n    \"DistrictOrCounty\": \"N]\",\n    \"PostalCode\": \"MwfRqslRk-\",\n    \"CountryCode\": \"DB\",\n    \"Municipality\": \"o`q3D\"\n  },\n  \"ShippingAddress\": {\n    \"ContactName\": \"hrpLs58\\\\\",\n    \"ContactPhoneNumber\": \"k-mBlA\",\n    \"AddressLine1\": \"Ii27WUc3\",\n    \"AddressLine2\": \"Gb/bSI.\",\n    \"AddressLine3\": \"!\",\n    \"City\": \"&._5(BEt0\",\n    \"StateOrRegion\": \"=-h{sbDPEr\",\n    \"DistrictOrCounty\": \"]sV14\",\n    \"PostalCode\": \"9ltve\",\n    \"CountryCode\": \"FI\",\n    \"Municipality\": \"5%_\"\n  },\n  \"RackPhysicalProperties\": {\n    \"PowerDrawKva\": \"POWER_30_KVA\",\n    \"PowerPhase\": \"THREE_PHASE\",\n    \"PowerConnector\": \"IEC309\",\n    \"PowerFeedDrop\": \"ABOVE_RACK\",\n    \"UplinkGbps\": \"UPLINK_40G\",\n    \"UplinkCount\": \"UPLINK_COUNT_8\",\n    \"FiberOpticCableType\": \"SINGLE_MODE\",\n    \"OpticalStandard\": \"OPTIC_10GBASE_LR\",\n    \"MaximumSupportedWeightLbs\": \"MAX_1800_LBS\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/sites",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-56e7692f-01c8-4923-a15a-5aab91c72b2a"
+            },
+            {
+              "id": "d28ba9b5-66ce-44c5-a4a2-0bafd61137e7",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"vP~Y'/T\",\n  \"Description\": \"_\\\\H8;wu\\\"Byb\",\n  \"Notes\": \"WI\",\n  \"Tags\": {\n    \"ut89e\": \"st8fbdPD!\",\n    \"in_57\": \"a :^0L'X\",\n    \"est_db3\": \".=?~\",\n    \"ut_6\": \"0#F$#\",\n    \"sunt_2\": \"X9\",\n    \"est_84\": \"$\",\n    \"eiusmod_3_\": \"\\\\'Wc_ta/\",\n    \"sunt8f6\": \"\\\\y'^[Y$\\\\l6\\\\\",\n    \"id9dd\": \"Zq6zPH2*Hgo\",\n    \"Duis_e\": \"&5[\",\n    \"do_\": \"_%P\",\n    \"commodo_21\": \"(w~Q[\"\n  },\n  \"OperatingAddress\": {\n    \"ContactName\": \"h(qGnt.&]\",\n    \"ContactPhoneNumber\": \"em^eIO5KJ\",\n    \"AddressLine1\": \"Yp]j\",\n    \"AddressLine2\": \"]?~6++y}e\\\"\",\n    \"AddressLine3\": \"+WfZ<\",\n    \"City\": \"617\",\n    \"StateOrRegion\": \"O|H\",\n    \"DistrictOrCounty\": \"N]\",\n    \"PostalCode\": \"MwfRqslRk-\",\n    \"CountryCode\": \"DB\",\n    \"Municipality\": \"o`q3D\"\n  },\n  \"ShippingAddress\": {\n    \"ContactName\": \"hrpLs58\\\\\",\n    \"ContactPhoneNumber\": \"k-mBlA\",\n    \"AddressLine1\": \"Ii27WUc3\",\n    \"AddressLine2\": \"Gb/bSI.\",\n    \"AddressLine3\": \"!\",\n    \"City\": \"&._5(BEt0\",\n    \"StateOrRegion\": \"=-h{sbDPEr\",\n    \"DistrictOrCounty\": \"]sV14\",\n    \"PostalCode\": \"9ltve\",\n    \"CountryCode\": \"FI\",\n    \"Municipality\": \"5%_\"\n  },\n  \"RackPhysicalProperties\": {\n    \"PowerDrawKva\": \"POWER_30_KVA\",\n    \"PowerPhase\": \"THREE_PHASE\",\n    \"PowerConnector\": \"IEC309\",\n    \"PowerFeedDrop\": \"ABOVE_RACK\",\n    \"UplinkGbps\": \"UPLINK_40G\",\n    \"UplinkCount\": \"UPLINK_COUNT_8\",\n    \"FiberOpticCableType\": \"SINGLE_MODE\",\n    \"OpticalStandard\": \"OPTIC_10GBASE_LR\",\n    \"MaximumSupportedWeightLbs\": \"MAX_1800_LBS\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/sites",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-d28ba9b5-66ce-44c5-a4a2-0bafd61137e7"
+            }
+          ],
+          "createdAt": "2026-07-28T10:41:24.000Z",
+          "updatedAt": "2026-07-28T10:41:24.000Z",
+          "uid": "35240-f7ebb8de-88c9-42f4-b8c7-6810cfe65f90"
+        },
+        {
+          "name": "Amazon Outposts List Sites",
+          "id": "c0cdc695-386e-47f7-a1d2-6ef578fa79b3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/sites?NextToken=33289412%23%23o<&MaxResults=<integer>&OperatingAddressCountryCodeFilter=OM&OperatingAddressCountryCodeFilter=FG&OperatingAddressStateOrRegionFilter=~768&OperatingAddressStateOrRegionFilter=@\\Y.uw+&OperatingAddressCityFilter=~768&OperatingAddressCityFilter=@\\Y.uw+",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "sites"
+              ],
+              "query": [
+                {
+                  "key": "NextToken",
+                  "value": "33289412##o<"
+                },
+                {
+                  "key": "MaxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Filters the results by country code.",
+                  "key": "OperatingAddressCountryCodeFilter",
+                  "value": "OM"
+                },
+                {
+                  "description": "Filters the results by country code.",
+                  "key": "OperatingAddressCountryCodeFilter",
+                  "value": "FG"
+                },
+                {
+                  "description": "Filters the results by state or region.",
+                  "key": "OperatingAddressStateOrRegionFilter",
+                  "value": "~768"
+                },
+                {
+                  "description": "Filters the results by state or region.",
+                  "key": "OperatingAddressStateOrRegionFilter",
+                  "value": "@\\Y.uw+"
+                },
+                {
+                  "description": "Filters the results by city.",
+                  "key": "OperatingAddressCityFilter",
+                  "value": "~768"
+                },
+                {
+                  "description": "Filters the results by city.",
+                  "key": "OperatingAddressCityFilter",
+                  "value": "@\\Y.uw+"
+                }
+              ]
+            },
+            "description": "<p>Lists the Outpost sites for your Amazon Web Services account. Use filters to return specific results.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
+          },
+          "response": [
+            {
+              "id": "a7ca90c7-06d9-4d41-a6ca-1b2640fcfe28",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sites?NextToken=33289412%23%23o<&MaxResults=<integer>&OperatingAddressCountryCodeFilter=FG&OperatingAddressStateOrRegionFilter=@\\Y.uw+&OperatingAddressCityFilter=@\\Y.uw+",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites"
+                  ],
+                  "query": [
+                    {
+                      "key": "NextToken",
+                      "value": "33289412##o<"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filters the results by country code.",
+                      "key": "OperatingAddressCountryCodeFilter",
+                      "value": "FG"
+                    },
+                    {
+                      "description": "Filters the results by state or region.",
+                      "key": "OperatingAddressStateOrRegionFilter",
+                      "value": "@\\Y.uw+"
+                    },
+                    {
+                      "description": "Filters the results by city.",
+                      "key": "OperatingAddressCityFilter",
+                      "value": "@\\Y.uw+"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Sites\": [\n    {\n      \"SiteId\": \"os-1e2cc753dbaa68bf5\",\n      \"AccountId\": \"734008951545\",\n      \"Name\": \"$\",\n      \"Description\": \"$nJ[}\",\n      \"Tags\": {\n        \"exercitation_95b\": \".n\\\"\",\n        \"Uta_\": \"=b\",\n        \"culpa_1ab\": \"n\\\\sBkl'+\",\n        \"est_85\": \"QaT\\\"4\",\n        \"do_a\": \"eSl\",\n        \"cillum_5bd\": \";12c>Vy/pG`\",\n        \"cillumece\": \"E'b)A((\\\"\",\n        \"exercitationc7\": \">'UopAOCrDm\",\n        \"culpac6\": \"+\",\n        \"adipisicing3\": \"H+\",\n        \"ut_3\": \"A+QV{T\",\n        \"consequat_04\": \"5<zxvVXn2\",\n        \"eu_74\": \",;\",\n        \"quis268\": \"TK:b>=V8\"\n      },\n      \"SiteArn\": \"arn:awscoknnw-cwq:outposts:v3nx7asjc:835225890534:site/os-c73d268827e4ffe29\",\n      \"Notes\": \"RdZ\",\n      \"OperatingAddressCountryCode\": \"CT\",\n      \"OperatingAddressStateOrRegion\": \"lHSLv\",\n      \"OperatingAddressCity\": \"r.o7w\",\n      \"RackPhysicalProperties\": {\n        \"PowerDrawKva\": \"POWER_30_KVA\",\n        \"PowerPhase\": \"SINGLE_PHASE\",\n        \"PowerConnector\": \"IEC309\",\n        \"PowerFeedDrop\": \"BELOW_RACK\",\n        \"UplinkGbps\": \"UPLINK_40G\",\n        \"UplinkCount\": \"UPLINK_COUNT_6\",\n        \"FiberOpticCableType\": \"SINGLE_MODE\",\n        \"OpticalStandard\": \"OPTIC_10GBASE_IR\",\n        \"MaximumSupportedWeightLbs\": \"MAX_2000_LBS\"\n      }\n    },\n    {\n      \"SiteId\": \"arn:aws:outposts:l:629505238334:site/os-42138ddf62383d369\",\n      \"AccountId\": \"972486224039\",\n      \"Name\": \"w49/}Hfq\",\n      \"Description\": \"2|t+BzP\",\n      \"Tags\": {\n        \"Duis_b9\": \"5: 0\\\"I\",\n        \"ex_999\": \")\",\n        \"incididunt74\": \"0[z'}W(uDqx\",\n        \"nullac39\": \"w>\\\\}Sn4@uB\",\n        \"esse8\": \"{C:bE\"\n      },\n      \"SiteArn\": \"arn:aws:outposts:0j-2siscq:198585573680:site/os-2e42a41d1c1256f41\",\n      \"Notes\": \"cs^r5OiOTO\",\n      \"OperatingAddressCountryCode\": \"MV\",\n      \"OperatingAddressStateOrRegion\": \"d(YX$cj\",\n      \"OperatingAddressCity\": \"qIPnY^gd/\",\n      \"RackPhysicalProperties\": {\n        \"PowerDrawKva\": \"POWER_5_KVA\",\n        \"PowerPhase\": \"SINGLE_PHASE\",\n        \"PowerConnector\": \"L6_30P\",\n        \"PowerFeedDrop\": \"BELOW_RACK\",\n        \"UplinkGbps\": \"UPLINK_1G\",\n        \"UplinkCount\": \"UPLINK_COUNT_3\",\n        \"FiberOpticCableType\": \"MULTI_MODE\",\n        \"OpticalStandard\": \"OPTIC_1000BASE_SX\",\n        \"MaximumSupportedWeightLbs\": \"MAX_1400_LBS\"\n      }\n    }\n  ],\n  \"NextToken\": \"1831130##,\"\n}",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-a7ca90c7-06d9-4d41-a6ca-1b2640fcfe28"
+            },
+            {
+              "id": "8181c8c7-4c42-4786-8a38-7481f873d73c",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sites?NextToken=33289412%23%23o<&MaxResults=<integer>&OperatingAddressCountryCodeFilter=FG&OperatingAddressStateOrRegionFilter=@\\Y.uw+&OperatingAddressCityFilter=@\\Y.uw+",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites"
+                  ],
+                  "query": [
+                    {
+                      "key": "NextToken",
+                      "value": "33289412##o<"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filters the results by country code.",
+                      "key": "OperatingAddressCountryCodeFilter",
+                      "value": "FG"
+                    },
+                    {
+                      "description": "Filters the results by state or region.",
+                      "key": "OperatingAddressStateOrRegionFilter",
+                      "value": "@\\Y.uw+"
+                    },
+                    {
+                      "description": "Filters the results by city.",
+                      "key": "OperatingAddressCityFilter",
+                      "value": "@\\Y.uw+"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-8181c8c7-4c42-4786-8a38-7481f873d73c"
+            },
+            {
+              "id": "40db0f6b-8dc9-4e21-96ee-361bcc9b1e62",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sites?NextToken=33289412%23%23o<&MaxResults=<integer>&OperatingAddressCountryCodeFilter=FG&OperatingAddressStateOrRegionFilter=@\\Y.uw+&OperatingAddressCityFilter=@\\Y.uw+",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites"
+                  ],
+                  "query": [
+                    {
+                      "key": "NextToken",
+                      "value": "33289412##o<"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filters the results by country code.",
+                      "key": "OperatingAddressCountryCodeFilter",
+                      "value": "FG"
+                    },
+                    {
+                      "description": "Filters the results by state or region.",
+                      "key": "OperatingAddressStateOrRegionFilter",
+                      "value": "@\\Y.uw+"
+                    },
+                    {
+                      "description": "Filters the results by city.",
+                      "key": "OperatingAddressCityFilter",
+                      "value": "@\\Y.uw+"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-40db0f6b-8dc9-4e21-96ee-361bcc9b1e62"
+            },
+            {
+              "id": "158a6e4d-e04e-4c1b-83bb-8eb14b90db16",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sites?NextToken=33289412%23%23o<&MaxResults=<integer>&OperatingAddressCountryCodeFilter=FG&OperatingAddressStateOrRegionFilter=@\\Y.uw+&OperatingAddressCityFilter=@\\Y.uw+",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sites"
+                  ],
+                  "query": [
+                    {
+                      "key": "NextToken",
+                      "value": "33289412##o<"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filters the results by country code.",
+                      "key": "OperatingAddressCountryCodeFilter",
+                      "value": "FG"
+                    },
+                    {
+                      "description": "Filters the results by state or region.",
+                      "key": "OperatingAddressStateOrRegionFilter",
+                      "value": "@\\Y.uw+"
+                    },
+                    {
+                      "description": "Filters the results by city.",
+                      "key": "OperatingAddressCityFilter",
+                      "value": "@\\Y.uw+"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:24.000Z",
+              "updatedAt": "2026-07-28T10:41:24.000Z",
+              "uid": "35240-158a6e4d-e04e-4c1b-83bb-8eb14b90db16"
+            }
+          ],
+          "createdAt": "2026-07-28T10:41:24.000Z",
+          "updatedAt": "2026-07-28T10:41:24.000Z",
+          "uid": "35240-c0cdc695-386e-47f7-a1d2-6ef578fa79b3"
+        }
+      ],
+      "id": "42676c67-dceb-4ec6-ac19-e36d72cd32b9",
+      "createdAt": "2026-07-28T10:41:24.000Z",
+      "updatedAt": "2026-07-28T10:41:24.000Z",
+      "uid": "35240-42676c67-dceb-4ec6-ac19-e36d72cd32b9"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://outposts.{{region}}.amazonaws.com"
+    }
+  ]
+}

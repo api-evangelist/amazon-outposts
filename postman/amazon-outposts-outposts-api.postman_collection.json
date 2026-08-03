@@ -1,0 +1,3830 @@
+{
+  "info": {
+    "_postman_id": "8ae611d5-4b26-4559-aca2-bdda23eff111",
+    "name": "AWS Catalog Outposts API",
+    "description": "Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services infrastructure, APIs, and tools to customer premises. By providing local access to Amazon Web Services managed infrastructure, Amazon Web Services Outposts enables customers to build and run applications on premises using the same programming interfaces as in Amazon Web Services Regions, while using local compute and storage resources for lower latency and local data processing needs.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:41:15.000Z",
+    "updatedAt": "2026-07-28T10:41:15.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8ae611d5-4b26-4559-aca2-bdda23eff111"
+  },
+  "item": [
+    {
+      "name": "outposts",
+      "item": [
+        {
+          "name": "{OutpostId}",
+          "item": [
+            {
+              "name": "instanceTypes",
+              "item": [
+                {
+                  "name": "Amazon Outposts Get Outpost Instance Types",
+                  "id": "b52524cf-63c5-4878-9e2d-e6bd1f3bf438",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId/instanceTypes?NextToken=41445528716%23%23z;M06s}!!5D&MaxResults=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId",
+                        "instanceTypes"
+                      ],
+                      "query": [
+                        {
+                          "key": "NextToken",
+                          "value": "41445528716##z;M06s}!!5D"
+                        },
+                        {
+                          "key": "MaxResults",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "9a1ddedf-f696-42cc-bd1e-5efb203fc129",
+                          "key": "OutpostId",
+                          "value": "op-4569ec148f4df850d",
+                          "description": "(Required)  The ID or the Amazon Resource Name (ARN) of the Outpost. "
+                        }
+                      ]
+                    },
+                    "description": "Gets the instance types for the specified Outpost."
+                  },
+                  "response": [
+                    {
+                      "id": "3c16050e-a8ee-4e74-bcdd-b02e21c03060",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/outposts/:OutpostId/instanceTypes?NextToken=41445528716%23%23z;M06s}!!5D&MaxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "outposts",
+                            ":OutpostId",
+                            "instanceTypes"
+                          ],
+                          "query": [
+                            {
+                              "key": "NextToken",
+                              "value": "41445528716##z;M06s}!!5D"
+                            },
+                            {
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "OutpostId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"InstanceTypes\": [\n    {\n      \"InstanceType\": \"<string>\"\n    },\n    {\n      \"InstanceType\": \"<string>\"\n    }\n  ],\n  \"NextToken\": \"8817039608##\\\\@}V.I\",\n  \"OutpostId\": \"arn:awsiyon-garfec:outposts:q8jge5:956497591216:outpost/op-06422aa3db9850518\",\n  \"OutpostArn\": \"arn:aws:outposts:-3-ldkpe:667163375064:outpost/op-da774fa4e7b6aedf4\"\n}",
+                      "createdAt": "2026-07-28T10:41:15.000Z",
+                      "updatedAt": "2026-07-28T10:41:15.000Z",
+                      "uid": "35240-3c16050e-a8ee-4e74-bcdd-b02e21c03060"
+                    },
+                    {
+                      "id": "e7a54d69-7e0b-4e92-aab5-24a00cefe125",
+                      "name": "ValidationException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/outposts/:OutpostId/instanceTypes?NextToken=41445528716%23%23z;M06s}!!5D&MaxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "outposts",
+                            ":OutpostId",
+                            "instanceTypes"
+                          ],
+                          "query": [
+                            {
+                              "key": "NextToken",
+                              "value": "41445528716##z;M06s}!!5D"
+                            },
+                            {
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "OutpostId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:15.000Z",
+                      "updatedAt": "2026-07-28T10:41:15.000Z",
+                      "uid": "35240-e7a54d69-7e0b-4e92-aab5-24a00cefe125"
+                    },
+                    {
+                      "id": "16a4b103-2ac7-44ae-9ec4-7e74f8ec622e",
+                      "name": "NotFoundException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/outposts/:OutpostId/instanceTypes?NextToken=41445528716%23%23z;M06s}!!5D&MaxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "outposts",
+                            ":OutpostId",
+                            "instanceTypes"
+                          ],
+                          "query": [
+                            {
+                              "key": "NextToken",
+                              "value": "41445528716##z;M06s}!!5D"
+                            },
+                            {
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "OutpostId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:15.000Z",
+                      "updatedAt": "2026-07-28T10:41:15.000Z",
+                      "uid": "35240-16a4b103-2ac7-44ae-9ec4-7e74f8ec622e"
+                    },
+                    {
+                      "id": "e0405109-9008-4b6b-99d4-2dd1a5e70066",
+                      "name": "AccessDeniedException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/outposts/:OutpostId/instanceTypes?NextToken=41445528716%23%23z;M06s}!!5D&MaxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "outposts",
+                            ":OutpostId",
+                            "instanceTypes"
+                          ],
+                          "query": [
+                            {
+                              "key": "NextToken",
+                              "value": "41445528716##z;M06s}!!5D"
+                            },
+                            {
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "OutpostId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:15.000Z",
+                      "updatedAt": "2026-07-28T10:41:15.000Z",
+                      "uid": "35240-e0405109-9008-4b6b-99d4-2dd1a5e70066"
+                    },
+                    {
+                      "id": "548d144d-622a-4b5e-913e-4ab6321d2eb6",
+                      "name": "InternalServerException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/outposts/:OutpostId/instanceTypes?NextToken=41445528716%23%23z;M06s}!!5D&MaxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "outposts",
+                            ":OutpostId",
+                            "instanceTypes"
+                          ],
+                          "query": [
+                            {
+                              "key": "NextToken",
+                              "value": "41445528716##z;M06s}!!5D"
+                            },
+                            {
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "OutpostId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:15.000Z",
+                      "updatedAt": "2026-07-28T10:41:15.000Z",
+                      "uid": "35240-548d144d-622a-4b5e-913e-4ab6321d2eb6"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-b52524cf-63c5-4878-9e2d-e6bd1f3bf438"
+                }
+              ],
+              "id": "e33caf2e-1230-4a7a-a8b6-5f171ff6e2b8",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-e33caf2e-1230-4a7a-a8b6-5f171ff6e2b8"
+            },
+            {
+              "name": "assets",
+              "item": [
+                {
+                  "name": "Amazon Outposts List Assets",
+                  "id": "4f5c1086-90bb-4517-8737-d36d1a11a8da",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId/assets?HostIdFilter=vSex&HostIdFilter= &MaxResults=<integer>&NextToken=41445528716%23%23z;M06s}!!5D&StatusFilter=ACTIVE",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId",
+                        "assets"
+                      ],
+                      "query": [
+                        {
+                          "description": "Filters the results by the host ID of a Dedicated Host.",
+                          "key": "HostIdFilter",
+                          "value": "vSex"
+                        },
+                        {
+                          "description": "Filters the results by the host ID of a Dedicated Host.",
+                          "key": "HostIdFilter",
+                          "value": " "
+                        },
+                        {
+                          "key": "MaxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "NextToken",
+                          "value": "41445528716##z;M06s}!!5D"
+                        },
+                        {
+                          "description": "Filters the results by state.",
+                          "key": "StatusFilter",
+                          "value": "ACTIVE"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "8bfae6a1-dd05-4b8b-a091-431e1b03f972",
+                          "key": "OutpostId",
+                          "value": "op-4569ec148f4df850d",
+                          "description": "(Required)  The ID or the Amazon Resource Name (ARN) of the Outpost. "
+                        }
+                      ]
+                    },
+                    "description": "<p>Lists the hardware assets for the specified Outpost.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "95d657b3-1271-4072-9f34-1045aab0a6d8",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/outposts/:OutpostId/assets?HostIdFilter= &MaxResults=<integer>&NextToken=41445528716%23%23z;M06s}!!5D&StatusFilter=ACTIVE",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "outposts",
+                            ":OutpostId",
+                            "assets"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filters the results by the host ID of a Dedicated Host.",
+                              "key": "HostIdFilter",
+                              "value": " "
+                            },
+                            {
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "NextToken",
+                              "value": "41445528716##z;M06s}!!5D"
+                            },
+                            {
+                              "description": "Filters the results by state.",
+                              "key": "StatusFilter",
+                              "value": "ACTIVE"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "OutpostId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"Assets\": [\n    {\n      \"AssetId\": \"KNVZ\",\n      \"RackId\": \"P1eD{*4{e\",\n      \"AssetType\": \"COMPUTE\",\n      \"ComputeAttributes\": {\n        \"HostId\": \"lB\",\n        \"State\": \"RETIRING\"\n      },\n      \"AssetLocation\": {\n        \"RackElevation\": \"<float>\"\n      }\n    },\n    {\n      \"AssetId\": \"lanIkZO6YZ\",\n      \"RackId\": \"lH>VI$:\",\n      \"AssetType\": \"COMPUTE\",\n      \"ComputeAttributes\": {\n        \"HostId\": \" \",\n        \"State\": \"ISOLATED\"\n      },\n      \"AssetLocation\": {\n        \"RackElevation\": \"<float>\"\n      }\n    }\n  ],\n  \"NextToken\": \"3758478##,Ke{96}\"\n}",
+                      "createdAt": "2026-07-28T10:41:15.000Z",
+                      "updatedAt": "2026-07-28T10:41:15.000Z",
+                      "uid": "35240-95d657b3-1271-4072-9f34-1045aab0a6d8"
+                    },
+                    {
+                      "id": "43ba853e-20db-4575-ba9b-296e6f9e1179",
+                      "name": "ValidationException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/outposts/:OutpostId/assets?HostIdFilter= &MaxResults=<integer>&NextToken=41445528716%23%23z;M06s}!!5D&StatusFilter=ACTIVE",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "outposts",
+                            ":OutpostId",
+                            "assets"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filters the results by the host ID of a Dedicated Host.",
+                              "key": "HostIdFilter",
+                              "value": " "
+                            },
+                            {
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "NextToken",
+                              "value": "41445528716##z;M06s}!!5D"
+                            },
+                            {
+                              "description": "Filters the results by state.",
+                              "key": "StatusFilter",
+                              "value": "ACTIVE"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "OutpostId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:15.000Z",
+                      "updatedAt": "2026-07-28T10:41:15.000Z",
+                      "uid": "35240-43ba853e-20db-4575-ba9b-296e6f9e1179"
+                    },
+                    {
+                      "id": "3e3e2589-60a5-4e86-9101-f53b77f081fd",
+                      "name": "AccessDeniedException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/outposts/:OutpostId/assets?HostIdFilter= &MaxResults=<integer>&NextToken=41445528716%23%23z;M06s}!!5D&StatusFilter=ACTIVE",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "outposts",
+                            ":OutpostId",
+                            "assets"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filters the results by the host ID of a Dedicated Host.",
+                              "key": "HostIdFilter",
+                              "value": " "
+                            },
+                            {
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "NextToken",
+                              "value": "41445528716##z;M06s}!!5D"
+                            },
+                            {
+                              "description": "Filters the results by state.",
+                              "key": "StatusFilter",
+                              "value": "ACTIVE"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "OutpostId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:15.000Z",
+                      "updatedAt": "2026-07-28T10:41:15.000Z",
+                      "uid": "35240-3e3e2589-60a5-4e86-9101-f53b77f081fd"
+                    },
+                    {
+                      "id": "5e730cc2-43f1-4a2b-85d5-afb4758f3cef",
+                      "name": "NotFoundException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/outposts/:OutpostId/assets?HostIdFilter= &MaxResults=<integer>&NextToken=41445528716%23%23z;M06s}!!5D&StatusFilter=ACTIVE",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "outposts",
+                            ":OutpostId",
+                            "assets"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filters the results by the host ID of a Dedicated Host.",
+                              "key": "HostIdFilter",
+                              "value": " "
+                            },
+                            {
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "NextToken",
+                              "value": "41445528716##z;M06s}!!5D"
+                            },
+                            {
+                              "description": "Filters the results by state.",
+                              "key": "StatusFilter",
+                              "value": "ACTIVE"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "OutpostId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:15.000Z",
+                      "updatedAt": "2026-07-28T10:41:15.000Z",
+                      "uid": "35240-5e730cc2-43f1-4a2b-85d5-afb4758f3cef"
+                    },
+                    {
+                      "id": "c16175a0-48ae-4e1d-b7bc-4cec6665f640",
+                      "name": "InternalServerException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/outposts/:OutpostId/assets?HostIdFilter= &MaxResults=<integer>&NextToken=41445528716%23%23z;M06s}!!5D&StatusFilter=ACTIVE",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "outposts",
+                            ":OutpostId",
+                            "assets"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filters the results by the host ID of a Dedicated Host.",
+                              "key": "HostIdFilter",
+                              "value": " "
+                            },
+                            {
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "NextToken",
+                              "value": "41445528716##z;M06s}!!5D"
+                            },
+                            {
+                              "description": "Filters the results by state.",
+                              "key": "StatusFilter",
+                              "value": "ACTIVE"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "OutpostId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:41:15.000Z",
+                      "updatedAt": "2026-07-28T10:41:15.000Z",
+                      "uid": "35240-c16175a0-48ae-4e1d-b7bc-4cec6665f640"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-4f5c1086-90bb-4517-8737-d36d1a11a8da"
+                }
+              ],
+              "id": "e7c3bba8-8370-4778-bc6f-82c6b3d9e586",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-e7c3bba8-8370-4778-bc6f-82c6b3d9e586"
+            },
+            {
+              "name": "Amazon Outposts Delete Outpost",
+              "id": "22228063-4864-4c79-9245-5baa3206415d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/outposts/:OutpostId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts",
+                    ":OutpostId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "347e860b-0602-42a6-a9a3-2ed5ad168eac",
+                      "key": "OutpostId",
+                      "value": "op-4569ec148f4df850d",
+                      "description": "(Required)  The ID or the Amazon Resource Name (ARN) of the Outpost. "
+                    }
+                  ]
+                },
+                "description": "Deletes the specified Outpost."
+              },
+              "response": [
+                {
+                  "id": "67a3b7c9-c82f-42d2-94bb-4dbd76fd1912",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-67a3b7c9-c82f-42d2-94bb-4dbd76fd1912"
+                },
+                {
+                  "id": "0ccefa60-bbf6-43fe-b916-3367959feccd",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-0ccefa60-bbf6-43fe-b916-3367959feccd"
+                },
+                {
+                  "id": "29c76ba4-f30f-4cfe-9317-c442cc5340c7",
+                  "name": "ConflictException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-29c76ba4-f30f-4cfe-9317-c442cc5340c7"
+                },
+                {
+                  "id": "a5c1d984-cded-4cdd-ab94-6af95c206cba",
+                  "name": "NotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-a5c1d984-cded-4cdd-ab94-6af95c206cba"
+                },
+                {
+                  "id": "9a4338c0-ceea-4aa8-8b67-0c7512c5fa7c",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-9a4338c0-ceea-4aa8-8b67-0c7512c5fa7c"
+                },
+                {
+                  "id": "a641832b-a822-4e85-9b12-7a52c3e183a9",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-a641832b-a822-4e85-9b12-7a52c3e183a9"
+                }
+              ],
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-22228063-4864-4c79-9245-5baa3206415d"
+            },
+            {
+              "name": "Amazon Outposts Get Outpost",
+              "id": "fd6d3bb4-4c45-4b61-a3d5-bea7f63ef8c8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/outposts/:OutpostId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts",
+                    ":OutpostId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "e2885276-6598-484d-aec0-00dce1735e19",
+                      "key": "OutpostId",
+                      "value": "op-4569ec148f4df850d",
+                      "description": "(Required)  The ID or the Amazon Resource Name (ARN) of the Outpost. "
+                    }
+                  ]
+                },
+                "description": "Gets information about the specified Outpost."
+              },
+              "response": [
+                {
+                  "id": "d1da53da-9ee1-4a4b-9cde-18cb91f98ad5",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Outpost\": {\n    \"OutpostId\": \"arn:aws-e-ujmockru:outposts:yjyt1:350017109605:outpost/op-ea67d146f36eeba38\",\n    \"OwnerId\": \"333275759709\",\n    \"OutpostArn\": \"arn:aws:outposts:eernlzak8yd:832213186355:outpost/op-3866ef99c4d3c96f4\",\n    \"SiteId\": \"arn:awsajaxzxmein:outposts:cnkn5k85gbw:384729517705:site/os-9d3b6a3b4e844c89d\",\n    \"Name\": \"\\\\Z.P53qA)4`\",\n    \"Description\": \"P)kV%g&<2l\",\n    \"LifeCycleStatus\": \"oKkFb\",\n    \"AvailabilityZone\": \"pCUlS-7662\",\n    \"AvailabilityZoneId\": \"ugLYYXWRdEK5-mbuUInk3\",\n    \"Tags\": {\n      \"Duis_21\": \"Od^H:0_Z3P\",\n      \"ut_31\": \"&>CoxP\",\n      \"occaecatfe\": \"Vsb$Xfl;len\",\n      \"est_c\": \"(~;alkjUY\",\n      \"Excepteur_2\": \"A}HW)Y2Wr\",\n      \"dolore_e\": \"g>>C) \",\n      \"ut11\": \"fOg:{t)\",\n      \"Duis_e2\": \"8 H\",\n      \"et_84\": \"Oev);oufrW>\",\n      \"do__84\": \"\\\\PN7YP6?\",\n      \"Lorem41f\": \"U3/*K$\",\n      \"euca1\": \"#9oHCB`*\",\n      \"dolore_f\": \"q\",\n      \"reprehenderit150\": \"#Q w$9,9!`\",\n      \"incididuntd18\": \"MUA{ -ez&z\",\n      \"id_2__\": \"'\",\n      \"cupidatat65\": \"\\\\kz!9K\",\n      \"ullamco_5\": \"L\",\n      \"sit_\": \"0h>/><\",\n      \"adipisicing_0f7\": \"/R\",\n      \"Ut_b5\": \"[qT49''G5P\",\n      \"dolor_8\": \"Yu\",\n      \"veniam53c\": \"0v\\\"\",\n      \"magna_052\": \"~rP(.lo\",\n      \"magna_8\": \"@L\",\n      \"elit_19c\": \" 5r:s\",\n      \"laboris4\": \"WnwPto+FmvV\",\n      \"officia_a\": \"b\",\n      \"elit__\": \" !&-7Oh+O\",\n      \"esse__8\": \"?,7G7,\",\n      \"aliqua__1\": \"T/\",\n      \"sit_b\": \"snj\",\n      \"quisa8b\": \"@ zjR\",\n      \"enim_f\": \"ueGZ:T\",\n      \"ipsumf9\": \"zNz(\",\n      \"sed0\": \"45ehgH\",\n      \"elit_f6\": \">eS:mnaz?\",\n      \"commodo1e\": \"6~'N.Wg,#^\"\n    },\n    \"SiteArn\": \"arn:awsnuhh-dw:outposts:1v:646641763756:site/os-5f1d70c3ea02131c7\",\n    \"SupportedHardwareType\": \"RACK\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-d1da53da-9ee1-4a4b-9cde-18cb91f98ad5"
+                },
+                {
+                  "id": "e5cd0a61-8dc0-48dd-804e-a8a21c0183f2",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-e5cd0a61-8dc0-48dd-804e-a8a21c0183f2"
+                },
+                {
+                  "id": "b36a3928-5eec-4e8f-8189-0e2a746ac993",
+                  "name": "NotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-b36a3928-5eec-4e8f-8189-0e2a746ac993"
+                },
+                {
+                  "id": "663e5c21-9504-4f5a-b9cb-12b7f4291336",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-663e5c21-9504-4f5a-b9cb-12b7f4291336"
+                },
+                {
+                  "id": "0a790d3b-4cb6-41cf-ae70-5e3f19eee16a",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-0a790d3b-4cb6-41cf-ae70-5e3f19eee16a"
+                }
+              ],
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-fd6d3bb4-4c45-4b61-a3d5-bea7f63ef8c8"
+            },
+            {
+              "name": "Amazon Outposts Update Outpost",
+              "id": "431c6911-16a0-40bd-8596-6c76e88c871e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"8X\",\n  \"Description\": \"1?ktq/HP\",\n  \"SupportedHardwareType\": \"RACK\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/outposts/:OutpostId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts",
+                    ":OutpostId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "32afecea-b75b-4ca0-a5b1-8aeb7386f0b8",
+                      "key": "OutpostId",
+                      "value": "op-4569ec148f4df850d",
+                      "description": "(Required)  The ID or the Amazon Resource Name (ARN) of the Outpost. "
+                    }
+                  ]
+                },
+                "description": " Updates an Outpost. "
+              },
+              "response": [
+                {
+                  "id": "51a4df26-5d5e-4a39-8450-de1f3eaaa0b1",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"8X\",\n  \"Description\": \"1?ktq/HP\",\n  \"SupportedHardwareType\": \"RACK\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Outpost\": {\n    \"OutpostId\": \"arn:aws-e-ujmockru:outposts:yjyt1:350017109605:outpost/op-ea67d146f36eeba38\",\n    \"OwnerId\": \"333275759709\",\n    \"OutpostArn\": \"arn:aws:outposts:eernlzak8yd:832213186355:outpost/op-3866ef99c4d3c96f4\",\n    \"SiteId\": \"arn:awsajaxzxmein:outposts:cnkn5k85gbw:384729517705:site/os-9d3b6a3b4e844c89d\",\n    \"Name\": \"\\\\Z.P53qA)4`\",\n    \"Description\": \"P)kV%g&<2l\",\n    \"LifeCycleStatus\": \"oKkFb\",\n    \"AvailabilityZone\": \"pCUlS-7662\",\n    \"AvailabilityZoneId\": \"ugLYYXWRdEK5-mbuUInk3\",\n    \"Tags\": {\n      \"Duis_21\": \"Od^H:0_Z3P\",\n      \"ut_31\": \"&>CoxP\",\n      \"occaecatfe\": \"Vsb$Xfl;len\",\n      \"est_c\": \"(~;alkjUY\",\n      \"Excepteur_2\": \"A}HW)Y2Wr\",\n      \"dolore_e\": \"g>>C) \",\n      \"ut11\": \"fOg:{t)\",\n      \"Duis_e2\": \"8 H\",\n      \"et_84\": \"Oev);oufrW>\",\n      \"do__84\": \"\\\\PN7YP6?\",\n      \"Lorem41f\": \"U3/*K$\",\n      \"euca1\": \"#9oHCB`*\",\n      \"dolore_f\": \"q\",\n      \"reprehenderit150\": \"#Q w$9,9!`\",\n      \"incididuntd18\": \"MUA{ -ez&z\",\n      \"id_2__\": \"'\",\n      \"cupidatat65\": \"\\\\kz!9K\",\n      \"ullamco_5\": \"L\",\n      \"sit_\": \"0h>/><\",\n      \"adipisicing_0f7\": \"/R\",\n      \"Ut_b5\": \"[qT49''G5P\",\n      \"dolor_8\": \"Yu\",\n      \"veniam53c\": \"0v\\\"\",\n      \"magna_052\": \"~rP(.lo\",\n      \"magna_8\": \"@L\",\n      \"elit_19c\": \" 5r:s\",\n      \"laboris4\": \"WnwPto+FmvV\",\n      \"officia_a\": \"b\",\n      \"elit__\": \" !&-7Oh+O\",\n      \"esse__8\": \"?,7G7,\",\n      \"aliqua__1\": \"T/\",\n      \"sit_b\": \"snj\",\n      \"quisa8b\": \"@ zjR\",\n      \"enim_f\": \"ueGZ:T\",\n      \"ipsumf9\": \"zNz(\",\n      \"sed0\": \"45ehgH\",\n      \"elit_f6\": \">eS:mnaz?\",\n      \"commodo1e\": \"6~'N.Wg,#^\"\n    },\n    \"SiteArn\": \"arn:awsnuhh-dw:outposts:1v:646641763756:site/os-5f1d70c3ea02131c7\",\n    \"SupportedHardwareType\": \"RACK\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-51a4df26-5d5e-4a39-8450-de1f3eaaa0b1"
+                },
+                {
+                  "id": "13df973b-b9e2-4d5a-b8b4-f4fafbe5870a",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"8X\",\n  \"Description\": \"1?ktq/HP\",\n  \"SupportedHardwareType\": \"RACK\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-13df973b-b9e2-4d5a-b8b4-f4fafbe5870a"
+                },
+                {
+                  "id": "261863f6-dfb8-4913-8d4c-7b9b7cb1e18a",
+                  "name": "ConflictException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"8X\",\n  \"Description\": \"1?ktq/HP\",\n  \"SupportedHardwareType\": \"RACK\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-261863f6-dfb8-4913-8d4c-7b9b7cb1e18a"
+                },
+                {
+                  "id": "d7bf6c3e-2fc0-4d8e-a85b-e375cb19acd9",
+                  "name": "NotFoundException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"8X\",\n  \"Description\": \"1?ktq/HP\",\n  \"SupportedHardwareType\": \"RACK\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-d7bf6c3e-2fc0-4d8e-a85b-e375cb19acd9"
+                },
+                {
+                  "id": "8e6a8bb2-09f8-4681-afc8-64ba76be1afd",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"8X\",\n  \"Description\": \"1?ktq/HP\",\n  \"SupportedHardwareType\": \"RACK\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-8e6a8bb2-09f8-4681-afc8-64ba76be1afd"
+                },
+                {
+                  "id": "0b9479f9-215d-4f94-bae4-a0d0722abd37",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Name\": \"8X\",\n  \"Description\": \"1?ktq/HP\",\n  \"SupportedHardwareType\": \"RACK\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/outposts/:OutpostId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "outposts",
+                        ":OutpostId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "OutpostId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:41:15.000Z",
+                  "updatedAt": "2026-07-28T10:41:15.000Z",
+                  "uid": "35240-0b9479f9-215d-4f94-bae4-a0d0722abd37"
+                }
+              ],
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-431c6911-16a0-40bd-8596-6c76e88c871e"
+            }
+          ],
+          "id": "2d007509-f865-47cd-8830-02d03f179f6b",
+          "createdAt": "2026-07-28T10:41:15.000Z",
+          "updatedAt": "2026-07-28T10:41:15.000Z",
+          "uid": "35240-2d007509-f865-47cd-8830-02d03f179f6b"
+        },
+        {
+          "name": "Amazon Outposts Create Outpost",
+          "id": "d714ab14-33f6-453a-8176-24b4b625d6ee",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"Z_\",\n  \"SiteId\": \"arn:awsqffn:outposts:irfwdwzhlrq:018339196176:site/os-b86e38041100388d6\",\n  \"Description\": \"wYm02}S\",\n  \"AvailabilityZone\": \"xai-h-DaZxYEcUbh\",\n  \"AvailabilityZoneId\": \"n1-qDfkQpVU2\",\n  \"Tags\": {\n    \"sint573\": \"szWdSC8\",\n    \"ex_4\": \"z0PqPj;}\",\n    \"irure6dc\": \"-E9y0xP\",\n    \"eiusmod2\": \"3]mIY\",\n    \"dolore3_9\": \"(YvQo(UCs[+\",\n    \"consequat_b\": \"Y2\",\n    \"Loremd\": \"~22zr4P%'{\",\n    \"elit_4c_\": \"FhpjZ@\",\n    \"irure_0e5\": \"IV03\",\n    \"anim8\": \"n;g@~o'.BC\",\n    \"sit_d\": \"Sb{@cLBEQ\",\n    \"fugiat_1\": \"UFW[]+%\",\n    \"sit_47\": \"nA:Z_iw\",\n    \"veniama\": \"J!e\",\n    \"enim6b\": \"78.~R8<U'_a\",\n    \"aute_a1\": \";[nX\",\n    \"laborum_702\": \"wf5.6%\\\\p\\\"b:\",\n    \"commodo0\": \"Ld}\",\n    \"irure_4c7\": \"+\",\n    \"ullamco_736\": \"V^UN9HrR\",\n    \"exercitation_2d\": \"pEZ9`4H_\",\n    \"ex_bf\": \"gN@1z\",\n    \"qui_8_5\": \"5\",\n    \"adipisicing13\": \"|\",\n    \"occaecat_83f\": \"7g\",\n    \"elit_4cd\": \"LdZ4}^^r b\",\n    \"amet1\": \"g6&TGlMY\",\n    \"consectetur134\": \"`nibK\",\n    \"do_933\": \",\",\n    \"ex__ad\": \":t2\\\"[K_$Bp,\",\n    \"aliqua5d\": \"C<9`xgE$\",\n    \"incididunt2\": \"Der\",\n    \"exercitation_\": \" z{wZ3.\",\n    \"incididunt_d\": \"C%+[+OK8@u\",\n    \"nulla03\": \"~>\\\"'d??Y\",\n    \"do3c0\": \"vjkaNZjN\",\n    \"idbd7\": \"P2\",\n    \"ex_9\": \"L\",\n    \"voluptate__b5\": \"0sJ*meu\",\n    \"sed5\": \"n{J\\\\5Aw11V\",\n    \"dolore_fa\": \"W:?{8d9\",\n    \"ut0b5\": \"/S\",\n    \"ida\": \"3 n62_*\"\n  },\n  \"SupportedHardwareType\": \"SERVER\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/outposts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "outposts"
+              ]
+            },
+            "description": "<p>Creates an Outpost.</p> <p>You can specify either an Availability one or an AZ ID.</p>"
+          },
+          "response": [
+            {
+              "id": "190534cf-4fa1-433f-95ab-24d5a85bc9c8",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"Z_\",\n  \"SiteId\": \"arn:awsqffn:outposts:irfwdwzhlrq:018339196176:site/os-b86e38041100388d6\",\n  \"Description\": \"wYm02}S\",\n  \"AvailabilityZone\": \"xai-h-DaZxYEcUbh\",\n  \"AvailabilityZoneId\": \"n1-qDfkQpVU2\",\n  \"Tags\": {\n    \"sint573\": \"szWdSC8\",\n    \"ex_4\": \"z0PqPj;}\",\n    \"irure6dc\": \"-E9y0xP\",\n    \"eiusmod2\": \"3]mIY\",\n    \"dolore3_9\": \"(YvQo(UCs[+\",\n    \"consequat_b\": \"Y2\",\n    \"Loremd\": \"~22zr4P%'{\",\n    \"elit_4c_\": \"FhpjZ@\",\n    \"irure_0e5\": \"IV03\",\n    \"anim8\": \"n;g@~o'.BC\",\n    \"sit_d\": \"Sb{@cLBEQ\",\n    \"fugiat_1\": \"UFW[]+%\",\n    \"sit_47\": \"nA:Z_iw\",\n    \"veniama\": \"J!e\",\n    \"enim6b\": \"78.~R8<U'_a\",\n    \"aute_a1\": \";[nX\",\n    \"laborum_702\": \"wf5.6%\\\\p\\\"b:\",\n    \"commodo0\": \"Ld}\",\n    \"irure_4c7\": \"+\",\n    \"ullamco_736\": \"V^UN9HrR\",\n    \"exercitation_2d\": \"pEZ9`4H_\",\n    \"ex_bf\": \"gN@1z\",\n    \"qui_8_5\": \"5\",\n    \"adipisicing13\": \"|\",\n    \"occaecat_83f\": \"7g\",\n    \"elit_4cd\": \"LdZ4}^^r b\",\n    \"amet1\": \"g6&TGlMY\",\n    \"consectetur134\": \"`nibK\",\n    \"do_933\": \",\",\n    \"ex__ad\": \":t2\\\"[K_$Bp,\",\n    \"aliqua5d\": \"C<9`xgE$\",\n    \"incididunt2\": \"Der\",\n    \"exercitation_\": \" z{wZ3.\",\n    \"incididunt_d\": \"C%+[+OK8@u\",\n    \"nulla03\": \"~>\\\"'d??Y\",\n    \"do3c0\": \"vjkaNZjN\",\n    \"idbd7\": \"P2\",\n    \"ex_9\": \"L\",\n    \"voluptate__b5\": \"0sJ*meu\",\n    \"sed5\": \"n{J\\\\5Aw11V\",\n    \"dolore_fa\": \"W:?{8d9\",\n    \"ut0b5\": \"/S\",\n    \"ida\": \"3 n62_*\"\n  },\n  \"SupportedHardwareType\": \"SERVER\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/outposts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Outpost\": {\n    \"OutpostId\": \"arn:aws-e-ujmockru:outposts:yjyt1:350017109605:outpost/op-ea67d146f36eeba38\",\n    \"OwnerId\": \"333275759709\",\n    \"OutpostArn\": \"arn:aws:outposts:eernlzak8yd:832213186355:outpost/op-3866ef99c4d3c96f4\",\n    \"SiteId\": \"arn:awsajaxzxmein:outposts:cnkn5k85gbw:384729517705:site/os-9d3b6a3b4e844c89d\",\n    \"Name\": \"\\\\Z.P53qA)4`\",\n    \"Description\": \"P)kV%g&<2l\",\n    \"LifeCycleStatus\": \"oKkFb\",\n    \"AvailabilityZone\": \"pCUlS-7662\",\n    \"AvailabilityZoneId\": \"ugLYYXWRdEK5-mbuUInk3\",\n    \"Tags\": {\n      \"Duis_21\": \"Od^H:0_Z3P\",\n      \"ut_31\": \"&>CoxP\",\n      \"occaecatfe\": \"Vsb$Xfl;len\",\n      \"est_c\": \"(~;alkjUY\",\n      \"Excepteur_2\": \"A}HW)Y2Wr\",\n      \"dolore_e\": \"g>>C) \",\n      \"ut11\": \"fOg:{t)\",\n      \"Duis_e2\": \"8 H\",\n      \"et_84\": \"Oev);oufrW>\",\n      \"do__84\": \"\\\\PN7YP6?\",\n      \"Lorem41f\": \"U3/*K$\",\n      \"euca1\": \"#9oHCB`*\",\n      \"dolore_f\": \"q\",\n      \"reprehenderit150\": \"#Q w$9,9!`\",\n      \"incididuntd18\": \"MUA{ -ez&z\",\n      \"id_2__\": \"'\",\n      \"cupidatat65\": \"\\\\kz!9K\",\n      \"ullamco_5\": \"L\",\n      \"sit_\": \"0h>/><\",\n      \"adipisicing_0f7\": \"/R\",\n      \"Ut_b5\": \"[qT49''G5P\",\n      \"dolor_8\": \"Yu\",\n      \"veniam53c\": \"0v\\\"\",\n      \"magna_052\": \"~rP(.lo\",\n      \"magna_8\": \"@L\",\n      \"elit_19c\": \" 5r:s\",\n      \"laboris4\": \"WnwPto+FmvV\",\n      \"officia_a\": \"b\",\n      \"elit__\": \" !&-7Oh+O\",\n      \"esse__8\": \"?,7G7,\",\n      \"aliqua__1\": \"T/\",\n      \"sit_b\": \"snj\",\n      \"quisa8b\": \"@ zjR\",\n      \"enim_f\": \"ueGZ:T\",\n      \"ipsumf9\": \"zNz(\",\n      \"sed0\": \"45ehgH\",\n      \"elit_f6\": \">eS:mnaz?\",\n      \"commodo1e\": \"6~'N.Wg,#^\"\n    },\n    \"SiteArn\": \"arn:awsnuhh-dw:outposts:1v:646641763756:site/os-5f1d70c3ea02131c7\",\n    \"SupportedHardwareType\": \"RACK\"\n  }\n}",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-190534cf-4fa1-433f-95ab-24d5a85bc9c8"
+            },
+            {
+              "id": "2d1b32b8-25fa-4963-8d36-748966006848",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"Z_\",\n  \"SiteId\": \"arn:awsqffn:outposts:irfwdwzhlrq:018339196176:site/os-b86e38041100388d6\",\n  \"Description\": \"wYm02}S\",\n  \"AvailabilityZone\": \"xai-h-DaZxYEcUbh\",\n  \"AvailabilityZoneId\": \"n1-qDfkQpVU2\",\n  \"Tags\": {\n    \"sint573\": \"szWdSC8\",\n    \"ex_4\": \"z0PqPj;}\",\n    \"irure6dc\": \"-E9y0xP\",\n    \"eiusmod2\": \"3]mIY\",\n    \"dolore3_9\": \"(YvQo(UCs[+\",\n    \"consequat_b\": \"Y2\",\n    \"Loremd\": \"~22zr4P%'{\",\n    \"elit_4c_\": \"FhpjZ@\",\n    \"irure_0e5\": \"IV03\",\n    \"anim8\": \"n;g@~o'.BC\",\n    \"sit_d\": \"Sb{@cLBEQ\",\n    \"fugiat_1\": \"UFW[]+%\",\n    \"sit_47\": \"nA:Z_iw\",\n    \"veniama\": \"J!e\",\n    \"enim6b\": \"78.~R8<U'_a\",\n    \"aute_a1\": \";[nX\",\n    \"laborum_702\": \"wf5.6%\\\\p\\\"b:\",\n    \"commodo0\": \"Ld}\",\n    \"irure_4c7\": \"+\",\n    \"ullamco_736\": \"V^UN9HrR\",\n    \"exercitation_2d\": \"pEZ9`4H_\",\n    \"ex_bf\": \"gN@1z\",\n    \"qui_8_5\": \"5\",\n    \"adipisicing13\": \"|\",\n    \"occaecat_83f\": \"7g\",\n    \"elit_4cd\": \"LdZ4}^^r b\",\n    \"amet1\": \"g6&TGlMY\",\n    \"consectetur134\": \"`nibK\",\n    \"do_933\": \",\",\n    \"ex__ad\": \":t2\\\"[K_$Bp,\",\n    \"aliqua5d\": \"C<9`xgE$\",\n    \"incididunt2\": \"Der\",\n    \"exercitation_\": \" z{wZ3.\",\n    \"incididunt_d\": \"C%+[+OK8@u\",\n    \"nulla03\": \"~>\\\"'d??Y\",\n    \"do3c0\": \"vjkaNZjN\",\n    \"idbd7\": \"P2\",\n    \"ex_9\": \"L\",\n    \"voluptate__b5\": \"0sJ*meu\",\n    \"sed5\": \"n{J\\\\5Aw11V\",\n    \"dolore_fa\": \"W:?{8d9\",\n    \"ut0b5\": \"/S\",\n    \"ida\": \"3 n62_*\"\n  },\n  \"SupportedHardwareType\": \"SERVER\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/outposts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-2d1b32b8-25fa-4963-8d36-748966006848"
+            },
+            {
+              "id": "53033b5c-d198-41a4-9e52-236fed0186d2",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"Z_\",\n  \"SiteId\": \"arn:awsqffn:outposts:irfwdwzhlrq:018339196176:site/os-b86e38041100388d6\",\n  \"Description\": \"wYm02}S\",\n  \"AvailabilityZone\": \"xai-h-DaZxYEcUbh\",\n  \"AvailabilityZoneId\": \"n1-qDfkQpVU2\",\n  \"Tags\": {\n    \"sint573\": \"szWdSC8\",\n    \"ex_4\": \"z0PqPj;}\",\n    \"irure6dc\": \"-E9y0xP\",\n    \"eiusmod2\": \"3]mIY\",\n    \"dolore3_9\": \"(YvQo(UCs[+\",\n    \"consequat_b\": \"Y2\",\n    \"Loremd\": \"~22zr4P%'{\",\n    \"elit_4c_\": \"FhpjZ@\",\n    \"irure_0e5\": \"IV03\",\n    \"anim8\": \"n;g@~o'.BC\",\n    \"sit_d\": \"Sb{@cLBEQ\",\n    \"fugiat_1\": \"UFW[]+%\",\n    \"sit_47\": \"nA:Z_iw\",\n    \"veniama\": \"J!e\",\n    \"enim6b\": \"78.~R8<U'_a\",\n    \"aute_a1\": \";[nX\",\n    \"laborum_702\": \"wf5.6%\\\\p\\\"b:\",\n    \"commodo0\": \"Ld}\",\n    \"irure_4c7\": \"+\",\n    \"ullamco_736\": \"V^UN9HrR\",\n    \"exercitation_2d\": \"pEZ9`4H_\",\n    \"ex_bf\": \"gN@1z\",\n    \"qui_8_5\": \"5\",\n    \"adipisicing13\": \"|\",\n    \"occaecat_83f\": \"7g\",\n    \"elit_4cd\": \"LdZ4}^^r b\",\n    \"amet1\": \"g6&TGlMY\",\n    \"consectetur134\": \"`nibK\",\n    \"do_933\": \",\",\n    \"ex__ad\": \":t2\\\"[K_$Bp,\",\n    \"aliqua5d\": \"C<9`xgE$\",\n    \"incididunt2\": \"Der\",\n    \"exercitation_\": \" z{wZ3.\",\n    \"incididunt_d\": \"C%+[+OK8@u\",\n    \"nulla03\": \"~>\\\"'d??Y\",\n    \"do3c0\": \"vjkaNZjN\",\n    \"idbd7\": \"P2\",\n    \"ex_9\": \"L\",\n    \"voluptate__b5\": \"0sJ*meu\",\n    \"sed5\": \"n{J\\\\5Aw11V\",\n    \"dolore_fa\": \"W:?{8d9\",\n    \"ut0b5\": \"/S\",\n    \"ida\": \"3 n62_*\"\n  },\n  \"SupportedHardwareType\": \"SERVER\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/outposts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-53033b5c-d198-41a4-9e52-236fed0186d2"
+            },
+            {
+              "id": "092af8fc-9522-4f68-b221-e4e956e1b363",
+              "name": "NotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"Z_\",\n  \"SiteId\": \"arn:awsqffn:outposts:irfwdwzhlrq:018339196176:site/os-b86e38041100388d6\",\n  \"Description\": \"wYm02}S\",\n  \"AvailabilityZone\": \"xai-h-DaZxYEcUbh\",\n  \"AvailabilityZoneId\": \"n1-qDfkQpVU2\",\n  \"Tags\": {\n    \"sint573\": \"szWdSC8\",\n    \"ex_4\": \"z0PqPj;}\",\n    \"irure6dc\": \"-E9y0xP\",\n    \"eiusmod2\": \"3]mIY\",\n    \"dolore3_9\": \"(YvQo(UCs[+\",\n    \"consequat_b\": \"Y2\",\n    \"Loremd\": \"~22zr4P%'{\",\n    \"elit_4c_\": \"FhpjZ@\",\n    \"irure_0e5\": \"IV03\",\n    \"anim8\": \"n;g@~o'.BC\",\n    \"sit_d\": \"Sb{@cLBEQ\",\n    \"fugiat_1\": \"UFW[]+%\",\n    \"sit_47\": \"nA:Z_iw\",\n    \"veniama\": \"J!e\",\n    \"enim6b\": \"78.~R8<U'_a\",\n    \"aute_a1\": \";[nX\",\n    \"laborum_702\": \"wf5.6%\\\\p\\\"b:\",\n    \"commodo0\": \"Ld}\",\n    \"irure_4c7\": \"+\",\n    \"ullamco_736\": \"V^UN9HrR\",\n    \"exercitation_2d\": \"pEZ9`4H_\",\n    \"ex_bf\": \"gN@1z\",\n    \"qui_8_5\": \"5\",\n    \"adipisicing13\": \"|\",\n    \"occaecat_83f\": \"7g\",\n    \"elit_4cd\": \"LdZ4}^^r b\",\n    \"amet1\": \"g6&TGlMY\",\n    \"consectetur134\": \"`nibK\",\n    \"do_933\": \",\",\n    \"ex__ad\": \":t2\\\"[K_$Bp,\",\n    \"aliqua5d\": \"C<9`xgE$\",\n    \"incididunt2\": \"Der\",\n    \"exercitation_\": \" z{wZ3.\",\n    \"incididunt_d\": \"C%+[+OK8@u\",\n    \"nulla03\": \"~>\\\"'d??Y\",\n    \"do3c0\": \"vjkaNZjN\",\n    \"idbd7\": \"P2\",\n    \"ex_9\": \"L\",\n    \"voluptate__b5\": \"0sJ*meu\",\n    \"sed5\": \"n{J\\\\5Aw11V\",\n    \"dolore_fa\": \"W:?{8d9\",\n    \"ut0b5\": \"/S\",\n    \"ida\": \"3 n62_*\"\n  },\n  \"SupportedHardwareType\": \"SERVER\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/outposts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-092af8fc-9522-4f68-b221-e4e956e1b363"
+            },
+            {
+              "id": "68171121-63f0-4edf-a27a-73e2915519eb",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"Z_\",\n  \"SiteId\": \"arn:awsqffn:outposts:irfwdwzhlrq:018339196176:site/os-b86e38041100388d6\",\n  \"Description\": \"wYm02}S\",\n  \"AvailabilityZone\": \"xai-h-DaZxYEcUbh\",\n  \"AvailabilityZoneId\": \"n1-qDfkQpVU2\",\n  \"Tags\": {\n    \"sint573\": \"szWdSC8\",\n    \"ex_4\": \"z0PqPj;}\",\n    \"irure6dc\": \"-E9y0xP\",\n    \"eiusmod2\": \"3]mIY\",\n    \"dolore3_9\": \"(YvQo(UCs[+\",\n    \"consequat_b\": \"Y2\",\n    \"Loremd\": \"~22zr4P%'{\",\n    \"elit_4c_\": \"FhpjZ@\",\n    \"irure_0e5\": \"IV03\",\n    \"anim8\": \"n;g@~o'.BC\",\n    \"sit_d\": \"Sb{@cLBEQ\",\n    \"fugiat_1\": \"UFW[]+%\",\n    \"sit_47\": \"nA:Z_iw\",\n    \"veniama\": \"J!e\",\n    \"enim6b\": \"78.~R8<U'_a\",\n    \"aute_a1\": \";[nX\",\n    \"laborum_702\": \"wf5.6%\\\\p\\\"b:\",\n    \"commodo0\": \"Ld}\",\n    \"irure_4c7\": \"+\",\n    \"ullamco_736\": \"V^UN9HrR\",\n    \"exercitation_2d\": \"pEZ9`4H_\",\n    \"ex_bf\": \"gN@1z\",\n    \"qui_8_5\": \"5\",\n    \"adipisicing13\": \"|\",\n    \"occaecat_83f\": \"7g\",\n    \"elit_4cd\": \"LdZ4}^^r b\",\n    \"amet1\": \"g6&TGlMY\",\n    \"consectetur134\": \"`nibK\",\n    \"do_933\": \",\",\n    \"ex__ad\": \":t2\\\"[K_$Bp,\",\n    \"aliqua5d\": \"C<9`xgE$\",\n    \"incididunt2\": \"Der\",\n    \"exercitation_\": \" z{wZ3.\",\n    \"incididunt_d\": \"C%+[+OK8@u\",\n    \"nulla03\": \"~>\\\"'d??Y\",\n    \"do3c0\": \"vjkaNZjN\",\n    \"idbd7\": \"P2\",\n    \"ex_9\": \"L\",\n    \"voluptate__b5\": \"0sJ*meu\",\n    \"sed5\": \"n{J\\\\5Aw11V\",\n    \"dolore_fa\": \"W:?{8d9\",\n    \"ut0b5\": \"/S\",\n    \"ida\": \"3 n62_*\"\n  },\n  \"SupportedHardwareType\": \"SERVER\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/outposts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-68171121-63f0-4edf-a27a-73e2915519eb"
+            },
+            {
+              "id": "29f6fb2e-8ffa-40e1-8704-235665a4b229",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"Z_\",\n  \"SiteId\": \"arn:awsqffn:outposts:irfwdwzhlrq:018339196176:site/os-b86e38041100388d6\",\n  \"Description\": \"wYm02}S\",\n  \"AvailabilityZone\": \"xai-h-DaZxYEcUbh\",\n  \"AvailabilityZoneId\": \"n1-qDfkQpVU2\",\n  \"Tags\": {\n    \"sint573\": \"szWdSC8\",\n    \"ex_4\": \"z0PqPj;}\",\n    \"irure6dc\": \"-E9y0xP\",\n    \"eiusmod2\": \"3]mIY\",\n    \"dolore3_9\": \"(YvQo(UCs[+\",\n    \"consequat_b\": \"Y2\",\n    \"Loremd\": \"~22zr4P%'{\",\n    \"elit_4c_\": \"FhpjZ@\",\n    \"irure_0e5\": \"IV03\",\n    \"anim8\": \"n;g@~o'.BC\",\n    \"sit_d\": \"Sb{@cLBEQ\",\n    \"fugiat_1\": \"UFW[]+%\",\n    \"sit_47\": \"nA:Z_iw\",\n    \"veniama\": \"J!e\",\n    \"enim6b\": \"78.~R8<U'_a\",\n    \"aute_a1\": \";[nX\",\n    \"laborum_702\": \"wf5.6%\\\\p\\\"b:\",\n    \"commodo0\": \"Ld}\",\n    \"irure_4c7\": \"+\",\n    \"ullamco_736\": \"V^UN9HrR\",\n    \"exercitation_2d\": \"pEZ9`4H_\",\n    \"ex_bf\": \"gN@1z\",\n    \"qui_8_5\": \"5\",\n    \"adipisicing13\": \"|\",\n    \"occaecat_83f\": \"7g\",\n    \"elit_4cd\": \"LdZ4}^^r b\",\n    \"amet1\": \"g6&TGlMY\",\n    \"consectetur134\": \"`nibK\",\n    \"do_933\": \",\",\n    \"ex__ad\": \":t2\\\"[K_$Bp,\",\n    \"aliqua5d\": \"C<9`xgE$\",\n    \"incididunt2\": \"Der\",\n    \"exercitation_\": \" z{wZ3.\",\n    \"incididunt_d\": \"C%+[+OK8@u\",\n    \"nulla03\": \"~>\\\"'d??Y\",\n    \"do3c0\": \"vjkaNZjN\",\n    \"idbd7\": \"P2\",\n    \"ex_9\": \"L\",\n    \"voluptate__b5\": \"0sJ*meu\",\n    \"sed5\": \"n{J\\\\5Aw11V\",\n    \"dolore_fa\": \"W:?{8d9\",\n    \"ut0b5\": \"/S\",\n    \"ida\": \"3 n62_*\"\n  },\n  \"SupportedHardwareType\": \"SERVER\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/outposts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-29f6fb2e-8ffa-40e1-8704-235665a4b229"
+            },
+            {
+              "id": "44a6e427-3cd7-411a-850f-6be8dadbc94f",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"Z_\",\n  \"SiteId\": \"arn:awsqffn:outposts:irfwdwzhlrq:018339196176:site/os-b86e38041100388d6\",\n  \"Description\": \"wYm02}S\",\n  \"AvailabilityZone\": \"xai-h-DaZxYEcUbh\",\n  \"AvailabilityZoneId\": \"n1-qDfkQpVU2\",\n  \"Tags\": {\n    \"sint573\": \"szWdSC8\",\n    \"ex_4\": \"z0PqPj;}\",\n    \"irure6dc\": \"-E9y0xP\",\n    \"eiusmod2\": \"3]mIY\",\n    \"dolore3_9\": \"(YvQo(UCs[+\",\n    \"consequat_b\": \"Y2\",\n    \"Loremd\": \"~22zr4P%'{\",\n    \"elit_4c_\": \"FhpjZ@\",\n    \"irure_0e5\": \"IV03\",\n    \"anim8\": \"n;g@~o'.BC\",\n    \"sit_d\": \"Sb{@cLBEQ\",\n    \"fugiat_1\": \"UFW[]+%\",\n    \"sit_47\": \"nA:Z_iw\",\n    \"veniama\": \"J!e\",\n    \"enim6b\": \"78.~R8<U'_a\",\n    \"aute_a1\": \";[nX\",\n    \"laborum_702\": \"wf5.6%\\\\p\\\"b:\",\n    \"commodo0\": \"Ld}\",\n    \"irure_4c7\": \"+\",\n    \"ullamco_736\": \"V^UN9HrR\",\n    \"exercitation_2d\": \"pEZ9`4H_\",\n    \"ex_bf\": \"gN@1z\",\n    \"qui_8_5\": \"5\",\n    \"adipisicing13\": \"|\",\n    \"occaecat_83f\": \"7g\",\n    \"elit_4cd\": \"LdZ4}^^r b\",\n    \"amet1\": \"g6&TGlMY\",\n    \"consectetur134\": \"`nibK\",\n    \"do_933\": \",\",\n    \"ex__ad\": \":t2\\\"[K_$Bp,\",\n    \"aliqua5d\": \"C<9`xgE$\",\n    \"incididunt2\": \"Der\",\n    \"exercitation_\": \" z{wZ3.\",\n    \"incididunt_d\": \"C%+[+OK8@u\",\n    \"nulla03\": \"~>\\\"'d??Y\",\n    \"do3c0\": \"vjkaNZjN\",\n    \"idbd7\": \"P2\",\n    \"ex_9\": \"L\",\n    \"voluptate__b5\": \"0sJ*meu\",\n    \"sed5\": \"n{J\\\\5Aw11V\",\n    \"dolore_fa\": \"W:?{8d9\",\n    \"ut0b5\": \"/S\",\n    \"ida\": \"3 n62_*\"\n  },\n  \"SupportedHardwareType\": \"SERVER\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/outposts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-44a6e427-3cd7-411a-850f-6be8dadbc94f"
+            }
+          ],
+          "createdAt": "2026-07-28T10:41:15.000Z",
+          "updatedAt": "2026-07-28T10:41:15.000Z",
+          "uid": "35240-d714ab14-33f6-453a-8176-24b4b625d6ee"
+        },
+        {
+          "name": "Amazon Outposts List Outposts",
+          "id": "906f58d9-786e-4b93-b94f-eb23ae5c9ce1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/outposts?NextToken=41445528716%23%23z;M06s}!!5D&MaxResults=<integer>&LifeCycleStatusFilter=zvSuBqRD&AvailabilityZoneFilter=do-&AvailabilityZoneIdFilter=E7-ppZJhMr2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "outposts"
+              ],
+              "query": [
+                {
+                  "key": "NextToken",
+                  "value": "41445528716##z;M06s}!!5D"
+                },
+                {
+                  "key": "MaxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Filters the results by the lifecycle status.",
+                  "key": "LifeCycleStatusFilter",
+                  "value": "zvSuBqRD"
+                },
+                {
+                  "description": "Filters the results by Availability Zone (for example, <code>us-east-1a</code>).",
+                  "key": "AvailabilityZoneFilter",
+                  "value": "do-"
+                },
+                {
+                  "description": "Filters the results by AZ ID (for example, <code>use1-az1</code>).",
+                  "key": "AvailabilityZoneIdFilter",
+                  "value": "E7-ppZJhMr2"
+                }
+              ]
+            },
+            "description": "<p>Lists the Outposts for your Amazon Web Services account.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
+          },
+          "response": [
+            {
+              "id": "b7735ba1-5ea5-47c1-b00b-068bc1c9fe54",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/outposts?NextToken=41445528716%23%23z;M06s}!!5D&MaxResults=<integer>&LifeCycleStatusFilter=zvSuBqRD&AvailabilityZoneFilter=do-&AvailabilityZoneIdFilter=E7-ppZJhMr2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts"
+                  ],
+                  "query": [
+                    {
+                      "key": "NextToken",
+                      "value": "41445528716##z;M06s}!!5D"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filters the results by the lifecycle status.",
+                      "key": "LifeCycleStatusFilter",
+                      "value": "zvSuBqRD"
+                    },
+                    {
+                      "description": "Filters the results by Availability Zone (for example, <code>us-east-1a</code>).",
+                      "key": "AvailabilityZoneFilter",
+                      "value": "do-"
+                    },
+                    {
+                      "description": "Filters the results by AZ ID (for example, <code>use1-az1</code>).",
+                      "key": "AvailabilityZoneIdFilter",
+                      "value": "E7-ppZJhMr2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Outposts\": [\n    {\n      \"OutpostId\": \"op-4bfba9ceb4d74311d\",\n      \"OwnerId\": \"864273734537\",\n      \"OutpostArn\": \"arn:awsyxnddqtx:outposts:o5blrik8-j:748827228347:outpost/op-ac0911a0b6b6b8621\",\n      \"SiteId\": \"os-9a5cfb88770533637\",\n      \"Name\": \"TR!+Tmv\",\n      \"Description\": \"C9}\",\n      \"LifeCycleStatus\": \"Wc\",\n      \"AvailabilityZone\": \"mOBGYAWYK-OfRqaTcRSiu-\",\n      \"AvailabilityZoneId\": \"eXWvlH9-PrLGRtGzglw6\",\n      \"Tags\": {\n        \"cupidatatb8\": \"N\",\n        \"nostrudab7\": \"&\",\n        \"eu_4\": \"<$hxQ~;)El<\"\n      },\n      \"SiteArn\": \"arn:aws:outposts:i:672056022728:site/os-d8921902af6bb69fd\",\n      \"SupportedHardwareType\": \"RACK\"\n    },\n    {\n      \"OutpostId\": \"op-ed5f1d352531ec7a8\",\n      \"OwnerId\": \"806526423109\",\n      \"OutpostArn\": \"arn:aws-:outposts:meknacqy:180916351930:outpost/op-79b798ae78c730a19\",\n      \"SiteId\": \"arn:aws:outposts:y56dthlsi:049637209424:site/os-2c170afb88860050f\",\n      \"Name\": \"*a*$\",\n      \"Description\": \"bY5\",\n      \"LifeCycleStatus\": \"fAH\",\n      \"AvailabilityZone\": \"LMfqk-QmCQd-ocXrMLsHvIu-\",\n      \"AvailabilityZoneId\": \"mAziXBtNhDk9-DjkflsclSg0\",\n      \"Tags\": {\n        \"aute_3b\": \"W{oCGGKW\",\n        \"minim_b\": \"U=\",\n        \"dolor_d\": \"$B7YPS0:vLH\",\n        \"anim_69\": \"VY`ru'\",\n        \"ut232\": \"zCb\",\n        \"consequat_056\": \"\\\\-\",\n        \"in_1e\": \"R+Y`Wrk.I[\",\n        \"ex_85\": \"s/\",\n        \"sit_deb\": \")\",\n        \"suntf8c\": \"fNe\",\n        \"veniam_b\": \"~!\",\n        \"magnacbe\": \"{{O@t\",\n        \"enim04d\": \"x\",\n        \"estee3\": \"5n\",\n        \"aliqua_d0\": \"G0w{\",\n        \"occaecat_a3\": \"r#el|\",\n        \"irure_1ab\": \"!>=P\",\n        \"nulla_6\": \"5u\",\n        \"do_612\": \"@r5dID\\\\sRA\",\n        \"fugiat_4f9\": \"8!JrPZW^I\",\n        \"consequat__c\": \"X\",\n        \"occaecat_0f\": \"}X\",\n        \"irure_c\": \"^G,1]G\\\\\",\n        \"quis624\": \"'`F\\\\qTU0\",\n        \"veniam_f\": \"\\\\2|0Z~6\",\n        \"do_ac\": \"x]3{8jI\",\n        \"ad_b\": \"L)9m\",\n        \"quisd\": \"t~d\\\\=5[\",\n        \"sunt_35\": \"$A#0W?o4{l \",\n        \"proident_5ef\": \"}i8/bkd\",\n        \"voluptate0ee\": \"n8sx\\\"\",\n        \"officia_b2e\": \"\\\\%\",\n        \"et_40\": \"K;wBH\",\n        \"aliqua_e\": \"%|dLCH'\",\n        \"pariatur_0ee\": \"s`Q\",\n        \"proident_0\": \"$b\",\n        \"et_46b\": \"#u\",\n        \"dolore3a\": \"FB{\",\n        \"aliquaf9\": \"orE{e)6R9D-\",\n        \"amet_1\": \"+gOxGMD\",\n        \"culpaab\": \"CW._v\\\"\",\n        \"velit6\": \".8EV>ZOwh%\",\n        \"commodo1\": \".lxopIQLtfR\",\n        \"velit_d81\": \")&vGC}#}c2b\",\n        \"laboris2e\": \"Mw\",\n        \"pariatur_48\": \"\\\"4\"\n      },\n      \"SiteArn\": \"arn:aws:outposts:n:677194525186:site/os-d19f694f4baed95c3\",\n      \"SupportedHardwareType\": \"RACK\"\n    }\n  ],\n  \"NextToken\": \"7065401377##{!-vVWu>wBc\"\n}",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-b7735ba1-5ea5-47c1-b00b-068bc1c9fe54"
+            },
+            {
+              "id": "642ee7f4-0150-4e56-86bb-9a8b25884517",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/outposts?NextToken=41445528716%23%23z;M06s}!!5D&MaxResults=<integer>&LifeCycleStatusFilter=zvSuBqRD&AvailabilityZoneFilter=do-&AvailabilityZoneIdFilter=E7-ppZJhMr2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts"
+                  ],
+                  "query": [
+                    {
+                      "key": "NextToken",
+                      "value": "41445528716##z;M06s}!!5D"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filters the results by the lifecycle status.",
+                      "key": "LifeCycleStatusFilter",
+                      "value": "zvSuBqRD"
+                    },
+                    {
+                      "description": "Filters the results by Availability Zone (for example, <code>us-east-1a</code>).",
+                      "key": "AvailabilityZoneFilter",
+                      "value": "do-"
+                    },
+                    {
+                      "description": "Filters the results by AZ ID (for example, <code>use1-az1</code>).",
+                      "key": "AvailabilityZoneIdFilter",
+                      "value": "E7-ppZJhMr2"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-642ee7f4-0150-4e56-86bb-9a8b25884517"
+            },
+            {
+              "id": "e55aacc0-0316-4fcd-8300-7376912891c8",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/outposts?NextToken=41445528716%23%23z;M06s}!!5D&MaxResults=<integer>&LifeCycleStatusFilter=zvSuBqRD&AvailabilityZoneFilter=do-&AvailabilityZoneIdFilter=E7-ppZJhMr2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts"
+                  ],
+                  "query": [
+                    {
+                      "key": "NextToken",
+                      "value": "41445528716##z;M06s}!!5D"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filters the results by the lifecycle status.",
+                      "key": "LifeCycleStatusFilter",
+                      "value": "zvSuBqRD"
+                    },
+                    {
+                      "description": "Filters the results by Availability Zone (for example, <code>us-east-1a</code>).",
+                      "key": "AvailabilityZoneFilter",
+                      "value": "do-"
+                    },
+                    {
+                      "description": "Filters the results by AZ ID (for example, <code>use1-az1</code>).",
+                      "key": "AvailabilityZoneIdFilter",
+                      "value": "E7-ppZJhMr2"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-e55aacc0-0316-4fcd-8300-7376912891c8"
+            },
+            {
+              "id": "a20d4e74-e57a-4803-8bad-311ee679acc1",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/outposts?NextToken=41445528716%23%23z;M06s}!!5D&MaxResults=<integer>&LifeCycleStatusFilter=zvSuBqRD&AvailabilityZoneFilter=do-&AvailabilityZoneIdFilter=E7-ppZJhMr2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "outposts"
+                  ],
+                  "query": [
+                    {
+                      "key": "NextToken",
+                      "value": "41445528716##z;M06s}!!5D"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filters the results by the lifecycle status.",
+                      "key": "LifeCycleStatusFilter",
+                      "value": "zvSuBqRD"
+                    },
+                    {
+                      "description": "Filters the results by Availability Zone (for example, <code>us-east-1a</code>).",
+                      "key": "AvailabilityZoneFilter",
+                      "value": "do-"
+                    },
+                    {
+                      "description": "Filters the results by AZ ID (for example, <code>use1-az1</code>).",
+                      "key": "AvailabilityZoneIdFilter",
+                      "value": "E7-ppZJhMr2"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:41:15.000Z",
+              "updatedAt": "2026-07-28T10:41:15.000Z",
+              "uid": "35240-a20d4e74-e57a-4803-8bad-311ee679acc1"
+            }
+          ],
+          "createdAt": "2026-07-28T10:41:15.000Z",
+          "updatedAt": "2026-07-28T10:41:15.000Z",
+          "uid": "35240-906f58d9-786e-4b93-b94f-eb23ae5c9ce1"
+        }
+      ],
+      "id": "777172e9-77a6-4ee4-b098-ab2a6f401ca6",
+      "createdAt": "2026-07-28T10:41:15.000Z",
+      "updatedAt": "2026-07-28T10:41:15.000Z",
+      "uid": "35240-777172e9-77a6-4ee4-b098-ab2a6f401ca6"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://outposts.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "provider": "amazon-outposts",
+  "sources": [
+    "amazon-outposts-catalog-api-openapi.yml",
+    "amazon-outposts-connections-api-openapi.yml",
+    "amazon-outposts-list-orders-api-openapi.yml",
+    "amazon-outposts-orders-api-openapi.yml",
+    "amazon-outposts-outposts-api-openapi.yml",
+    "amazon-outposts-sites-api-openapi.yml",
+    "amazon-outposts-tags-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-outposts-catalog-api-openapi.yml",
+    "amazon-outposts-connections-api-openapi.yml",
+    "amazon-outposts-list-orders-api-openapi.yml",
+    "amazon-outposts-orders-api-openapi.yml",
+    "amazon-outposts-outposts-api-openapi.yml",
+    "amazon-outposts-sites-api-openapi.yml",
+    "amazon-outposts-tags-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
