@@ -1,0 +1,423 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Catalog Outposts API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Outposts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Outposts List Outposts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://outposts.{region}.amazonaws.com/outposts",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LifeCycleStatusFilter",
+                "value": "",
+                "type": "query",
+                "description": "Filters the results by the lifecycle status."
+              },
+              {
+                "name": "AvailabilityZoneFilter",
+                "value": "",
+                "type": "query",
+                "description": "Filters the results by Availability Zone (for example, <code>us-east-1a</code>)."
+              },
+              {
+                "name": "AvailabilityZoneIdFilter",
+                "value": "",
+                "type": "query",
+                "description": "Filters the results by AZ ID (for example, <code>use1-az1</code>)."
+              }
+            ]
+          },
+          "docs": "<p>Lists the Outposts for your Amazon Web Services account.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
+        },
+        {
+          "info": {
+            "name": "Amazon Outposts Create Outpost",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://outposts.{region}.amazonaws.com/outposts",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Creates an Outpost.</p> <p>You can specify either an Availability one or an AZ ID.</p>"
+        },
+        {
+          "info": {
+            "name": "Amazon Outposts Get Outpost",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://outposts.{region}.amazonaws.com/outposts/:OutpostId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "OutpostId",
+                "value": "",
+                "type": "path",
+                "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+              }
+            ]
+          },
+          "docs": "Gets information about the specified Outpost."
+        },
+        {
+          "info": {
+            "name": "Amazon Outposts Update Outpost",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://outposts.{region}.amazonaws.com/outposts/:OutpostId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "OutpostId",
+                "value": "",
+                "type": "path",
+                "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": " Updates an Outpost. "
+        },
+        {
+          "info": {
+            "name": "Amazon Outposts Delete Outpost",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://outposts.{region}.amazonaws.com/outposts/:OutpostId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "OutpostId",
+                "value": "",
+                "type": "path",
+                "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+              }
+            ]
+          },
+          "docs": "Deletes the specified Outpost."
+        },
+        {
+          "info": {
+            "name": "Amazon Outposts Get Outpost Instance Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://outposts.{region}.amazonaws.com/outposts/:OutpostId/instanceTypes",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "OutpostId",
+                "value": "",
+                "type": "path",
+                "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the instance types for the specified Outpost."
+        },
+        {
+          "info": {
+            "name": "Amazon Outposts List Assets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://outposts.{region}.amazonaws.com/outposts/:OutpostId/assets",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "OutpostId",
+                "value": "",
+                "type": "path",
+                "description": " The ID or the Amazon Resource Name (ARN) of the Outpost. "
+              },
+              {
+                "name": "HostIdFilter",
+                "value": "",
+                "type": "query",
+                "description": "Filters the results by the host ID of a Dedicated Host."
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "StatusFilter",
+                "value": "",
+                "type": "query",
+                "description": "Filters the results by state."
+              }
+            ]
+          },
+          "docs": "<p>Lists the hardware assets for the specified Outpost.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
