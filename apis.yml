@@ -90,6 +90,8 @@ apis:
   humanURL: https://aws.amazon.com/outposts/
   baseURL: https://outposts.amazonaws.com
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
