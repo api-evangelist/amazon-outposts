@@ -5,6 +5,18 @@ description: >-
   on-premises or edge location for a truly consistent hybrid experience. It allows you to extend AWS infrastructure, AWS
   services, APIs, and tools to virtually any data center, co-location space, or on-premises facility.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
