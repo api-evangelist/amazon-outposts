@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Catalog Outposts API
   description: Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services infrastructure, APIs, and tools to customer premises. By providing local access to Amazon Web Services managed infrastructure, Amazon Web Services Outposts enables customers to build and run applications on premises using the same programming interfaces as in Amazon Web Services Regions, while using local compute and storage resources for lower latency and local data processing needs.
@@ -726,63 +726,6 @@ paths:
       - Outposts
 components:
   schemas:
-    OutpostName:
-      type: string
-      pattern: ^[\S ]+$
-      description: The name of the Outpost.
-      minLength: 1
-      maxLength: 255
-    NotFoundException: {}
-    AssetState:
-      type: string
-      enum:
-      - ACTIVE
-      - RETIRING
-    AccessDeniedException: {}
-    GetOutpostOutput:
-      type: object
-      properties:
-        Outpost:
-          $ref: '#/components/schemas/Outpost'
-    InstanceTypeItem:
-      type: object
-      properties:
-        InstanceType:
-          $ref: '#/components/schemas/InstanceType'
-      description: Information about an instance type.
-    HostId:
-      type: string
-      pattern: ^[A-Za-z0-9-]*$
-      minLength: 1
-      maxLength: 50
-    GetOutpostInstanceTypesOutput:
-      type: object
-      properties:
-        InstanceTypes:
-          $ref: '#/components/schemas/InstanceTypeListDefinition'
-        NextToken:
-          $ref: '#/components/schemas/Token'
-        OutpostId:
-          allOf:
-          - $ref: '#/components/schemas/OutpostId'
-          - description: ' The ID of the Outpost. '
-        OutpostArn:
-          $ref: '#/components/schemas/OutpostArn'
-    CreateOutpostOutput:
-      type: object
-      properties:
-        Outpost:
-          $ref: '#/components/schemas/Outpost'
-    SiteId:
-      type: string
-      pattern: ^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$
-      description: The ID of the site.
-      minLength: 1
-      maxLength: 255
-    InstanceType:
-      type: string
-      description: The instance type.
-    ConflictException: {}
     ComputeAttributes:
       type: object
       properties:
@@ -795,24 +738,12 @@ components:
           - $ref: '#/components/schemas/ComputeAssetState'
           - description: <p>The state.</p> <ul> <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li> <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li> <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li> </ul>
       description: ' Information about compute hardware assets. '
-    ListOutpostsOutput:
-      type: object
-      properties:
-        Outposts:
-          $ref: '#/components/schemas/outpostListDefinition'
-        NextToken:
-          $ref: '#/components/schemas/Token'
-    RackId:
+    HostId:
       type: string
-      pattern: ^[\S \n]+$
-      minLength: 5
-      maxLength: 20
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
+      pattern: ^[A-Za-z0-9-]*$
+      minLength: 1
+      maxLength: 50
+    ConflictException: {}
     AssetInfo:
       type: object
       properties:
@@ -837,33 +768,167 @@ components:
           - $ref: '#/components/schemas/AssetLocation'
           - description: ' The position of an asset in a rack. '
       description: ' Information about hardware assets. '
+    InstanceTypeListDefinition:
+      type: array
+      description: Information about the instance types.
+      items:
+        $ref: '#/components/schemas/InstanceTypeItem'
+    InstanceType:
+      type: string
+      description: The instance type.
+    CreateOutpostOutput:
+      type: object
+      properties:
+        Outpost:
+          $ref: '#/components/schemas/Outpost'
+    AssetState:
+      type: string
+      enum:
+      - ACTIVE
+      - RETIRING
+    AvailabilityZoneId:
+      type: string
+      pattern: ^[a-zA-Z]+\d-[a-zA-Z]+\d$
+      description: The ID of the Availability Zone.
+      minLength: 1
+      maxLength: 255
+    LifeCycleStatus:
+      type: string
+      pattern: ^[ A-Za-z]+$
+      description: The life cycle status.
+      minLength: 1
+      maxLength: 20
+    OutpostId:
+      type: string
+      pattern: ^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$
+      minLength: 1
+      maxLength: 180
+    ListOutpostsOutput:
+      type: object
+      properties:
+        Outposts:
+          $ref: '#/components/schemas/outpostListDefinition'
+        NextToken:
+          $ref: '#/components/schemas/Token'
     AvailabilityZone:
       type: string
       pattern: ^([a-zA-Z]+-){1,3}([a-zA-Z]+)?(\d+[a-zA-Z]?)?$
       description: The Availability Zone.
       minLength: 1
       maxLength: 1000
-    outpostListDefinition:
-      type: array
-      description: Information about the Outposts.
-      items:
-        $ref: '#/components/schemas/Outpost'
-    ServiceQuotaExceededException: {}
-    UpdateOutpostOutput:
+    DeleteOutpostOutput:
+      type: object
+      properties: {}
+    RackElevation:
+      type: number
+      format: float
+      minimum: 0
+      maximum: 99
+    GetOutpostOutput:
       type: object
       properties:
         Outpost:
           $ref: '#/components/schemas/Outpost'
+    ComputeAssetState:
+      type: string
+      enum:
+      - ACTIVE
+      - ISOLATED
+      - RETIRING
+    AssetListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/AssetInfo'
+    AssetType:
+      type: string
+      enum:
+      - COMPUTE
+    OutpostName:
+      type: string
+      pattern: ^[\S ]+$
+      description: The name of the Outpost.
+      minLength: 1
+      maxLength: 255
+    RackId:
+      type: string
+      pattern: ^[\S \n]+$
+      minLength: 5
+      maxLength: 20
+    Token:
+      type: string
+      pattern: ^(\d+)##(\S+)$
+      description: The pagination token.
+      minLength: 1
+      maxLength: 2048
+    SiteId:
+      type: string
+      pattern: ^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$
+      description: The ID of the site.
+      minLength: 1
+      maxLength: 255
+    SupportedHardwareType:
+      type: string
+      enum:
+      - RACK
+      - SERVER
+    InstanceTypeItem:
+      type: object
+      properties:
+        InstanceType:
+          $ref: '#/components/schemas/InstanceType'
+      description: Information about an instance type.
+    OutpostArn:
+      type: string
+      pattern: ^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$
+      description: The Amazon Resource Name (ARN) of the Outpost.
+      minLength: 1
+      maxLength: 255
+    AssetId:
+      type: string
+      pattern: ^(\w+)$
+      minLength: 1
+      maxLength: 100
     OwnerId:
       type: string
       pattern: \d{12}
       description: The Amazon Web Services account ID of the Outpost owner.
       minLength: 12
       maxLength: 12
-    AssetType:
+    UpdateOutpostOutput:
+      type: object
+      properties:
+        Outpost:
+          $ref: '#/components/schemas/Outpost'
+    SiteArn:
       type: string
-      enum:
-      - COMPUTE
+      pattern: ^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/(os-[a-f0-9]{17})$
+      description: The Amazon Resource Name (ARN) of the site.
+      minLength: 1
+      maxLength: 255
+    GetOutpostInstanceTypesOutput:
+      type: object
+      properties:
+        InstanceTypes:
+          $ref: '#/components/schemas/InstanceTypeListDefinition'
+        NextToken:
+          $ref: '#/components/schemas/Token'
+        OutpostId:
+          allOf:
+          - $ref: '#/components/schemas/OutpostId'
+          - description: ' The ID of the Outpost. '
+        OutpostArn:
+          $ref: '#/components/schemas/OutpostArn'
+    ServiceQuotaExceededException: {}
+    TagValue:
+      type: string
+      pattern: ^[\S \n]+$
+      maxLength: 256
+    OutpostDescription:
+      type: string
+      pattern: ^[\S ]*$
+      description: The description of the Outpost.
+      minLength: 0
+      maxLength: 1000
     Outpost:
       type: object
       properties:
@@ -898,32 +963,22 @@ components:
           - $ref: '#/components/schemas/SupportedHardwareType'
           - description: ' The hardware type. '
       description: Information about an Outpost.
-    InternalServerException: {}
-    DeleteOutpostOutput:
+    ValidationException: {}
+    AssetLocation:
       type: object
-      properties: {}
-    Token:
-      type: string
-      pattern: ^(\d+)##(\S+)$
-      description: The pagination token.
-      minLength: 1
-      maxLength: 2048
-    OutpostId:
-      type: string
-      pattern: ^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$
-      minLength: 1
-      maxLength: 180
-    LifeCycleStatus:
-      type: string
-      pattern: ^[ A-Za-z]+$
-      description: The life cycle status.
-      minLength: 1
-      maxLength: 20
-    SupportedHardwareType:
-      type: string
-      enum:
-      - RACK
-      - SERVER
+      properties:
+        RackElevation:
+          allOf:
+          - $ref: '#/components/schemas/RackElevation'
+          - description: ' The position of an asset in a rack measured in rack units. '
+      description: ' Information about the position of the asset in a rack. '
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    InternalServerException: {}
     ListAssetsOutput:
       type: object
       properties:
@@ -933,95 +988,28 @@ components:
           - description: Information about the hardware assets.
         NextToken:
           $ref: '#/components/schemas/Token'
-    AvailabilityZoneId:
-      type: string
-      pattern: ^[a-zA-Z]+\d-[a-zA-Z]+\d$
-      description: The ID of the Availability Zone.
-      minLength: 1
-      maxLength: 255
-    AssetListDefinition:
+    AccessDeniedException: {}
+    NotFoundException: {}
+    outpostListDefinition:
       type: array
+      description: Information about the Outposts.
       items:
-        $ref: '#/components/schemas/AssetInfo'
-    InstanceTypeListDefinition:
-      type: array
-      description: Information about the instance types.
-      items:
-        $ref: '#/components/schemas/InstanceTypeItem'
-    ComputeAssetState:
-      type: string
-      enum:
-      - ACTIVE
-      - ISOLATED
-      - RETIRING
-    OutpostArn:
-      type: string
-      pattern: ^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$
-      description: The Amazon Resource Name (ARN) of the Outpost.
-      minLength: 1
-      maxLength: 255
-    OutpostDescription:
-      type: string
-      pattern: ^[\S ]*$
-      description: The description of the Outpost.
-      minLength: 0
-      maxLength: 1000
-    ValidationException: {}
-    RackElevation:
-      type: number
-      format: float
-      minimum: 0
-      maximum: 99
-    AssetLocation:
-      type: object
-      properties:
-        RackElevation:
-          allOf:
-          - $ref: '#/components/schemas/RackElevation'
-          - description: ' The position of an asset in a rack measured in rack units. '
-      description: ' Information about the position of the asset in a rack. '
-    AssetId:
-      type: string
-      pattern: ^(\w+)$
-      minLength: 1
-      maxLength: 100
-    SiteArn:
-      type: string
-      pattern: ^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/(os-[a-f0-9]{17})$
-      description: The Amazon Resource Name (ARN) of the site.
-      minLength: 1
-      maxLength: 255
-    TagValue:
-      type: string
-      pattern: ^[\S \n]+$
-      maxLength: 256
+        $ref: '#/components/schemas/Outpost'
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -1034,6 +1022,18 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
