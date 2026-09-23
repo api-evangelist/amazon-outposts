@@ -1,13 +1,7 @@
 {
   "provider": "amazon-outposts",
   "sources": [
-    "amazon-outposts-catalog-api-openapi.yml",
-    "amazon-outposts-connections-api-openapi.yml",
-    "amazon-outposts-list-orders-api-openapi.yml",
-    "amazon-outposts-orders-api-openapi.yml",
-    "amazon-outposts-outposts-api-openapi.yml",
-    "amazon-outposts-sites-api-openapi.yml",
-    "amazon-outposts-tags-api-openapi.yml"
+    "_original/amazon-outposts-openapi.yml"
   ],
   "outputs": [
     "amazon-outposts-catalog-api-openapi.yml",
@@ -22,7 +16,50 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-outposts-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "amazon-outposts-openapi.yml: tagged paths POST /orders/{OrderId}/cancel -> Orders",
+    "amazon-outposts-openapi.yml: tagged paths POST /orders -> Orders",
+    "amazon-outposts-openapi.yml: tagged paths POST /outposts -> Outposts",
+    "amazon-outposts-openapi.yml: tagged paths GET /outposts -> Outposts",
+    "amazon-outposts-openapi.yml: tagged paths POST /sites -> Sites",
+    "amazon-outposts-openapi.yml: tagged paths GET /sites -> Sites",
+    "amazon-outposts-openapi.yml: tagged paths DELETE /outposts/{OutpostId} -> Outposts",
+    "amazon-outposts-openapi.yml: tagged paths GET /outposts/{OutpostId} -> Outposts",
+    "amazon-outposts-openapi.yml: tagged paths PATCH /outposts/{OutpostId} -> Outposts",
+    "amazon-outposts-openapi.yml: tagged paths DELETE /sites/{SiteId} -> Sites",
+    "amazon-outposts-openapi.yml: tagged paths GET /sites/{SiteId} -> Sites",
+    "amazon-outposts-openapi.yml: tagged paths PATCH /sites/{SiteId} -> Sites",
+    "amazon-outposts-openapi.yml: tagged paths GET /catalog/item/{CatalogItemId} -> Catalog",
+    "amazon-outposts-openapi.yml: tagged paths GET /connections/{ConnectionId} -> Connections",
+    "amazon-outposts-openapi.yml: tagged paths GET /orders/{OrderId} -> Orders",
+    "amazon-outposts-openapi.yml: tagged paths GET /outposts/{OutpostId}/instanceTypes -> Outposts",
+    "amazon-outposts-openapi.yml: tagged paths GET /sites/{SiteId}/address#AddressType -> Sites",
+    "amazon-outposts-openapi.yml: tagged paths GET /outposts/{OutpostId}/assets -> Outposts",
+    "amazon-outposts-openapi.yml: tagged paths GET /catalog/items -> Catalog",
+    "amazon-outposts-openapi.yml: tagged paths GET /list-orders -> List Orders",
+    "amazon-outposts-openapi.yml: tagged paths GET /tags/{ResourceArn} -> Tags",
+    "amazon-outposts-openapi.yml: tagged paths POST /tags/{ResourceArn} -> Tags",
+    "amazon-outposts-openapi.yml: tagged paths POST /connections -> Connections",
+    "amazon-outposts-openapi.yml: tagged paths DELETE /tags/{ResourceArn}#tagKeys -> Tags",
+    "amazon-outposts-openapi.yml: tagged paths PUT /sites/{SiteId}/address -> Sites",
+    "amazon-outposts-openapi.yml: tagged paths PATCH /sites/{SiteId}/rackPhysicalProperties -> Sites",
+    "amazon-outposts-openapi.yml: declared missing tag: Catalog",
+    "amazon-outposts-openapi.yml: declared missing tag: Connections",
+    "amazon-outposts-openapi.yml: declared missing tag: List Orders",
+    "amazon-outposts-openapi.yml: declared missing tag: Orders",
+    "amazon-outposts-openapi.yml: declared missing tag: Outposts",
+    "amazon-outposts-openapi.yml: declared missing tag: Sites",
+    "amazon-outposts-openapi.yml: declared missing tag: Tags",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-outposts-catalog-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-outposts-connections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-outposts-list-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-outposts-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-outposts-outposts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-outposts-sites-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-outposts-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

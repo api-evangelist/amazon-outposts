@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2019-12-03
   x-release: v4
-  title: AWS Outposts Catalog List Orders API
+  title: AWS Outposts List Orders API
   description: Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services infrastructure, APIs, and tools to customer premises. By providing local access to Amazon Web Services managed infrastructure, Amazon Web Services Outposts enables customers to build and run applications on premises using the same programming interfaces as in Amazon Web Services Regions, while using local compute and storage resources for lower latency and local data processing needs.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/outposts-2019-12-03.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -200,25 +201,76 @@ paths:
       tags:
       - List Orders
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    OrderSummaryListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/OrderSummary'
+    ListOrdersOutput:
+      type: object
+      properties:
+        Orders:
+          allOf:
+          - $ref: '#/components/schemas/OrderSummaryListDefinition'
+          - description: ' Information about the orders. '
+        NextToken:
+          $ref: '#/components/schemas/Token'
     OrderId:
       type: string
       pattern: oo-[a-f0-9]{17}$
       minLength: 1
       maxLength: 20
+    ISO8601Timestamp:
+      type: string
+      format: date-time
+    LineItemStatusCounts:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/LineItemQuantity'
     OrderType:
       type: string
       enum:
       - OUTPOST
       - REPLACEMENT
-    LineItemStatusCounts:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/LineItemQuantity'
     OrderSummary:
       type: object
       properties:
@@ -251,24 +303,6 @@ components:
           - $ref: '#/components/schemas/ISO8601Timestamp'
           - description: ' The fulfilment date for the order. '
       description: ' A summary of line items in your order. '
-    ISO8601Timestamp:
-      type: string
-      format: date-time
-    ListOrdersOutput:
-      type: object
-      properties:
-        Orders:
-          allOf:
-          - $ref: '#/components/schemas/OrderSummaryListDefinition'
-          - description: ' Information about the orders. '
-        NextToken:
-          $ref: '#/components/schemas/Token'
-    Token:
-      type: string
-      pattern: ^(\d+)##(\S+)$
-      description: The pagination token.
-      minLength: 1
-      maxLength: 2048
     OrderStatus:
       type: string
       enum:
@@ -287,57 +321,24 @@ components:
       pattern: ^op-[a-f0-9]{17}$
       minLength: 1
       maxLength: 20
-    ValidationException: {}
     InternalServerException: {}
+    Token:
+      type: string
+      pattern: ^(\d+)##(\S+)$
+      description: The pagination token.
+      minLength: 1
+      maxLength: 2048
+    ValidationException: {}
     AccessDeniedException: {}
+    NotFoundException: {}
     LineItemQuantity:
       type: integer
       minimum: 1
       maximum: 20
-    NotFoundException: {}
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
+    OrderSummaryListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/OrderSummary'
   securitySchemes:
     hmac:
       type: apiKey

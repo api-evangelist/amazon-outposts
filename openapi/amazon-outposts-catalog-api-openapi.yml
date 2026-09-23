@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2019-12-03
   x-release: v4
   title: AWS Outposts Catalog API
   description: Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services infrastructure, APIs, and tools to customer premises. By providing local access to Amazon Web Services managed infrastructure, Amazon Web Services Outposts enables customers to build and run applications on premises using the same programming interfaces as in Amazon Web Services Regions, while using local compute and storage resources for lower latency and local data processing needs.
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/outposts-2019-12-03.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -184,7 +185,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: ListCatalogItems
-      description: <p>Lists the items in the catalog.</p> <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
+      description: 'Lists the items in the catalog.
+
+
+        Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.'
       responses:
         '200':
           description: Success
@@ -268,85 +272,12 @@ paths:
       tags:
       - Catalog
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    CatalogItemWeightLbs:
-      type: integer
-    MaxSize:
+    SkuCode:
       type: string
-    ListCatalogItemsOutput:
-      type: object
-      properties:
-        CatalogItems:
-          allOf:
-          - $ref: '#/components/schemas/CatalogItemListDefinition'
-          - description: Information about the catalog items.
-        NextToken:
-          $ref: '#/components/schemas/Token'
-    EC2CapacityListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/EC2Capacity'
-    CatalogItemPowerKva:
-      type: number
-      format: float
-    Token:
-      type: string
-      pattern: ^(\d+)##(\S+)$
-      description: The pagination token.
+      pattern: OR-[A-Z0-9]{7}
       minLength: 1
-      maxLength: 2048
-    CatalogItemListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/CatalogItem'
-    CatalogItemClass:
-      type: string
-      enum:
-      - RACK
-      - SERVER
+      maxLength: 10
     GetCatalogItemOutput:
       type: object
       properties:
@@ -354,22 +285,37 @@ components:
           allOf:
           - $ref: '#/components/schemas/CatalogItem'
           - description: Information about this catalog item.
-    SupportedUplinkGbps:
-      type: integer
-    Family:
+    EC2Capacity:
+      type: object
+      properties:
+        Family:
+          allOf:
+          - $ref: '#/components/schemas/Family'
+          - description: ' The family of the EC2 capacity. '
+        MaxSize:
+          allOf:
+          - $ref: '#/components/schemas/MaxSize'
+          - description: ' The maximum size of the EC2 capacity. '
+        Quantity:
+          allOf:
+          - $ref: '#/components/schemas/Quantity'
+          - description: ' The quantity of the EC2 capacity. '
+      description: ' Information about EC2 capacity. '
+    SupportedStorageEnum:
       type: string
-      pattern: '[a-z0-9]+'
-      minLength: 1
-      maxLength: 10
-    SupportedStorageList:
+      enum:
+      - EBS
+      - S3
+    CatalogItemListDefinition:
       type: array
       items:
-        $ref: '#/components/schemas/SupportedStorageEnum'
-    ValidationException: {}
+        $ref: '#/components/schemas/CatalogItem'
     SupportedUplinkGbpsListDefinition:
       type: array
       items:
         $ref: '#/components/schemas/SupportedUplinkGbps'
+    Quantity:
+      type: string
     CatalogItem:
       type: object
       properties:
@@ -402,41 +348,99 @@ components:
           - $ref: '#/components/schemas/SupportedStorageList'
           - description: ' The supported storage options for the catalog item. '
       description: ' Information about a catalog item. '
-    InternalServerException: {}
-    SupportedStorageEnum:
+    CatalogItemPowerKva:
+      type: number
+      format: float
+    MaxSize:
       type: string
-      enum:
-      - EBS
-      - S3
+    InternalServerException: {}
+    CatalogItemWeightLbs:
+      type: integer
+    ValidationException: {}
+    Token:
+      type: string
+      pattern: ^(\d+)##(\S+)$
+      description: The pagination token.
+      minLength: 1
+      maxLength: 2048
     CatalogItemStatus:
       type: string
       enum:
       - AVAILABLE
       - DISCONTINUED
-    NotFoundException: {}
-    Quantity:
+    SupportedStorageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SupportedStorageEnum'
+    CatalogItemClass:
       type: string
-    SkuCode:
-      type: string
-      pattern: OR-[A-Z0-9]{7}
-      minLength: 1
-      maxLength: 10
-    EC2Capacity:
+      enum:
+      - RACK
+      - SERVER
+    ListCatalogItemsOutput:
       type: object
       properties:
-        Family:
+        CatalogItems:
           allOf:
-          - $ref: '#/components/schemas/Family'
-          - description: ' The family of the EC2 capacity. '
-        MaxSize:
-          allOf:
-          - $ref: '#/components/schemas/MaxSize'
-          - description: ' The maximum size of the EC2 capacity. '
-        Quantity:
-          allOf:
-          - $ref: '#/components/schemas/Quantity'
-          - description: ' The quantity of the EC2 capacity. '
-      description: ' Information about EC2 capacity. '
+          - $ref: '#/components/schemas/CatalogItemListDefinition'
+          - description: Information about the catalog items.
+        NextToken:
+          $ref: '#/components/schemas/Token'
+    NotFoundException: {}
+    Family:
+      type: string
+      pattern: '[a-z0-9]+'
+      minLength: 1
+      maxLength: 10
+    EC2CapacityListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/EC2Capacity'
+    SupportedUplinkGbps:
+      type: integer
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2019-12-03
   x-release: v4
-  title: AWS Outposts Catalog Connections API
+  title: AWS Outposts Connections API
   description: Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services infrastructure, APIs, and tools to customer premises. By providing local access to Amazon Web Services managed infrastructure, Amazon Web Services Outposts enables customers to build and run applications on premises using the same programming interfaces as in Amazon Web Services Regions, while using local compute and storage resources for lower latency and local data processing needs.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/outposts-2019-12-03.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +126,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: GetConnection
-      description: <note> <p> Amazon Web Services uses this action to install Outpost servers.</p> </note> <p> Gets information about the specified connection. </p> <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>
+      description: 'Amazon Web Services uses this action to install Outpost servers.
+
+
+        Gets information about the specified connection.
+
+
+        Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see Amazon Web Services managed policies for Amazon Web Services Outposts and Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail in the Amazon Web Services Outposts User Guide.'
       responses:
         '200':
           description: Success
@@ -191,7 +198,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: StartConnection
-      description: <note> <p> Amazon Web Services uses this action to install Outpost servers.</p> </note> <p> Starts the connection required for Outpost server installation. </p> <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>
+      description: 'Amazon Web Services uses this action to install Outpost servers.
+
+
+        Starts the connection required for Outpost server installation.
+
+
+        Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see Amazon Web Services managed policies for Amazon Web Services Outposts and Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail in the Amazon Web Services Outposts User Guide.'
       responses:
         '200':
           description: Success
@@ -274,11 +287,6 @@ paths:
       - Connections
 components:
   schemas:
-    CIDR:
-      type: string
-      pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$
-      minLength: 9
-      maxLength: 18
     ConnectionDetails:
       type: object
       properties:
@@ -307,6 +315,22 @@ components:
           - $ref: '#/components/schemas/CIDRList'
           - description: ' The allowed IP addresses. '
       description: ' Information about a connection. '
+    ConnectionId:
+      type: string
+      pattern: ^[a-zA-Z0-9+/=]{1,1024}$
+      minLength: 1
+      maxLength: 1024
+    ServerEndpoint:
+      type: string
+      pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}:[0-9]{1,5}$
+      minLength: 9
+      maxLength: 21
+    CIDR:
+      type: string
+      pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$
+      minLength: 9
+      maxLength: 18
+    InternalServerException: {}
     GetConnectionResponse:
       type: object
       properties:
@@ -318,11 +342,23 @@ components:
           allOf:
           - $ref: '#/components/schemas/ConnectionDetails'
           - description: ' Information about the connection. '
-    ConnectionId:
+    ValidationException: {}
+    CIDRList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CIDR'
+    UnderlayIpAddress:
       type: string
-      pattern: ^[a-zA-Z0-9+/=]{1,1024}$
-      minLength: 1
-      maxLength: 1024
+      pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}$
+      minLength: 7
+      maxLength: 15
+    AccessDeniedException: {}
+    NotFoundException: {}
+    WireGuardPublicKey:
+      type: string
+      pattern: ^[a-zA-Z0-9/+]{43}=$
+      minLength: 44
+      maxLength: 44
     StartConnectionResponse:
       type: object
       properties:
@@ -334,38 +370,21 @@ components:
           allOf:
           - $ref: '#/components/schemas/UnderlayIpAddress'
           - description: ' The underlay IP address. '
-    WireGuardPublicKey:
-      type: string
-      pattern: ^[a-zA-Z0-9/+]{43}=$
-      minLength: 44
-      maxLength: 44
-    CIDRList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CIDR'
-    ServerEndpoint:
-      type: string
-      pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}:[0-9]{1,5}$
-      minLength: 9
-      maxLength: 21
-    ValidationException: {}
-    InternalServerException: {}
-    AccessDeniedException: {}
-    NotFoundException: {}
-    UnderlayIpAddress:
-      type: string
-      pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}$
-      minLength: 7
-      maxLength: 15
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -382,20 +401,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
