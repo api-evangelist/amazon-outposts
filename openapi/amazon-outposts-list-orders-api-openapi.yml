@@ -202,24 +202,37 @@ paths:
       - List Orders
 components:
   schemas:
-    OrderId:
+    OrderStatus:
       type: string
-      pattern: oo-[a-f0-9]{17}$
-      minLength: 1
-      maxLength: 20
-    ISO8601Timestamp:
-      type: string
-      format: date-time
-    Token:
-      type: string
-      pattern: ^(\d+)##(\S+)$
-      description: The pagination token.
-      minLength: 1
-      maxLength: 2048
-    LineItemQuantity:
-      type: integer
-      minimum: 1
-      maximum: 20
+      enum:
+      - RECEIVED
+      - PENDING
+      - PROCESSING
+      - INSTALLING
+      - FULFILLED
+      - CANCELLED
+      - PREPARING
+      - IN_PROGRESS
+      - COMPLETED
+      - ERROR
+    ListOrdersOutput:
+      type: object
+      properties:
+        Orders:
+          allOf:
+          - $ref: '#/components/schemas/OrderSummaryListDefinition'
+          - description: ' Information about the orders. '
+        NextToken:
+          $ref: '#/components/schemas/Token'
+    OrderSummaryListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/OrderSummary'
+    AccessDeniedException: {}
+    LineItemStatusCounts:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/LineItemQuantity'
     OrderSummary:
       type: object
       properties:
@@ -252,69 +265,38 @@ components:
           - $ref: '#/components/schemas/ISO8601Timestamp'
           - description: ' The fulfilment date for the order. '
       description: ' A summary of line items in your order. '
-    AccessDeniedException: {}
-    OrderSummaryListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/OrderSummary'
+    Token:
+      type: string
+      pattern: ^(\d+)##(\S+)$
+      description: The pagination token.
+      minLength: 1
+      maxLength: 2048
+    NotFoundException: {}
     OutpostIdOnly:
       type: string
       pattern: ^op-[a-f0-9]{17}$
       minLength: 1
       maxLength: 20
-    ListOrdersOutput:
-      type: object
-      properties:
-        Orders:
-          allOf:
-          - $ref: '#/components/schemas/OrderSummaryListDefinition'
-          - description: ' Information about the orders. '
-        NextToken:
-          $ref: '#/components/schemas/Token'
-    InternalServerException: {}
     OrderType:
       type: string
       enum:
       - OUTPOST
       - REPLACEMENT
-    NotFoundException: {}
-    OrderStatus:
+    InternalServerException: {}
+    LineItemQuantity:
+      type: integer
+      minimum: 1
+      maximum: 20
+    OrderId:
       type: string
-      enum:
-      - RECEIVED
-      - PENDING
-      - PROCESSING
-      - INSTALLING
-      - FULFILLED
-      - CANCELLED
-      - PREPARING
-      - IN_PROGRESS
-      - COMPLETED
-      - ERROR
+      pattern: oo-[a-f0-9]{17}$
+      minLength: 1
+      maxLength: 20
     ValidationException: {}
-    LineItemStatusCounts:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/LineItemQuantity'
+    ISO8601Timestamp:
+      type: string
+      format: date-time
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -327,8 +309,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string

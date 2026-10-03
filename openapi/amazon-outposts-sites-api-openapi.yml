@@ -1032,38 +1032,45 @@ paths:
       - Sites
 components:
   schemas:
-    City:
+    AddressLine1:
       type: string
       pattern: ^\S[\S ]*$
       minLength: 1
-      maxLength: 50
-    OpticalStandard:
+      maxLength: 180
+    UplinkGbps:
       type: string
       enum:
-      - OPTIC_10GBASE_SR
-      - OPTIC_10GBASE_IR
-      - OPTIC_10GBASE_LR
-      - OPTIC_40GBASE_SR
-      - OPTIC_40GBASE_ESR
-      - OPTIC_40GBASE_IR4_LR4L
-      - OPTIC_40GBASE_LR4
-      - OPTIC_100GBASE_SR4
-      - OPTIC_100GBASE_CWDM4
-      - OPTIC_100GBASE_LR4
-      - OPTIC_100G_PSM4_MSA
-      - OPTIC_1000BASE_LX
-      - OPTIC_1000BASE_SX
-    SiteId:
+      - UPLINK_1G
+      - UPLINK_10G
+      - UPLINK_40G
+      - UPLINK_100G
+    GetSiteOutput:
+      type: object
+      properties:
+        Site:
+          $ref: '#/components/schemas/Site'
+    ServiceQuotaExceededException: {}
+    AccessDeniedException: {}
+    PowerDrawKva:
       type: string
-      pattern: ^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$
-      description: The ID of the site.
-      minLength: 1
-      maxLength: 255
-    ContactName:
+      enum:
+      - POWER_5_KVA
+      - POWER_10_KVA
+      - POWER_15_KVA
+      - POWER_30_KVA
+    MaximumSupportedWeightLbs:
       type: string
-      pattern: ^\S[\S ]*$
+      enum:
+      - NO_LIMIT
+      - MAX_1400_LBS
+      - MAX_1600_LBS
+      - MAX_1800_LBS
+      - MAX_2000_LBS
+    SiteNotes:
+      type: string
+      pattern: ^[\S \n]+$
       minLength: 1
-      maxLength: 255
+      maxLength: 2000
     GetSiteAddressOutput:
       type: object
       properties:
@@ -1077,22 +1084,12 @@ components:
           allOf:
           - $ref: '#/components/schemas/Address'
           - description: ' Information about the address. '
-    GetSiteOutput:
-      type: object
-      properties:
-        Site:
-          $ref: '#/components/schemas/Site'
-    SiteName:
+    Token:
       type: string
-      pattern: ^[\S ]+$
-      description: The name of the site.
+      pattern: ^(\d+)##(\S+)$
+      description: The pagination token.
       minLength: 1
-      maxLength: 1000
-    PowerPhase:
-      type: string
-      enum:
-      - SINGLE_PHASE
-      - THREE_PHASE
+      maxLength: 2048
     Site:
       type: object
       properties:
@@ -1131,108 +1128,16 @@ components:
           - $ref: '#/components/schemas/RackPhysicalProperties'
           - description: ' Information about the physical and logistical details for a rack at the site. '
       description: Information about a site.
-    ContactPhoneNumber:
-      type: string
-      pattern: ^[\S ]+$
-      minLength: 1
-      maxLength: 20
-    ConflictException: {}
-    PowerFeedDrop:
-      type: string
-      enum:
-      - ABOVE_RACK
-      - BELOW_RACK
-    ServiceQuotaExceededException: {}
-    Token:
-      type: string
-      pattern: ^(\d+)##(\S+)$
-      description: The pagination token.
-      minLength: 1
-      maxLength: 2048
-    MaximumSupportedWeightLbs:
-      type: string
-      enum:
-      - NO_LIMIT
-      - MAX_1400_LBS
-      - MAX_1600_LBS
-      - MAX_1800_LBS
-      - MAX_2000_LBS
-    AccessDeniedException: {}
-    StateOrRegion:
-      type: string
-      pattern: ^\S[\S ]*$
-      minLength: 1
-      maxLength: 50
-    Municipality:
-      type: string
-      pattern: ^\S[\S ]*$
-      minLength: 0
-      maxLength: 180
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    SiteDescription:
-      type: string
-      pattern: ^[\S ]+$
-      description: The description of the site.
-      minLength: 1
-      maxLength: 1001
-    PowerDrawKva:
-      type: string
-      enum:
-      - POWER_5_KVA
-      - POWER_10_KVA
-      - POWER_15_KVA
-      - POWER_30_KVA
-    PostalCode:
-      type: string
-      pattern: ^[a-zA-Z0-9 -]+$
-      minLength: 1
-      maxLength: 20
-    CreateSiteOutput:
-      type: object
-      properties:
-        Site:
-          $ref: '#/components/schemas/Site'
-    UpdateSiteOutput:
-      type: object
-      properties:
-        Site:
-          $ref: '#/components/schemas/Site'
-    UpdateSiteAddressOutput:
-      type: object
-      properties:
-        AddressType:
-          allOf:
-          - $ref: '#/components/schemas/AddressType'
-          - description: ' The type of the address. '
-        Address:
-          allOf:
-          - $ref: '#/components/schemas/Address'
-          - description: ' Information about an address. '
-    DistrictOrCounty:
-      type: string
-      pattern: ^\S[\S ]*
-      minLength: 1
-      maxLength: 60
-    AddressLine3:
-      type: string
-      pattern: ^\S[\S ]*$
-      minLength: 0
-      maxLength: 60
     AddressType:
       type: string
       enum:
       - SHIPPING_ADDRESS
       - OPERATING_ADDRESS
-    FiberOpticCableType:
+    PostalCode:
       type: string
-      enum:
-      - SINGLE_MODE
-      - MULTI_MODE
+      pattern: ^[a-zA-Z0-9 -]+$
+      minLength: 1
+      maxLength: 20
     RackPhysicalProperties:
       type: object
       properties:
@@ -1273,30 +1178,117 @@ components:
           - $ref: '#/components/schemas/MaximumSupportedWeightLbs'
           - description: 'The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). '
       description: ' Information about the physical and logistical details for racks at sites. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. '
-    AddressLine1:
+    SiteName:
+      type: string
+      pattern: ^[\S ]+$
+      description: The name of the site.
+      minLength: 1
+      maxLength: 1000
+    SiteDescription:
+      type: string
+      pattern: ^[\S ]+$
+      description: The description of the site.
+      minLength: 1
+      maxLength: 1001
+    AddressLine3:
+      type: string
+      pattern: ^\S[\S ]*$
+      minLength: 0
+      maxLength: 60
+    NotFoundException: {}
+    ContactPhoneNumber:
+      type: string
+      pattern: ^[\S ]+$
+      minLength: 1
+      maxLength: 20
+    City:
       type: string
       pattern: ^\S[\S ]*$
       minLength: 1
-      maxLength: 180
-    AccountId:
+      maxLength: 50
+    ConflictException: {}
+    CountryCode:
       type: string
-      pattern: \d{12}
-      description: The ID of the Amazon Web Services account.
-      minLength: 12
-      maxLength: 12
-    siteListDefinition:
-      type: array
-      description: Information about the sites.
-      items:
-        $ref: '#/components/schemas/Site'
-    InternalServerException: {}
-    ListSitesOutput:
+      pattern: ^[A-Z]{2}$
+      minLength: 2
+      maxLength: 2
+    DistrictOrCounty:
+      type: string
+      pattern: ^\S[\S ]*
+      minLength: 1
+      maxLength: 60
+    ContactName:
+      type: string
+      pattern: ^\S[\S ]*$
+      minLength: 1
+      maxLength: 255
+    PowerPhase:
+      type: string
+      enum:
+      - SINGLE_PHASE
+      - THREE_PHASE
+    UpdateSiteRackPhysicalPropertiesOutput:
       type: object
       properties:
-        Sites:
-          $ref: '#/components/schemas/siteListDefinition'
-        NextToken:
-          $ref: '#/components/schemas/Token'
+        Site:
+          $ref: '#/components/schemas/Site'
+    UplinkCount:
+      type: string
+      enum:
+      - UPLINK_COUNT_1
+      - UPLINK_COUNT_2
+      - UPLINK_COUNT_3
+      - UPLINK_COUNT_4
+      - UPLINK_COUNT_5
+      - UPLINK_COUNT_6
+      - UPLINK_COUNT_7
+      - UPLINK_COUNT_8
+      - UPLINK_COUNT_12
+      - UPLINK_COUNT_16
+    SiteArn:
+      type: string
+      pattern: ^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/(os-[a-f0-9]{17})$
+      description: The Amazon Resource Name (ARN) of the site.
+      minLength: 1
+      maxLength: 255
+    CreateSiteOutput:
+      type: object
+      properties:
+        Site:
+          $ref: '#/components/schemas/Site'
+    TagValue:
+      type: string
+      pattern: ^[\S \n]+$
+      maxLength: 256
+    InternalServerException: {}
+    PowerFeedDrop:
+      type: string
+      enum:
+      - ABOVE_RACK
+      - BELOW_RACK
+    PowerConnector:
+      type: string
+      enum:
+      - L6_30P
+      - IEC309
+      - AH530P7W
+      - AH532P6W
+    Municipality:
+      type: string
+      pattern: ^\S[\S ]*$
+      minLength: 0
+      maxLength: 180
+    SiteId:
+      type: string
+      pattern: ^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$
+      description: The ID of the site.
+      minLength: 1
+      maxLength: 255
+    StateOrRegion:
+      type: string
+      pattern: ^\S[\S ]*$
+      minLength: 1
+      maxLength: 50
     Address:
       type: object
       required:
@@ -1351,87 +1343,77 @@ components:
           - $ref: '#/components/schemas/Municipality'
           - description: The municipality for the address.
       description: ' Information about an address. '
+    OpticalStandard:
+      type: string
+      enum:
+      - OPTIC_10GBASE_SR
+      - OPTIC_10GBASE_IR
+      - OPTIC_10GBASE_LR
+      - OPTIC_40GBASE_SR
+      - OPTIC_40GBASE_ESR
+      - OPTIC_40GBASE_IR4_LR4L
+      - OPTIC_40GBASE_LR4
+      - OPTIC_100GBASE_SR4
+      - OPTIC_100GBASE_CWDM4
+      - OPTIC_100GBASE_LR4
+      - OPTIC_100G_PSM4_MSA
+      - OPTIC_1000BASE_LX
+      - OPTIC_1000BASE_SX
+    ValidationException: {}
+    FiberOpticCableType:
+      type: string
+      enum:
+      - SINGLE_MODE
+      - MULTI_MODE
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    UpdateSiteOutput:
+      type: object
+      properties:
+        Site:
+          $ref: '#/components/schemas/Site'
+    AccountId:
+      type: string
+      pattern: \d{12}
+      description: The ID of the Amazon Web Services account.
+      minLength: 12
+      maxLength: 12
+    siteListDefinition:
+      type: array
+      description: Information about the sites.
+      items:
+        $ref: '#/components/schemas/Site'
+    ListSitesOutput:
+      type: object
+      properties:
+        Sites:
+          $ref: '#/components/schemas/siteListDefinition'
+        NextToken:
+          $ref: '#/components/schemas/Token'
+    UpdateSiteAddressOutput:
+      type: object
+      properties:
+        AddressType:
+          allOf:
+          - $ref: '#/components/schemas/AddressType'
+          - description: ' The type of the address. '
+        Address:
+          allOf:
+          - $ref: '#/components/schemas/Address'
+          - description: ' Information about an address. '
     DeleteSiteOutput:
       type: object
       properties: {}
-    NotFoundException: {}
     AddressLine2:
       type: string
       pattern: ^\S[\S ]*$
       minLength: 0
       maxLength: 60
-    UpdateSiteRackPhysicalPropertiesOutput:
-      type: object
-      properties:
-        Site:
-          $ref: '#/components/schemas/Site'
-    TagValue:
-      type: string
-      pattern: ^[\S \n]+$
-      maxLength: 256
-    PowerConnector:
-      type: string
-      enum:
-      - L6_30P
-      - IEC309
-      - AH530P7W
-      - AH532P6W
-    CountryCode:
-      type: string
-      pattern: ^[A-Z]{2}$
-      minLength: 2
-      maxLength: 2
-    UplinkGbps:
-      type: string
-      enum:
-      - UPLINK_1G
-      - UPLINK_10G
-      - UPLINK_40G
-      - UPLINK_100G
-    SiteArn:
-      type: string
-      pattern: ^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/(os-[a-f0-9]{17})$
-      description: The Amazon Resource Name (ARN) of the site.
-      minLength: 1
-      maxLength: 255
-    ValidationException: {}
-    SiteNotes:
-      type: string
-      pattern: ^[\S \n]+$
-      minLength: 1
-      maxLength: 2000
-    UplinkCount:
-      type: string
-      enum:
-      - UPLINK_COUNT_1
-      - UPLINK_COUNT_2
-      - UPLINK_COUNT_3
-      - UPLINK_COUNT_4
-      - UPLINK_COUNT_5
-      - UPLINK_COUNT_6
-      - UPLINK_COUNT_7
-      - UPLINK_COUNT_8
-      - UPLINK_COUNT_12
-      - UPLINK_COUNT_16
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -1444,8 +1426,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string

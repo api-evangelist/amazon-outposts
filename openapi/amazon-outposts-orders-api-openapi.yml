@@ -346,82 +346,29 @@ paths:
       - Orders
 components:
   schemas:
-    OrderId:
-      type: string
-      pattern: oo-[a-f0-9]{17}$
-      minLength: 1
-      maxLength: 20
-    ISO8601Timestamp:
-      type: string
-      format: date-time
-    LineItemStatus:
+    OrderStatus:
       type: string
       enum:
-      - PREPARING
-      - BUILDING
-      - SHIPPED
-      - DELIVERED
+      - RECEIVED
+      - PENDING
+      - PROCESSING
       - INSTALLING
-      - INSTALLED
-      - ERROR
+      - FULFILLED
       - CANCELLED
-      - REPLACED
-    ConflictException: {}
+      - PREPARING
+      - IN_PROGRESS
+      - COMPLETED
+      - ERROR
     ServiceQuotaExceededException: {}
-    LineItemQuantity:
-      type: integer
-      minimum: 1
-      maximum: 20
-    LineItemAssetInformation:
-      type: object
-      properties:
-        AssetId:
-          allOf:
-          - $ref: '#/components/schemas/AssetId'
-          - description: ' The ID of the asset. '
-        MacAddressList:
-          allOf:
-          - $ref: '#/components/schemas/MacAddressList'
-          - description: ' The MAC addresses of the asset. '
-      description: ' Information about a line item asset. '
     AccessDeniedException: {}
+    PaymentTerm:
+      type: string
+      enum:
+      - THREE_YEARS
+      - ONE_YEAR
     CancelOrderOutput:
       type: object
       properties: {}
-    LineItemListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/LineItem'
-    TrackingId:
-      type: string
-      pattern: ^[a-zA-Z0-9]+$
-      minLength: 6
-      maxLength: 42
-    PaymentOption:
-      type: string
-      enum:
-      - ALL_UPFRONT
-      - NO_UPFRONT
-      - PARTIAL_UPFRONT
-    LineItemId:
-      type: string
-      pattern: ooi-[a-f0-9]{17}
-    OutpostIdOnly:
-      type: string
-      pattern: ^op-[a-f0-9]{17}$
-      minLength: 1
-      maxLength: 20
-    LineItemAssetInformationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LineItemAssetInformation'
-    ShipmentCarrier:
-      type: string
-      enum:
-      - DHL
-      - DBS
-      - FEDEX
-      - UPS
     CreateOrderOutput:
       type: object
       properties:
@@ -434,24 +381,35 @@ components:
       pattern: OR-[A-Z0-9]{7}
       minLength: 1
       maxLength: 10
+    ShipmentInformation:
+      type: object
+      properties:
+        ShipmentTrackingNumber:
+          allOf:
+          - $ref: '#/components/schemas/TrackingId'
+          - description: ' The tracking number of the shipment. '
+        ShipmentCarrier:
+          allOf:
+          - $ref: '#/components/schemas/ShipmentCarrier'
+          - description: ' The carrier of the shipment. '
+      description: ' Information about a line item shipment. '
+    NotFoundException: {}
+    GetOrderOutput:
+      type: object
+      properties:
+        Order:
+          $ref: '#/components/schemas/Order'
+    ConflictException: {}
+    OutpostIdOnly:
+      type: string
+      pattern: ^op-[a-f0-9]{17}$
+      minLength: 1
+      maxLength: 20
     MacAddress:
       type: string
       pattern: ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$
       minLength: 17
       maxLength: 17
-    InternalServerException: {}
-    LineItemRequest:
-      type: object
-      properties:
-        CatalogItemId:
-          allOf:
-          - $ref: '#/components/schemas/SkuCode'
-          - description: The ID of the catalog item.
-        Quantity:
-          allOf:
-          - $ref: '#/components/schemas/LineItemQuantity'
-          - description: The quantity of a line item request.
-      description: Information about a line item request.
     MacAddressList:
       type: array
       items:
@@ -461,6 +419,114 @@ components:
       enum:
       - OUTPOST
       - REPLACEMENT
+    InternalServerException: {}
+    PaymentOption:
+      type: string
+      enum:
+      - ALL_UPFRONT
+      - NO_UPFRONT
+      - PARTIAL_UPFRONT
+    ShipmentCarrier:
+      type: string
+      enum:
+      - DHL
+      - DBS
+      - FEDEX
+      - UPS
+    LineItemStatus:
+      type: string
+      enum:
+      - PREPARING
+      - BUILDING
+      - SHIPPED
+      - DELIVERED
+      - INSTALLING
+      - INSTALLED
+      - ERROR
+      - CANCELLED
+      - REPLACED
+    LineItem:
+      type: object
+      properties:
+        CatalogItemId:
+          allOf:
+          - $ref: '#/components/schemas/SkuCode'
+          - description: ' The ID of the catalog item. '
+        LineItemId:
+          allOf:
+          - $ref: '#/components/schemas/LineItemId'
+          - description: The ID of the line item.
+        Quantity:
+          allOf:
+          - $ref: '#/components/schemas/LineItemQuantity'
+          - description: The quantity of the line item.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/LineItemStatus'
+          - description: The status of the line item.
+        ShipmentInformation:
+          allOf:
+          - $ref: '#/components/schemas/ShipmentInformation'
+          - description: ' Information about a line item shipment. '
+        AssetInformationList:
+          allOf:
+          - $ref: '#/components/schemas/LineItemAssetInformationList'
+          - description: ' Information about assets. '
+        PreviousLineItemId:
+          allOf:
+          - $ref: '#/components/schemas/LineItemId'
+          - description: The ID of the previous line item.
+        PreviousOrderId:
+          allOf:
+          - $ref: '#/components/schemas/OrderId'
+          - description: The ID of the previous order.
+      description: Information about a line item.
+    LineItemId:
+      type: string
+      pattern: ooi-[a-f0-9]{17}
+    LineItemQuantity:
+      type: integer
+      minimum: 1
+      maximum: 20
+    AssetId:
+      type: string
+      pattern: ^(\w+)$
+      minLength: 1
+      maxLength: 100
+    TrackingId:
+      type: string
+      pattern: ^[a-zA-Z0-9]+$
+      minLength: 6
+      maxLength: 42
+    OrderId:
+      type: string
+      pattern: oo-[a-f0-9]{17}$
+      minLength: 1
+      maxLength: 20
+    ValidationException: {}
+    LineItemAssetInformationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LineItemAssetInformation'
+    LineItemAssetInformation:
+      type: object
+      properties:
+        AssetId:
+          allOf:
+          - $ref: '#/components/schemas/AssetId'
+          - description: ' The ID of the asset. '
+        MacAddressList:
+          allOf:
+          - $ref: '#/components/schemas/MacAddressList'
+          - description: ' The MAC addresses of the asset. '
+      description: ' Information about a line item asset. '
+    LineItemListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/LineItem'
+    ISO8601Timestamp:
+      type: string
+      format: date-time
     Order:
       type: object
       properties:
@@ -501,103 +567,19 @@ components:
           - $ref: '#/components/schemas/OrderType'
           - description: The type of order.
       description: Information about an order.
-    NotFoundException: {}
-    PaymentTerm:
-      type: string
-      enum:
-      - THREE_YEARS
-      - ONE_YEAR
-    GetOrderOutput:
-      type: object
-      properties:
-        Order:
-          $ref: '#/components/schemas/Order'
-    AssetId:
-      type: string
-      pattern: ^(\w+)$
-      minLength: 1
-      maxLength: 100
-    LineItem:
+    LineItemRequest:
       type: object
       properties:
         CatalogItemId:
           allOf:
           - $ref: '#/components/schemas/SkuCode'
-          - description: ' The ID of the catalog item. '
-        LineItemId:
-          allOf:
-          - $ref: '#/components/schemas/LineItemId'
-          - description: The ID of the line item.
+          - description: The ID of the catalog item.
         Quantity:
           allOf:
           - $ref: '#/components/schemas/LineItemQuantity'
-          - description: The quantity of the line item.
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/LineItemStatus'
-          - description: The status of the line item.
-        ShipmentInformation:
-          allOf:
-          - $ref: '#/components/schemas/ShipmentInformation'
-          - description: ' Information about a line item shipment. '
-        AssetInformationList:
-          allOf:
-          - $ref: '#/components/schemas/LineItemAssetInformationList'
-          - description: ' Information about assets. '
-        PreviousLineItemId:
-          allOf:
-          - $ref: '#/components/schemas/LineItemId'
-          - description: The ID of the previous line item.
-        PreviousOrderId:
-          allOf:
-          - $ref: '#/components/schemas/OrderId'
-          - description: The ID of the previous order.
-      description: Information about a line item.
-    OrderStatus:
-      type: string
-      enum:
-      - RECEIVED
-      - PENDING
-      - PROCESSING
-      - INSTALLING
-      - FULFILLED
-      - CANCELLED
-      - PREPARING
-      - IN_PROGRESS
-      - COMPLETED
-      - ERROR
-    ValidationException: {}
-    ShipmentInformation:
-      type: object
-      properties:
-        ShipmentTrackingNumber:
-          allOf:
-          - $ref: '#/components/schemas/TrackingId'
-          - description: ' The tracking number of the shipment. '
-        ShipmentCarrier:
-          allOf:
-          - $ref: '#/components/schemas/ShipmentCarrier'
-          - description: ' The carrier of the shipment. '
-      description: ' Information about a line item shipment. '
+          - description: The quantity of a line item request.
+      description: Information about a line item request.
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -610,8 +592,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string

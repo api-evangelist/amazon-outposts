@@ -273,6 +273,99 @@ paths:
       - Catalog
 components:
   schemas:
+    MaxSize:
+      type: string
+    CatalogItemPowerKva:
+      type: number
+      format: float
+    CatalogItemWeightLbs:
+      type: integer
+    Token:
+      type: string
+      pattern: ^(\d+)##(\S+)$
+      description: The pagination token.
+      minLength: 1
+      maxLength: 2048
+    SkuCode:
+      type: string
+      pattern: OR-[A-Z0-9]{7}
+      minLength: 1
+      maxLength: 10
+    GetCatalogItemOutput:
+      type: object
+      properties:
+        CatalogItem:
+          allOf:
+          - $ref: '#/components/schemas/CatalogItem'
+          - description: Information about this catalog item.
+    ListCatalogItemsOutput:
+      type: object
+      properties:
+        CatalogItems:
+          allOf:
+          - $ref: '#/components/schemas/CatalogItemListDefinition'
+          - description: Information about the catalog items.
+        NextToken:
+          $ref: '#/components/schemas/Token'
+    NotFoundException: {}
+    EC2Capacity:
+      type: object
+      properties:
+        Family:
+          allOf:
+          - $ref: '#/components/schemas/Family'
+          - description: ' The family of the EC2 capacity. '
+        MaxSize:
+          allOf:
+          - $ref: '#/components/schemas/MaxSize'
+          - description: ' The maximum size of the EC2 capacity. '
+        Quantity:
+          allOf:
+          - $ref: '#/components/schemas/Quantity'
+          - description: ' The quantity of the EC2 capacity. '
+      description: ' Information about EC2 capacity. '
+    CatalogItemStatus:
+      type: string
+      enum:
+      - AVAILABLE
+      - DISCONTINUED
+    CatalogItemListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/CatalogItem'
+    InternalServerException: {}
+    EC2CapacityListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/EC2Capacity'
+    Family:
+      type: string
+      pattern: '[a-z0-9]+'
+      minLength: 1
+      maxLength: 10
+    SupportedStorageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SupportedStorageEnum'
+    SupportedUplinkGbps:
+      type: integer
+    SupportedUplinkGbpsListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/SupportedUplinkGbps'
+    ValidationException: {}
+    CatalogItemClass:
+      type: string
+      enum:
+      - RACK
+      - SERVER
+    Quantity:
+      type: string
+    SupportedStorageEnum:
+      type: string
+      enum:
+      - EBS
+      - S3
     CatalogItem:
       type: object
       properties:
@@ -305,118 +398,7 @@ components:
           - $ref: '#/components/schemas/SupportedStorageList'
           - description: ' The supported storage options for the catalog item. '
       description: ' Information about a catalog item. '
-    CatalogItemPowerKva:
-      type: number
-      format: float
-    CatalogItemStatus:
-      type: string
-      enum:
-      - AVAILABLE
-      - DISCONTINUED
-    CatalogItemWeightLbs:
-      type: integer
-    CatalogItemListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/CatalogItem'
-    Token:
-      type: string
-      pattern: ^(\d+)##(\S+)$
-      description: The pagination token.
-      minLength: 1
-      maxLength: 2048
-    MaxSize:
-      type: string
-    Quantity:
-      type: string
-    SupportedStorageEnum:
-      type: string
-      enum:
-      - EBS
-      - S3
-    ListCatalogItemsOutput:
-      type: object
-      properties:
-        CatalogItems:
-          allOf:
-          - $ref: '#/components/schemas/CatalogItemListDefinition'
-          - description: Information about the catalog items.
-        NextToken:
-          $ref: '#/components/schemas/Token'
-    EC2Capacity:
-      type: object
-      properties:
-        Family:
-          allOf:
-          - $ref: '#/components/schemas/Family'
-          - description: ' The family of the EC2 capacity. '
-        MaxSize:
-          allOf:
-          - $ref: '#/components/schemas/MaxSize'
-          - description: ' The maximum size of the EC2 capacity. '
-        Quantity:
-          allOf:
-          - $ref: '#/components/schemas/Quantity'
-          - description: ' The quantity of the EC2 capacity. '
-      description: ' Information about EC2 capacity. '
-    EC2CapacityListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/EC2Capacity'
-    GetCatalogItemOutput:
-      type: object
-      properties:
-        CatalogItem:
-          allOf:
-          - $ref: '#/components/schemas/CatalogItem'
-          - description: Information about this catalog item.
-    Family:
-      type: string
-      pattern: '[a-z0-9]+'
-      minLength: 1
-      maxLength: 10
-    SkuCode:
-      type: string
-      pattern: OR-[A-Z0-9]{7}
-      minLength: 1
-      maxLength: 10
-    InternalServerException: {}
-    SupportedUplinkGbps:
-      type: integer
-    NotFoundException: {}
-    SupportedUplinkGbpsListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/SupportedUplinkGbps'
-    CatalogItemClass:
-      type: string
-      enum:
-      - RACK
-      - SERVER
-    ValidationException: {}
-    SupportedStorageList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SupportedStorageEnum'
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -429,8 +411,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
