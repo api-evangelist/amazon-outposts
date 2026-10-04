@@ -273,13 +273,36 @@ paths:
       - Catalog
 components:
   schemas:
-    MaxSize:
+    SupportedUplinkGbps:
+      type: integer
+    EC2CapacityListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/EC2Capacity'
+    CatalogItemStatus:
       type: string
+      enum:
+      - AVAILABLE
+      - DISCONTINUED
+    CatalogItemListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/CatalogItem'
+    SupportedUplinkGbpsListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/SupportedUplinkGbps'
+    CatalogItemWeightLbs:
+      type: integer
+    SupportedStorageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SupportedStorageEnum'
+    InternalServerException: {}
+    ValidationException: {}
     CatalogItemPowerKva:
       type: number
       format: float
-    CatalogItemWeightLbs:
-      type: integer
     Token:
       type: string
       pattern: ^(\d+)##(\S+)$
@@ -291,13 +314,8 @@ components:
       pattern: OR-[A-Z0-9]{7}
       minLength: 1
       maxLength: 10
-    GetCatalogItemOutput:
-      type: object
-      properties:
-        CatalogItem:
-          allOf:
-          - $ref: '#/components/schemas/CatalogItem'
-          - description: Information about this catalog item.
+    MaxSize:
+      type: string
     ListCatalogItemsOutput:
       type: object
       properties:
@@ -307,60 +325,13 @@ components:
           - description: Information about the catalog items.
         NextToken:
           $ref: '#/components/schemas/Token'
-    NotFoundException: {}
-    EC2Capacity:
-      type: object
-      properties:
-        Family:
-          allOf:
-          - $ref: '#/components/schemas/Family'
-          - description: ' The family of the EC2 capacity. '
-        MaxSize:
-          allOf:
-          - $ref: '#/components/schemas/MaxSize'
-          - description: ' The maximum size of the EC2 capacity. '
-        Quantity:
-          allOf:
-          - $ref: '#/components/schemas/Quantity'
-          - description: ' The quantity of the EC2 capacity. '
-      description: ' Information about EC2 capacity. '
-    CatalogItemStatus:
+    Quantity:
       type: string
-      enum:
-      - AVAILABLE
-      - DISCONTINUED
-    CatalogItemListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/CatalogItem'
-    InternalServerException: {}
-    EC2CapacityListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/EC2Capacity'
     Family:
       type: string
       pattern: '[a-z0-9]+'
       minLength: 1
       maxLength: 10
-    SupportedStorageList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SupportedStorageEnum'
-    SupportedUplinkGbps:
-      type: integer
-    SupportedUplinkGbpsListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/SupportedUplinkGbps'
-    ValidationException: {}
-    CatalogItemClass:
-      type: string
-      enum:
-      - RACK
-      - SERVER
-    Quantity:
-      type: string
     SupportedStorageEnum:
       type: string
       enum:
@@ -398,25 +369,36 @@ components:
           - $ref: '#/components/schemas/SupportedStorageList'
           - description: ' The supported storage options for the catalog item. '
       description: ' Information about a catalog item. '
+    NotFoundException: {}
+    EC2Capacity:
+      type: object
+      properties:
+        Family:
+          allOf:
+          - $ref: '#/components/schemas/Family'
+          - description: ' The family of the EC2 capacity. '
+        MaxSize:
+          allOf:
+          - $ref: '#/components/schemas/MaxSize'
+          - description: ' The maximum size of the EC2 capacity. '
+        Quantity:
+          allOf:
+          - $ref: '#/components/schemas/Quantity'
+          - description: ' The quantity of the EC2 capacity. '
+      description: ' Information about EC2 capacity. '
+    CatalogItemClass:
+      type: string
+      enum:
+      - RACK
+      - SERVER
+    GetCatalogItemOutput:
+      type: object
+      properties:
+        CatalogItem:
+          allOf:
+          - $ref: '#/components/schemas/CatalogItem'
+          - description: Information about this catalog item.
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
@@ -437,6 +419,24 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

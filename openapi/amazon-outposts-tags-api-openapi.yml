@@ -299,26 +299,18 @@ components:
     TagResourceResponse:
       type: object
       properties: {}
+    TagValue:
+      type: string
+      pattern: ^[\S \n]+$
+      maxLength: 256
     UntagResourceResponse:
       type: object
       properties: {}
-    ListTagsForResourceResponse:
-      type: object
-      properties:
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: The resource tags.
     TagKey:
       type: string
       pattern: ^(?!aws:)[a-zA-Z+-=._:/]+$
       minLength: 1
       maxLength: 128
-    InternalServerException: {}
-    TagValue:
-      type: string
-      pattern: ^[\S \n]+$
-      maxLength: 256
     ValidationException: {}
     TagMap:
       type: object
@@ -326,8 +318,22 @@ components:
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
+    InternalServerException: {}
+    ListTagsForResourceResponse:
+      type: object
+      properties:
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The resource tags.
     NotFoundException: {}
   parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -352,20 +358,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

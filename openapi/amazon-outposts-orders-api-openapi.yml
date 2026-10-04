@@ -345,7 +345,99 @@ paths:
       tags:
       - Orders
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    OrderType:
+      type: string
+      enum:
+      - OUTPOST
+      - REPLACEMENT
+    ConflictException: {}
+    LineItemAssetInformation:
+      type: object
+      properties:
+        AssetId:
+          allOf:
+          - $ref: '#/components/schemas/AssetId'
+          - description: ' The ID of the asset. '
+        MacAddressList:
+          allOf:
+          - $ref: '#/components/schemas/MacAddressList'
+          - description: ' The MAC addresses of the asset. '
+      description: ' Information about a line item asset. '
+    ShipmentCarrier:
+      type: string
+      enum:
+      - DHL
+      - DBS
+      - FEDEX
+      - UPS
+    AssetId:
+      type: string
+      pattern: ^(\w+)$
+      minLength: 1
+      maxLength: 100
+    ServiceQuotaExceededException: {}
+    LineItemRequest:
+      type: object
+      properties:
+        CatalogItemId:
+          allOf:
+          - $ref: '#/components/schemas/SkuCode'
+          - description: The ID of the catalog item.
+        Quantity:
+          allOf:
+          - $ref: '#/components/schemas/LineItemQuantity'
+          - description: The quantity of a line item request.
+      description: Information about a line item request.
+    InternalServerException: {}
+    OrderId:
+      type: string
+      pattern: oo-[a-f0-9]{17}$
+      minLength: 1
+      maxLength: 20
     OrderStatus:
       type: string
       enum:
@@ -359,28 +451,12 @@ components:
       - IN_PROGRESS
       - COMPLETED
       - ERROR
-    ServiceQuotaExceededException: {}
-    AccessDeniedException: {}
-    PaymentTerm:
+    OutpostIdOnly:
       type: string
-      enum:
-      - THREE_YEARS
-      - ONE_YEAR
-    CancelOrderOutput:
-      type: object
-      properties: {}
-    CreateOrderOutput:
-      type: object
-      properties:
-        Order:
-          allOf:
-          - $ref: '#/components/schemas/Order'
-          - description: Information about this order.
-    SkuCode:
-      type: string
-      pattern: OR-[A-Z0-9]{7}
+      pattern: ^op-[a-f0-9]{17}$
       minLength: 1
-      maxLength: 10
+      maxLength: 20
+    ValidationException: {}
     ShipmentInformation:
       type: object
       properties:
@@ -393,58 +469,12 @@ components:
           - $ref: '#/components/schemas/ShipmentCarrier'
           - description: ' The carrier of the shipment. '
       description: ' Information about a line item shipment. '
-    NotFoundException: {}
-    GetOrderOutput:
-      type: object
-      properties:
-        Order:
-          $ref: '#/components/schemas/Order'
-    ConflictException: {}
-    OutpostIdOnly:
+    LineItemId:
       type: string
-      pattern: ^op-[a-f0-9]{17}$
-      minLength: 1
-      maxLength: 20
-    MacAddress:
+      pattern: ooi-[a-f0-9]{17}
+    ISO8601Timestamp:
       type: string
-      pattern: ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$
-      minLength: 17
-      maxLength: 17
-    MacAddressList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MacAddress'
-    OrderType:
-      type: string
-      enum:
-      - OUTPOST
-      - REPLACEMENT
-    InternalServerException: {}
-    PaymentOption:
-      type: string
-      enum:
-      - ALL_UPFRONT
-      - NO_UPFRONT
-      - PARTIAL_UPFRONT
-    ShipmentCarrier:
-      type: string
-      enum:
-      - DHL
-      - DBS
-      - FEDEX
-      - UPS
-    LineItemStatus:
-      type: string
-      enum:
-      - PREPARING
-      - BUILDING
-      - SHIPPED
-      - DELIVERED
-      - INSTALLING
-      - INSTALLED
-      - ERROR
-      - CANCELLED
-      - REPLACED
+      format: date-time
     LineItem:
       type: object
       properties:
@@ -481,52 +511,53 @@ components:
           - $ref: '#/components/schemas/OrderId'
           - description: The ID of the previous order.
       description: Information about a line item.
-    LineItemId:
+    PaymentOption:
       type: string
-      pattern: ooi-[a-f0-9]{17}
+      enum:
+      - ALL_UPFRONT
+      - NO_UPFRONT
+      - PARTIAL_UPFRONT
     LineItemQuantity:
       type: integer
       minimum: 1
       maximum: 20
-    AssetId:
+    SkuCode:
       type: string
-      pattern: ^(\w+)$
+      pattern: OR-[A-Z0-9]{7}
       minLength: 1
-      maxLength: 100
+      maxLength: 10
+    LineItemAssetInformationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LineItemAssetInformation'
+    MacAddressList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MacAddress'
+    MacAddress:
+      type: string
+      pattern: ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$
+      minLength: 17
+      maxLength: 17
+    AccessDeniedException: {}
     TrackingId:
       type: string
       pattern: ^[a-zA-Z0-9]+$
       minLength: 6
       maxLength: 42
-    OrderId:
-      type: string
-      pattern: oo-[a-f0-9]{17}$
-      minLength: 1
-      maxLength: 20
-    ValidationException: {}
-    LineItemAssetInformationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LineItemAssetInformation'
-    LineItemAssetInformation:
+    NotFoundException: {}
+    GetOrderOutput:
       type: object
       properties:
-        AssetId:
-          allOf:
-          - $ref: '#/components/schemas/AssetId'
-          - description: ' The ID of the asset. '
-        MacAddressList:
-          allOf:
-          - $ref: '#/components/schemas/MacAddressList'
-          - description: ' The MAC addresses of the asset. '
-      description: ' Information about a line item asset. '
+        Order:
+          $ref: '#/components/schemas/Order'
+    CancelOrderOutput:
+      type: object
+      properties: {}
     LineItemListDefinition:
       type: array
       items:
         $ref: '#/components/schemas/LineItem'
-    ISO8601Timestamp:
-      type: string
-      format: date-time
     Order:
       type: object
       properties:
@@ -567,61 +598,30 @@ components:
           - $ref: '#/components/schemas/OrderType'
           - description: The type of order.
       description: Information about an order.
-    LineItemRequest:
+    PaymentTerm:
+      type: string
+      enum:
+      - THREE_YEARS
+      - ONE_YEAR
+    LineItemStatus:
+      type: string
+      enum:
+      - PREPARING
+      - BUILDING
+      - SHIPPED
+      - DELIVERED
+      - INSTALLING
+      - INSTALLED
+      - ERROR
+      - CANCELLED
+      - REPLACED
+    CreateOrderOutput:
       type: object
       properties:
-        CatalogItemId:
+        Order:
           allOf:
-          - $ref: '#/components/schemas/SkuCode'
-          - description: The ID of the catalog item.
-        Quantity:
-          allOf:
-          - $ref: '#/components/schemas/LineItemQuantity'
-          - description: The quantity of a line item request.
-      description: Information about a line item request.
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
+          - $ref: '#/components/schemas/Order'
+          - description: Information about this order.
   securitySchemes:
     hmac:
       type: apiKey

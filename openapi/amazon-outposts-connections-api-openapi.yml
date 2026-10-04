@@ -286,46 +286,56 @@ paths:
       tags:
       - Connections
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    CIDR:
-      type: string
-      pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$
-      minLength: 9
-      maxLength: 18
-    AccessDeniedException: {}
-    ServerEndpoint:
-      type: string
-      pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}:[0-9]{1,5}$
-      minLength: 9
-      maxLength: 21
     UnderlayIpAddress:
       type: string
       pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}$
       minLength: 7
       maxLength: 15
-    NotFoundException: {}
-    ConnectionId:
-      type: string
-      pattern: ^[a-zA-Z0-9+/=]{1,1024}$
-      minLength: 1
-      maxLength: 1024
-    StartConnectionResponse:
-      type: object
-      properties:
-        ConnectionId:
-          allOf:
-          - $ref: '#/components/schemas/ConnectionId'
-          - description: ' The ID of the connection. '
-        UnderlayIpAddress:
-          allOf:
-          - $ref: '#/components/schemas/UnderlayIpAddress'
-          - description: ' The underlay IP address. '
     InternalServerException: {}
-    WireGuardPublicKey:
-      type: string
-      pattern: ^[a-zA-Z0-9/+]{43}=$
-      minLength: 44
-      maxLength: 44
     GetConnectionResponse:
       type: object
       properties:
@@ -337,7 +347,23 @@ components:
           allOf:
           - $ref: '#/components/schemas/ConnectionDetails'
           - description: ' Information about the connection. '
+    ConnectionId:
+      type: string
+      pattern: ^[a-zA-Z0-9+/=]{1,1024}$
+      minLength: 1
+      maxLength: 1024
     ValidationException: {}
+    StartConnectionResponse:
+      type: object
+      properties:
+        ConnectionId:
+          allOf:
+          - $ref: '#/components/schemas/ConnectionId'
+          - description: ' The ID of the connection. '
+        UnderlayIpAddress:
+          allOf:
+          - $ref: '#/components/schemas/UnderlayIpAddress'
+          - description: ' The underlay IP address. '
     ConnectionDetails:
       type: object
       properties:
@@ -366,53 +392,27 @@ components:
           - $ref: '#/components/schemas/CIDRList'
           - description: ' The allowed IP addresses. '
       description: ' Information about a connection. '
+    CIDR:
+      type: string
+      pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$
+      minLength: 9
+      maxLength: 18
+    ServerEndpoint:
+      type: string
+      pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}:[0-9]{1,5}$
+      minLength: 9
+      maxLength: 21
+    AccessDeniedException: {}
+    NotFoundException: {}
     CIDRList:
       type: array
       items:
         $ref: '#/components/schemas/CIDR'
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
+    WireGuardPublicKey:
+      type: string
+      pattern: ^[a-zA-Z0-9/+]{43}=$
+      minLength: 44
+      maxLength: 44
   securitySchemes:
     hmac:
       type: apiKey
