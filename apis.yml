@@ -172,6 +172,9 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/outposts/faqs/
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-outposts-capability-edges.yml
+  name: Amazon Outposts Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-outposts/overview
 - type: AgenticAccess
