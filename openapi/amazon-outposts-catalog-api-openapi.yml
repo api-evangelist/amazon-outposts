@@ -273,70 +273,14 @@ paths:
       - Catalog
 components:
   schemas:
-    SupportedUplinkGbps:
-      type: integer
-    EC2CapacityListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/EC2Capacity'
-    CatalogItemStatus:
-      type: string
-      enum:
-      - AVAILABLE
-      - DISCONTINUED
-    CatalogItemListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/CatalogItem'
-    SupportedUplinkGbpsListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/SupportedUplinkGbps'
-    CatalogItemWeightLbs:
-      type: integer
-    SupportedStorageList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SupportedStorageEnum'
-    InternalServerException: {}
-    ValidationException: {}
-    CatalogItemPowerKva:
-      type: number
-      format: float
-    Token:
-      type: string
-      pattern: ^(\d+)##(\S+)$
-      description: The pagination token.
-      minLength: 1
-      maxLength: 2048
-    SkuCode:
-      type: string
-      pattern: OR-[A-Z0-9]{7}
-      minLength: 1
-      maxLength: 10
-    MaxSize:
-      type: string
-    ListCatalogItemsOutput:
-      type: object
-      properties:
-        CatalogItems:
-          allOf:
-          - $ref: '#/components/schemas/CatalogItemListDefinition'
-          - description: Information about the catalog items.
-        NextToken:
-          $ref: '#/components/schemas/Token'
-    Quantity:
-      type: string
-    Family:
-      type: string
-      pattern: '[a-z0-9]+'
-      minLength: 1
-      maxLength: 10
     SupportedStorageEnum:
       type: string
       enum:
       - EBS
       - S3
+    NotFoundException: {}
+    CatalogItemWeightLbs:
+      type: integer
     CatalogItem:
       type: object
       properties:
@@ -369,7 +313,12 @@ components:
           - $ref: '#/components/schemas/SupportedStorageList'
           - description: ' The supported storage options for the catalog item. '
       description: ' Information about a catalog item. '
-    NotFoundException: {}
+    Token:
+      type: string
+      pattern: ^(\d+)##(\S+)$
+      description: The pagination token.
+      minLength: 1
+      maxLength: 2048
     EC2Capacity:
       type: object
       properties:
@@ -386,11 +335,8 @@ components:
           - $ref: '#/components/schemas/Quantity'
           - description: ' The quantity of the EC2 capacity. '
       description: ' Information about EC2 capacity. '
-    CatalogItemClass:
-      type: string
-      enum:
-      - RACK
-      - SERVER
+    SupportedUplinkGbps:
+      type: integer
     GetCatalogItemOutput:
       type: object
       properties:
@@ -398,9 +344,63 @@ components:
           allOf:
           - $ref: '#/components/schemas/CatalogItem'
           - description: Information about this catalog item.
+    SkuCode:
+      type: string
+      pattern: OR-[A-Z0-9]{7}
+      minLength: 1
+      maxLength: 10
+    ListCatalogItemsOutput:
+      type: object
+      properties:
+        CatalogItems:
+          allOf:
+          - $ref: '#/components/schemas/CatalogItemListDefinition'
+          - description: Information about the catalog items.
+        NextToken:
+          $ref: '#/components/schemas/Token'
+    SupportedStorageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SupportedStorageEnum'
+    Family:
+      type: string
+      pattern: '[a-z0-9]+'
+      minLength: 1
+      maxLength: 10
+    Quantity:
+      type: string
+    MaxSize:
+      type: string
+    CatalogItemPowerKva:
+      type: number
+      format: float
+    SupportedUplinkGbpsListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/SupportedUplinkGbps'
+    InternalServerException: {}
+    EC2CapacityListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/EC2Capacity'
+    ValidationException: {}
+    CatalogItemClass:
+      type: string
+      enum:
+      - RACK
+      - SERVER
+    CatalogItemListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/CatalogItem'
+    CatalogItemStatus:
+      type: string
+      enum:
+      - AVAILABLE
+      - DISCONTINUED
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -411,8 +411,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -423,20 +423,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
