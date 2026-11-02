@@ -18,18 +18,17 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 accessModel:
-  pricing: freemium
-  onboarding: self-serve
+  pricing: enterprise
+  onboarding: unknown
   trial: false
-  try_now: true
+  try_now: false
   public: false
-  label: Freemium · Self-serve signup
-  confidence: medium
+  label: Enterprise
+  confidence: low
   source:
-  - plans
   - authentication
   - security
-  generated: '2026-09-03'
+  generated: '2026-11-02'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-outposts.png
 tags:
